@@ -4011,7 +4011,7 @@ EOD;
         if (!$path) {
             return '';
         }
-        return $this->doc_link($path, $text);
+        return null;//$this->doc_link($path, $text);
     }
 
     /**
