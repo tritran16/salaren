@@ -1,24 +1,24 @@
 <?php
-// This file is part of Salaren - http://Salaren.org/
+// This file is part of Moodle - http://moodle.org/
 //
-// Salaren is free software: you can redistribute it and/or modify
+// Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Salaren is distributed in the hope that it will be useful,
+// Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'role', language 'en', branch 'Salaren_20_STABLE'
+ * Strings for component 'role', language 'en', branch 'MOODLE_20_STABLE'
  *
  * @package   core_role
- * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -69,7 +69,7 @@ $string['backup:backupcourse'] = 'Backup courses';
 $string['backup:backupsection'] = 'Backup sections';
 $string['backup:configure'] = 'Configure backup options';
 $string['backup:downloadfile'] = 'Download files from backup areas';
-$string['backup:backuptargethub'] = 'Backup for publishing on Salaren.net';
+$string['backup:backuptargethub'] = 'Backup for publishing on Moodle.net';
 $string['backup:backuptargetimport'] = 'Backup for import';
 $string['backup:userinfo'] = 'Backup user data';
 $string['badges:awardbadge'] = 'Award badge to a user';
@@ -111,7 +111,7 @@ $string['cohort:manage'] = 'Create, delete and move cohorts';
 $string['comment:delete'] = 'Delete comments';
 $string['comment:post'] = 'Post comments';
 $string['comment:view'] = 'View comments';
-$string['community:add'] = 'Use the community block to search Salaren.net and find courses';
+$string['community:add'] = 'Use the community block to search Moodle.net and find courses';
 $string['community:download'] = 'Download a course from the community block';
 $string['competency:competencymanage'] = 'Manage competency frameworks';
 $string['competency:competencygrade'] = 'Set competency rating';
@@ -361,7 +361,7 @@ $string['restore:createuser'] = 'Create users on restore';
 $string['restore:restoreactivity'] = 'Restore activities';
 $string['restore:restoresection'] = 'Restore sections';
 $string['restore:restorecourse'] = 'Restore courses';
-$string['restore:restoretargethub'] = 'Restore courses downloaded from Salaren.net';
+$string['restore:restoretargethub'] = 'Restore courses downloaded from Moodle.net';
 $string['restore:restoretargetimport'] = 'Restore from files targeted as import';
 $string['restore:rolldates'] = 'Allowed to roll activity configuration dates on restore';
 $string['restore:uploadfile'] = 'Upload files to backup areas';

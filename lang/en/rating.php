@@ -1,24 +1,24 @@
 <?php
-// This file is part of Salaren - http://Salaren.org/
+// This file is part of Moodle - http://moodle.org/
 //
-// Salaren is free software: you can redistribute it and/or modify
+// Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Salaren is distributed in the hope that it will be useful,
+// Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'rating', language 'en', branch 'Salaren_20_STABLE'
+ * Strings for component 'rating', language 'en', branch 'MOODLE_20_STABLE'
  *
  * @package   core_rating
- * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -53,7 +53,7 @@ $string['ratinginvalid'] = 'Rating is invalid';
 $string['ratingtime'] = 'Restrict ratings to items with dates in this range:';
 $string['ratings'] = 'Ratings';
 $string['rolewarning'] = 'Roles with permission to rate';
-$string['rolewarning_help'] = 'To submit ratings users require the Salaren/rating:rate capability and any module specific capabilities. Users assigned the following roles should be able to rate items. The list of roles may be amended via the permissions link in the actions menu or administration block, depending on the theme.';
+$string['rolewarning_help'] = 'To submit ratings users require the moodle/rating:rate capability and any module specific capabilities. Users assigned the following roles should be able to rate items. The list of roles may be amended via the permissions link in the actions menu or administration block, depending on the theme.';
 $string['scaleselectionrequired'] = 'When selecting a ratings aggregate type you must also select to use either a scale or set a maximum points.';
 $string['privacy:metadata:rating'] = 'The user-entered rating is stored alongside a mapping of the item which was rated.';
 $string['privacy:metadata:rating:userid'] = 'The user who made the rating.';

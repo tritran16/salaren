@@ -1,24 +1,24 @@
 <?php
-// This file is part of Salaren - http://Salaren.org/
+// This file is part of Moodle - http://moodle.org/
 //
-// Salaren is free software: you can redistribute it and/or modify
+// Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Salaren is distributed in the hope that it will be useful,
+// Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'admin', language 'en', branch 'Salaren_20_STABLE'
+ * Strings for component 'admin', language 'en', branch 'MOODLE_20_STABLE'
  *
  * @package   core
- * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -61,7 +61,7 @@ $string['allowindexingnowhere'] = 'Nowhere';
 $string['allowusermailcharset'] = 'Allow user to select character set';
 $string['allowframembedding'] = 'Allow frame embedding';
 $string['allowframembedding_help'] = 'If enabled, this site may be embedded in a frame in a remote system, as recommended when using the \'Publish as LTI tool\' enrolment plugin. Otherwise, it is recommended to leave frame embedding disabled for security reasons.<br />Please, note also that for the mobile app this setting is ignored and frame embedding is always allowed.';
-$string['allowguestmySalaren'] = 'Allow guest access to Dashboard';
+$string['allowguestmymoodle'] = 'Allow guest access to Dashboard';
 $string['allowobjectembed'] = 'Allow EMBED and OBJECT tags';
 $string['allowthemechangeonurl'] = 'Allow theme changes in the URL';
 $string['allowuserblockhiding'] = 'Allow users to hide blocks';
@@ -150,15 +150,15 @@ $string['configallowcohortthemes'] = 'If you enable this, then themes can be set
 $string['configallowcoursethemes'] = 'If you enable this, then courses will be allowed to set their own themes.  Course themes override all other theme choices (site, user, or session themes)';
 $string['configallowedemaildomains'] = 'List email domains that are allowed to be disclosed in the "From" section of outgoing email. The default of "Empty" will use the No-reply address for all outgoing email. The use of wildcards is allowed e.g. *.example.com will allow emails sent from any subdomain of example.com, but not example.com itself. This will require separate entry.';
 $string['configallowemailaddresses'] = 'To restrict new email addresses to particular domains, list them here separated by spaces. All other domains will be rejected. To allow subdomains, add the domain with a preceding \'.\'. To allow a root domain together with its subdomains, add the domain twice - once with a preceding \'.\' and once without e.g. .ourcollege.edu.au ourcollege.edu.au.';
-$string['configallowguestmySalaren'] = 'If enabled guests can access Dashboard, otherwise guests are redirected to the site front page.';
+$string['configallowguestmymoodle'] = 'If enabled guests can access Dashboard, otherwise guests are redirected to the site front page.';
 $string['configallowobjectembed'] = 'As a default security measure, normal users are not allowed to embed multimedia (like Flash) within texts using explicit EMBED and OBJECT tags in their HTML (although it can still be done safely using the mediaplugins filter).  If you wish to allow these tags then enable this option.';
 $string['configallowoverride'] = 'You can allow people with the roles on the left side to override some of the column roles';
-$string['configallowoverride2'] = 'Select which role(s) can be overridden by each role in the left column.<br />Note that these settings only apply to users who have either the capability Salaren/role:override or the capability Salaren/role:safeoverride allowed.';
-$string['configallowswitch'] = 'Select which roles a user may switch to, based on which roles they already have. In addition to an entry in this table, a user must also have the Salaren/role:switchroles capability to be able to switch.<br />Note that it is only possible to switch to roles that have the Salaren/course:view capability, and that do not have the Salaren/site:doanything capability, so some columns in this table are disabled.';
-$string['configallowthemechangeonurl'] = 'If enabled, the theme can be changed by adding either:<br />?theme=themename to any Salaren URL (eg: mySalarensite.com/?theme=afterburner ) or <br />&theme=themename to any internal Salaren URL (eg: mySalarensite.com/course/view.php?id=2&theme=afterburner ).';
+$string['configallowoverride2'] = 'Select which role(s) can be overridden by each role in the left column.<br />Note that these settings only apply to users who have either the capability moodle/role:override or the capability moodle/role:safeoverride allowed.';
+$string['configallowswitch'] = 'Select which roles a user may switch to, based on which roles they already have. In addition to an entry in this table, a user must also have the moodle/role:switchroles capability to be able to switch.<br />Note that it is only possible to switch to roles that have the moodle/course:view capability, and that do not have the moodle/site:doanything capability, so some columns in this table are disabled.';
+$string['configallowthemechangeonurl'] = 'If enabled, the theme can be changed by adding either:<br />?theme=themename to any Moodle URL (eg: mymoodlesite.com/?theme=afterburner ) or <br />&theme=themename to any internal Moodle URL (eg: mymoodlesite.com/course/view.php?id=2&theme=afterburner ).';
 $string['configallowuserblockhiding'] = 'Do you want to allow users to hide/show side blocks throughout this site?  This feature uses Javascript and cookies to remember the state of each collapsible block, and only affects the user\'s own view.';
 $string['configallowusermailcharset'] = 'If enabled, users can choose an email charset in their messaging preferences.';
-$string['configallowuserswitchrolestheycantassign'] = 'By default, Salaren/role:assign is required for users to switch roles. Enabling this setting removes this requirement, and results in the roles available in the "Switch role to" dropdown menu being determined by settings in the "Allow role assignments" table only.
+$string['configallowuserswitchrolestheycantassign'] = 'By default, moodle/role:assign is required for users to switch roles. Enabling this setting removes this requirement, and results in the roles available in the "Switch role to" dropdown menu being determined by settings in the "Allow role assignments" table only.
 It is recommended that the settings in the "Allow role assignments" table do not allow users to switch to a role with more capabilities than their existing role.';
 $string['configallowuserthemes'] = 'If you enable this, then users will be allowed to set their own themes.  User themes override site themes (but not course themes)';
 $string['configallowview'] = 'Select which roles a user will see, be able to filter by etc. based on which roles they already have.';
@@ -185,13 +185,13 @@ $string['configcronremotepassword'] = 'This means that the cron.php script canno
 $string['configcurlcache'] = 'Time-to-live for cURL cache, in seconds.';
 $string['configcustommenuitems'] = 'You can configure a custom menu here to be shown by themes. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. Lines starting with a hyphen will appear as menu items in the previous top level menu, and dividers can be used by adding a line of one or more # characters where desired. For example:
 <pre>
-Salaren community|https://Salaren.org
--Salaren free support|https://Salaren.org/support
--Salaren Docs|https://docs.Salaren.org|Salaren Docs
--German Salaren Docs|https://docs.Salaren.org/de|Documentation in German|de
+Moodle community|https://moodle.org
+-Moodle free support|https://moodle.org/support
+-Moodle Docs|https://docs.moodle.org|Moodle Docs
+-German Moodle Docs|https://docs.moodle.org/de|Documentation in German|de
 -###
--Salaren development|https://Salaren.org/development
-Salaren.com|https://Salaren.com/
+-Moodle development|https://moodle.org/development
+Moodle.com|https://moodle.com/
 </pre>';
 $string['configcustomusermenuitems'] = 'You can configure the contents of the user menu (with the exception of the log out link, which is automatically added). Each line is separated by pipe characters and consists of 1) a string in "langstringname, componentname" form or as plain text, 2) a URL, and 3) an icon either as a pix icon (in the folder pix with the structure [subfoldername]/[iconname], e.g. i/publish) or as a URL. Dividers can be used by adding a line of one or more # characters where desired.';
 $string['configdbsessions'] = 'If enabled, this setting will use the database to store information about current sessions. Note that changing this setting now will log out all current users (including you). If you are using MySQL please make sure that \'max_allowed_packet\' in my.cnf (or my.ini) is at least 4M. Other session drivers can be configured directly in config.php, see config-dist.php for more information. This option disappears if you specify session driver in config.php file.';
@@ -213,8 +213,8 @@ $string['configdisableuserimages'] = 'Disable the ability for users to change us
 $string['configdisplayloginfailures'] = 'This will display information to users about previous failed logins.';
 $string['configdndallowtextandlinks'] = 'Enable or disable the dragging and dropping of text and links onto a course page, alongside the dragging and dropping of files. Note that the dragging of text into Firefox or between different browsers is unreliable and may result in no data being uploaded, or corrupted text being uploaded.';
 $string['configdoclang'] = 'This language will be used in links for the documentation pages.';
-$string['configdocroot'] = 'Defines the path to the Salaren Docs for providing context-specific documentation via \'Salaren Docs for this page\' links in the footer of each page. If the field is left blank, links will not be displayed.';
-$string['configdoctonewwindow'] = 'If you enable this, then links to Salaren Docs will be shown in a new window.';
+$string['configdocroot'] = 'Defines the path to the Moodle Docs for providing context-specific documentation via \'Moodle Docs for this page\' links in the footer of each page. If the field is left blank, links will not be displayed.';
+$string['configdoctonewwindow'] = 'If you enable this, then links to Moodle Docs will be shown in a new window.';
 $string['configeditordictionary'] = 'This value will be used if aspell doesn\'t have dictionary for users own language.';
 $string['configeditorfontlist'] = 'Select the fonts that should appear in the editor\'s drop-down list.';
 $string['configemailchangeconfirmation'] = 'Require an email confirmation step when users change their email address in their profile.';
@@ -223,14 +223,14 @@ $string['configemailsubjectprefix'] = 'Text to be prefixed to the subject line o
 $string['configenablecalendarexport'] = 'Enable exporting or subscribing to calendars.';
 $string['configenablecomments'] = 'Enable comments';
 $string['configenablecourserequests'] = 'This will allow any user to request a course be created.';
-$string['configenablemobilewebservice'] = 'Enable mobile service for the official Salaren app or other app requesting it. For more information, read the {$a}';
+$string['configenablemobilewebservice'] = 'Enable mobile service for the official Moodle app or other app requesting it. For more information, read the {$a}';
 $string['configenablerssfeeds'] = 'If enabled, RSS feeds are generated by various features across the site, such as blogs, forums, database activities and glossaries. Note that RSS feeds also need to be enabled for the particular activity modules.';
 $string['configenablerssfeedsdisabled'] = 'It is not available because RSS feeds are disabled in all the Site. To enable them, go to the Variables settings under Admin Configuration.';
 $string['configenablerssfeedsdisabled2'] = 'RSS feeds are currently disabled at site level. They may be enabled in Advanced features in the Site administration.';
 $string['configenablesafebrowserintegration'] = 'This adds the choice \'Require Safe Exam Browser\' to the \'Browser security\' field on the quiz settings form. See https://www.safeexambrowser.org/ for more information.';
-$string['configenablestats'] = 'If you choose \'yes\' here, Salaren\'s cronjob will process the logs and gather some statistics.  Depending on the amount of traffic on your site, this can take awhile. If you enable this, you will be able to see some interesting graphs and statistics about each of your courses, or on a sitewide basis.';
-$string['configenabletrusttext'] = 'By default Salaren will always thoroughly clean text that comes from users to remove any possible bad scripts, media etc that could be a security risk.  The Trusted Content system is a way of giving particular users that you trust the ability to include these advanced features in their content without interference.  To enable this system, you need to first enable this setting, and then grant the Trusted Content permission to a specific Salaren role.  Texts created or uploaded by such users will be marked as trusted and will not be cleaned before display.';
-$string['configenablewebservices'] = 'Web services enable other systems to log in to this Salaren and perform operations.  For extra security this feature should be disabled unless you are really using it.';
+$string['configenablestats'] = 'If you choose \'yes\' here, Moodle\'s cronjob will process the logs and gather some statistics.  Depending on the amount of traffic on your site, this can take awhile. If you enable this, you will be able to see some interesting graphs and statistics about each of your courses, or on a sitewide basis.';
+$string['configenabletrusttext'] = 'By default Moodle will always thoroughly clean text that comes from users to remove any possible bad scripts, media etc that could be a security risk.  The Trusted Content system is a way of giving particular users that you trust the ability to include these advanced features in their content without interference.  To enable this system, you need to first enable this setting, and then grant the Trusted Content permission to a specific Moodle role.  Texts created or uploaded by such users will be marked as trusted and will not be cleaned before display.';
+$string['configenablewebservices'] = 'Web services enable other systems to log in to this Moodle and perform operations.  For extra security this feature should be disabled unless you are really using it.';
 $string['configenablewsdocumentation'] = 'Enable auto-generation of web services documentation. A user can access to his own documentation on his security keys page {$a}. It displays the documentation for the enabled protocols only.';
 $string['configerrorlevel'] = 'Choose the amount of PHP warnings that you want to be displayed.  Normal is usually the best choice.';
 $string['configexportlookahead'] = 'Days to look ahead during export';
@@ -250,19 +250,19 @@ $string['configfrontpageloggedin'] = 'The items selected above will be displayed
 $string['configfullnamedisplay'] = 'This defines how names are shown when they are displayed in full. The default value, "language", leaves it to the string "fullnamedisplay" in the current language pack to decide. Some languages have different name display conventions.
 
 For most mono-lingual sites the most efficient setting is "firstname lastname", but you may choose to hide surnames altogether. Placeholders that can be used are: firstname, lastname, firstnamephonetic, lastnamephonetic, middlename, and alternatename.';
-$string['configgeoipfile'] = 'Location of GeoLite2 City binary data file. This file is not part of Salaren distribution and must be obtained separately from <a href="https://www.maxmind.com/">MaxMind</a>. You can either buy a commercial version or use the free version. Simply download <a href="https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz" >https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz</a> and extract it into "{$a}" directory on your server.';
+$string['configgeoipfile'] = 'Location of GeoLite2 City binary data file. This file is not part of Moodle distribution and must be obtained separately from <a href="https://www.maxmind.com/">MaxMind</a>. You can either buy a commercial version or use the free version. Simply download <a href="https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz" >https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz</a> and extract it into "{$a}" directory on your server.';
 $string['configgetremoteaddrconf'] = 'If your server is behind a reverse proxy, you can use this setting to specify which HTTP headers can be trusted to contain the remote IP address. The headers are read in order, using the first one that is available.';
 $string['configgradebookroles'] = 'This setting allows you to control who appears on the gradebook.  Users need to have at least one of these roles in a course to be shown in the gradebook for that course.';
 $string['configgradeexport'] = 'Choose which gradebook export formats are your primary methods for exporting grades.  Chosen plugins will then set and use a "last exported" field for every grade.  For example, this might result in exported records being identified as being "new" or "updated".  If you are not sure about this then leave everything unchecked.';
 $string['confighiddenuserfields'] = 'Select which user information fields you wish to hide from other users other than course teachers/admins. This will increase student privacy. Hold CTRL key to select multiple fields.';
 $string['configidnumber'] = 'This option specifies whether (a) Users are not be asked for an ID number at all, (b) Users are asked for an ID number but can leave it blank or (c) Users are asked for an ID Number and cannot leave it blank. If given the User\'s ID number is displayed in their Profile.';
-$string['configintro'] = 'On this page you can specify a number of configuration variables that help make Salaren work properly on your server.  Don\'t worry too much about it - the defaults will usually work fine and you can always come back to this page later and change these settings.';
+$string['configintro'] = 'On this page you can specify a number of configuration variables that help make Moodle work properly on your server.  Don\'t worry too much about it - the defaults will usually work fine and you can always come back to this page later and change these settings.';
 $string['configintroadmin'] = 'On this page you should configure your main administrator account which will have complete control over the site. Make sure you give it a secure username and password as well as a valid email address.  You can create more admin accounts later on.';
 $string['configintrosite'] = 'This page allows you to configure the front page and name of this new site.  You can come back here later to change these settings any time using the Administration menus.';
 $string['configiplookup'] = 'When you click on an IP address (such as 34.12.222.93), such as in the logs, you are shown a map with a best guess of where that IP is located.  There are different plugins for this that you can choose from, each has benefits and disadvantages.';
 $string['configkeeptagnamecase'] = 'Check this if you want tag names to keep the original casing as entered by users who created them';
 $string['configlang'] = 'Choose a default language for the whole site. Users can override this setting using the language menu or the setting in their personal profile.';
-$string['configlangstringcache'] = 'Caches all the language strings into compiled files in the data directory.  If you are translating Salaren or changing strings in the Salaren source code then you may want to switch this off.  Otherwise leave it on to see performance benefits.';
+$string['configlangstringcache'] = 'Caches all the language strings into compiled files in the data directory.  If you are translating Moodle or changing strings in the Moodle source code then you may want to switch this off.  Otherwise leave it on to see performance benefits.';
 $string['configlanglist'] = 'If left blank, all languages installed on the site will be displayed in the language menu. Alternatively, the language menu may be shortened by entering a list of language codes separated by commas e.g. en,de,fr. If desired, a different name for the language than the language pack name may be specified using the format: language code|language name e.g. en_kids|English,de_kids|Deutsch.';
 $string['configlangmenu'] = 'Choose whether or not you want to display the general-purpose language menu on the home page, login page etc.  This does not affect the user\'s ability to set the preferred language in their own profile.';
 $string['configlatinexcelexport'] = 'Choose the encoding for Excel exports.';
@@ -287,7 +287,7 @@ $string['configminpasswordnonalphanum'] = 'Passwords must have at least these ma
 $string['configminpasswordupper'] = 'Passwords must have at least these many upper case letters.';
 $string['configmodchooserdefault'] = 'Should the activity chooser be presented to users by default?';
 $string['configmycoursesperpage'] = 'Maximum number of courses to display in any list of a user\'s own courses';
-$string['configmySalarenredirect'] = 'This setting forces redirects to /my on login for non-admins and replaces the top level site navigation with /my';
+$string['configmymoodleredirect'] = 'This setting forces redirects to /my on login for non-admins and replaces the top level site navigation with /my';
 $string['configmypagelocked'] = 'This setting prevents the default page from being edited by any non-admins';
 $string['confignavcourselimit'] = 'Limits the number of courses shown to the user in the navigation.';
 $string['confignavshowallcourses'] = 'This setting determines whether users who are enrolled in courses can see Courses (listing all courses) in the navigation, in addition to My Courses (listing courses in which they are enrolled).';
@@ -312,7 +312,7 @@ $string['configproxypassword'] = 'Password needed to access internet through pro
 $string['configproxyport'] = 'If this server needs to use a proxy computer, then provide the proxy port here.';
 $string['configproxytype'] = 'Type of web proxy (PHP5 and cURL extension required for SOCKS5 support).';
 $string['configproxyuser'] = 'Username needed to access internet through proxy if required, empty if none (PHP cURL extension required).';
-$string['configrecaptchaprivatekey'] = 'String of characters (secret key) used to communicate between your Salaren server and the recaptcha server. ReCAPTCHA keys can be obtained from <a target="_blank" href="https://www.google.com/recaptcha">Google reCAPTCHA</a>.';
+$string['configrecaptchaprivatekey'] = 'String of characters (secret key) used to communicate between your Moodle server and the recaptcha server. ReCAPTCHA keys can be obtained from <a target="_blank" href="https://www.google.com/recaptcha">Google reCAPTCHA</a>.';
 $string['configrecaptchapublickey'] = 'String of characters (site key) used to display the reCAPTCHA element in the signup form. ReCAPTCHA keys can be obtained from <a target="_blank" href="https://www.google.com/recaptcha">Google reCAPTCHA</a>.';
 $string['configrequestcategoryselection'] = 'Allow the selection of a category when requesting a course.';
 $string['configrequestedstudentname'] = 'Word for student used in requested courses';
@@ -330,10 +330,10 @@ $string['configsectionrequestedcourse'] = 'Course requests';
 $string['configsectionsecurity'] = 'Security';
 $string['configsectionstats'] = 'Statistics';
 $string['configsectionuser'] = 'User';
-$string['configsecureforms'] = 'Salaren can use an additional level of security when accepting data from web forms. If this is enabled, then the browser\'s HTTP_REFERER variable is checked against the current form address.  In a very few cases this can cause problems if the user is using a firewall (eg Zonealarm) configured to strip HTTP_REFERER from their web traffic.  Symptoms are getting \'stuck\' on a form. If your users are having problems with the login page (for example) you might want to disable this setting, although it might leave your site more open to brute-force password attacks.  If in doubt, leave this set to \'Yes\'.';
-$string['configsessioncookie'] = 'This setting customises the name of the cookie used for Salaren sessions.  This is optional, and only useful to avoid cookies being confused when there is more than one copy of Salaren running within the same web site.';
-$string['configsessioncookiedomain'] = 'This allows you to change the domain that the Salaren cookies are available from. This is useful for Salaren customisations (e.g. authentication or enrolment plugins) that need to share Salaren session information with a web application on another subdomain. <strong>WARNING: it is strongly recommended to leave this setting at the default (empty) - an incorrect value will prevent all logins to the site.</strong>';
-$string['configsessioncookiepath'] = 'If you need to change where browsers send the Salaren cookies, you can change this setting to specify a subdirectory of your web site.  Otherwise the default \'/\' should be fine.';
+$string['configsecureforms'] = 'Moodle can use an additional level of security when accepting data from web forms. If this is enabled, then the browser\'s HTTP_REFERER variable is checked against the current form address.  In a very few cases this can cause problems if the user is using a firewall (eg Zonealarm) configured to strip HTTP_REFERER from their web traffic.  Symptoms are getting \'stuck\' on a form. If your users are having problems with the login page (for example) you might want to disable this setting, although it might leave your site more open to brute-force password attacks.  If in doubt, leave this set to \'Yes\'.';
+$string['configsessioncookie'] = 'This setting customises the name of the cookie used for Moodle sessions.  This is optional, and only useful to avoid cookies being confused when there is more than one copy of Moodle running within the same web site.';
+$string['configsessioncookiedomain'] = 'This allows you to change the domain that the Moodle cookies are available from. This is useful for Moodle customisations (e.g. authentication or enrolment plugins) that need to share Moodle session information with a web application on another subdomain. <strong>WARNING: it is strongly recommended to leave this setting at the default (empty) - an incorrect value will prevent all logins to the site.</strong>';
+$string['configsessioncookiepath'] = 'If you need to change where browsers send the Moodle cookies, you can change this setting to specify a subdirectory of your web site.  Otherwise the default \'/\' should be fine.';
 $string['configsessiontimeout'] = 'If people logged in to this site are idle for a long time (without loading pages) then they are automatically logged out (their session is ended).  This variable specifies how long this time should be.';
 $string['configshowicalsource'] = 'Show source information for iCal events';
 $string['configshowcommentscount'] = 'Show comments count, it will cost one more query when display comments link';
@@ -343,10 +343,10 @@ $string['configsitedefaultlicensehelp'] = 'The default licence for publishing co
 $string['configsitemailcharset'] = 'This setting specifies the default charset for all emails sent from the site.';
 $string['configsitemaxcategorydepth'] = 'Maximum category depth';
 $string['configsitemaxcategorydepthhelp'] = 'This specifies the maximum depth of child categories expanded when displaying categories or combo list. Deeper level categories will appear as links and user can expand them with AJAX request.';
-$string['configslasharguments'] = '\'Slash arguments\' (using <em>PATH_INFO</em>) is required for SCORM packages and multiple-file resources to display correctly. If your web server doesn\'t support \'slash arguments\' and you are unable to configure it, this setting can be disabled, though it will result in things not working.<br />Note: The use of \'slash arguments\' will be required in future versions of Salaren.';
-$string['configsmartpix'] = 'With this on, icons are served through a PHP script that searches the current theme, then all parent themes, then the Salaren /pix folder. This reduces the need to duplicate image files within themes, but has a slight performance cost.';
+$string['configslasharguments'] = '\'Slash arguments\' (using <em>PATH_INFO</em>) is required for SCORM packages and multiple-file resources to display correctly. If your web server doesn\'t support \'slash arguments\' and you are unable to configure it, this setting can be disabled, though it will result in things not working.<br />Note: The use of \'slash arguments\' will be required in future versions of Moodle.';
+$string['configsmartpix'] = 'With this on, icons are served through a PHP script that searches the current theme, then all parent themes, then the Moodle /pix folder. This reduces the need to duplicate image files within themes, but has a slight performance cost.';
 $string['configsmtpauthtype'] = 'This sets the authentication type to use on smtp server.';
-$string['configsmtphosts'] = 'Give the full name of one or more local SMTP servers that Salaren should use to send mail (eg \'mail.a.com\' or \'mail.a.com;mail.b.com\'). To specify a non-default port (i.e other than port 25), you can use the [server]:[port] syntax (eg \'mail.a.com:587\'). For secure connections, port 465 is usually used with SSL, port 587 is usually used with TLS, specify security protocol below if required. If you leave this field blank, Salaren will use the PHP default method of sending mail.';
+$string['configsmtphosts'] = 'Give the full name of one or more local SMTP servers that Moodle should use to send mail (eg \'mail.a.com\' or \'mail.a.com;mail.b.com\'). To specify a non-default port (i.e other than port 25), you can use the [server]:[port] syntax (eg \'mail.a.com:587\'). For secure connections, port 465 is usually used with SSL, port 587 is usually used with TLS, specify security protocol below if required. If you leave this field blank, Moodle will use the PHP default method of sending mail.';
 $string['configsmtpmaxbulk'] = 'Maximum number of messages sent per SMTP session. Grouping messages may speed up the sending of emails. Values lower than 2 force creation of new SMTP session for each email.';
 $string['configsmtpsecure'] = 'If SMTP server requires secure connection, specify the correct protocol type.';
 $string['configsmtpuser'] = 'If you have specified an SMTP server above, and the server requires authentication, then enter the username and password here.';
@@ -356,7 +356,7 @@ $string['configstatsmaxruntime'] = 'Stats processing can be quite intensive, so 
 $string['configstatsmaxruntime2'] = 'Stats processing can be quite intensive, specify maximum time allowed for gathering of one day of statistics. Maximum number of days processed in one cron execution is 31.';
 $string['configstatsmaxruntime3'] = 'This specifies the maximum time allowed to calculate the statistics for one day, bearing in mind that statistics processing can put a big load on the server. The maximum number of days processed in one cron can be specified below.';
 $string['configstatsruntimedays'] = 'This specifies the maximum number of days processed in each statistics execution. Once the statistics are up-to-date, only one day will be processed, so adjust this value depending of your server load, reducing it if shorter cron executions are needed.';
-$string['configstatsruntimestart'] = 'What time should the cronjob that does the statistics processing start? Specifying different times is recommended if there are multiple Salaren sites on one server.';
+$string['configstatsruntimestart'] = 'What time should the cronjob that does the statistics processing start? Specifying different times is recommended if there are multiple Moodle sites on one server.';
 $string['configstatsuserthreshold'] = 'This setting specifies the minimum number of enrolled users for a course to be included in statistics calculations.';
 $string['configstrictformsrequired'] = 'If enabled, users are prevented from entering a space or line break only in required fields in forms.';
 $string['configstripalltitletags'] = 'Uncheck this setting to allow HTML tags in activity and resource names.';
@@ -419,14 +419,14 @@ $string['croninfrequent'] = 'The time between the last two runs of the cron main
 $string['cronremotepassword'] = 'Cron password for remote access';
 $string['cronwarning'] = 'The <a href="{$a}">cron.php maintenance script</a> has not been run for at least 24 hours.';
 $string['cronwarningcli'] = 'The cli/cron.php maintenance script has not been run for at least 24 hours.';
-$string['ctyperequired'] = 'The ctype PHP extension is now required by Salaren, in order to improve site performance and to offer multilingual compatibility.';
+$string['ctyperequired'] = 'The ctype PHP extension is now required by Moodle, in order to improve site performance and to offer multilingual compatibility.';
 $string['curlsecurityallowedport'] = 'cURL allowed ports list';
 $string['curlsecurityallowedportsyntax'] = 'List of port numbers that cURL can connect to. Valid entries are integer numbers only. Put each entry on a new line. If left empty, then all ports are allowed. If set, in almost all cases, both 443 and 80 should be specified for cURL to connect to standard HTTPS and HTTP ports.';
 $string['curlsecurityblockedhosts'] = 'cURL blocked hosts list';
 $string['curlsecurityblockedhostssyntax'] = 'Put each entry on a new line. Valid entries are either full IPv4 or IPv6 addresses (such as 192.168.10.1, 0:0:0:0:0:0:0:1, ::1, fe80::) which match a single host; or CIDR notation (such as 231.54.211.0/20 or fe80::/64); or a range of IP addresses (such as 231.3.56.10-20 or fe80::1111-bbbb) where the range applies to the last group of the address; or domain names (such as localhost or example.com); or wildcard domain names (such as *.example.com or *.sub.example.com). Blank lines are not allowed.';
 $string['curlsecurityurlblocked'] = 'The URL is blocked.';
 $string['curlcache'] = 'cURL cache TTL';
-$string['curlrequired'] = 'The cURL PHP extension is now required by Salaren, in order to communicate with Salaren repositories.';
+$string['curlrequired'] = 'The cURL PHP extension is now required by Moodle, in order to communicate with Moodle repositories.';
 $string['curltimeoutkbitrate'] = 'Bitrate to use when calculating cURL timeouts (Kbps)';
 $string['curltimeoutkbitrate_help'] = 'This setting is used to calculate an appropriate timeout during large cURL requests. As part of this calculation an HTTP HEAD request is made to determine the size of the content. Setting this to 0 disables this request from being made.';
 $string['currenttheme'] = 'Current theme';
@@ -440,7 +440,7 @@ $string['datarootsecuritywarning'] = 'Your site configuration might not be secur
 $string['dbsessions'] = 'Use database for session information';
 $string['debug'] = 'Debug messages';
 $string['debugall'] = 'ALL: Show all reasonable PHP debug messages';
-$string['debugdeveloper'] = 'DEVELOPER: extra Salaren debug messages for developers';
+$string['debugdeveloper'] = 'DEVELOPER: extra Moodle debug messages for developers';
 $string['debugdisplay'] = 'Display debug messages';
 $string['debugging'] = 'Debugging';
 $string['debugminimal'] = 'MINIMAL: Show only fatal errors';
@@ -466,7 +466,7 @@ $string['denyemailaddresses'] = 'Denied email domains';
 $string['devlibdirpresent'] = 'Directories with development libraries, especially <em>/vendor</em> and <em>/node_modules</em>, should not be present on public sites. See the <a href="{$a->moreinfourl}">security overview report</a> for more details.';
 $string['development'] = 'Development';
 $string['devicedetectregex'] = 'Device detection regular expressions';
-$string['devicedetectregex_desc'] = '<p>By default, Salaren can detect devices of the type default (desktop PCs, laptops, etc), mobile (phones and small hand held devices), tablet (iPads, Android tablets) and legacy (Internet Explorer 6 users).  The theme selector can be used to apply separate themes to all of these.  This setting allows regular expressions that allow the detection of extra device types (these take precedence over the default types).</p>
+$string['devicedetectregex_desc'] = '<p>By default, Moodle can detect devices of the type default (desktop PCs, laptops, etc), mobile (phones and small hand held devices), tablet (iPads, Android tablets) and legacy (Internet Explorer 6 users).  The theme selector can be used to apply separate themes to all of these.  This setting allows regular expressions that allow the detection of extra device types (these take precedence over the default types).</p>
 <p>For example, you could enter the regular expression \'/(MIDP-1.0|Maemo|Windows CE)/\' to detect some commonly used feature phones add the return value \'featurephone\'.  This adds \'featurephone\' on the theme selector that would allow you to add a theme that would be used on these devices.  Other phones would still use the theme selected for the mobile device type.</p>';
 $string['devicedetectregexexpression'] = 'Regular expression';
 $string['devicedetectregexvalue'] = 'Return value';
@@ -476,10 +476,10 @@ $string['displayerrorswarning'] = 'Enabling the PHP setting <em>display_errors</
 $string['displayloginfailures'] = 'Display login failures';
 $string['dndallowtextandlinks'] = 'Drag and drop upload of text/links';
 $string['doclang'] = 'Language for docs';
-$string['docroot'] = 'Salaren Docs document root';
+$string['docroot'] = 'Moodle Docs document root';
 $string['doctonewwindow'] = 'Open in new window';
 $string['doesnotfit'] = 'Email display settings';
-$string['doesnotfitdetail'] = 'Display settings for email leaving Salaren.';
+$string['doesnotfitdetail'] = 'Display settings for email leaving Moodle.';
 $string['download'] = 'Download';
 $string['durationunits'] = 'duration units';
 $string['edithelpdocs'] = 'Edit help documents';
@@ -520,7 +520,7 @@ $string['enabledevicedetection'] = 'Enable device detection';
 $string['enableglobalsearch'] = 'Enable global search';
 $string['enableglobalsearch_desc'] = 'If enabled, data will be indexed and synchronised by a scheduled task.';
 $string['enablegravatar'] = 'Enable Gravatar';
-$string['enablegravatar_help'] = 'When enabled Salaren will attempt to fetch a user profile picture from Gravatar if the user has not uploaded an image.';
+$string['enablegravatar_help'] = 'When enabled Moodle will attempt to fetch a user profile picture from Gravatar if the user has not uploaded an image.';
 $string['enablemobilewebservice'] = 'Enable web services for mobile devices';
 $string['enablerecordcache'] = 'Enable record cache';
 $string['enablerssfeeds'] = 'Enable RSS feeds';
@@ -534,8 +534,8 @@ $string['enrolinstancedefaults'] = 'Enrolment instance defaults';
 $string['enrolinstancedefaults_desc'] = 'Default enrolment settings in new courses.';
 $string['enrolmultipleusers'] = 'Enrol the users';
 $string['environment'] = 'Environment';
-$string['environmenterrortodo'] = 'You must solve all the environmental problems (errors) found above before proceeding to install this Salaren version!';
-$string['environmenterrorupgrade'] = 'Warning: you should solve all the environmental problems (errors) found above before proceeding to upgrade this Salaren version!  Upgrading without fixing these requirements could cause problems such as data loss.  Are you sure you want to continue with the upgrade?';
+$string['environmenterrortodo'] = 'You must solve all the environmental problems (errors) found above before proceeding to install this Moodle version!';
+$string['environmenterrorupgrade'] = 'Warning: you should solve all the environmental problems (errors) found above before proceeding to upgrade this Moodle version!  Upgrading without fixing these requirements could cause problems such as data loss.  Are you sure you want to continue with the upgrade?';
 $string['environmentmustfixsetting'] = 'PHP setting must be changed.';
 $string['environmentok'] = 'Your server environment meets all minimum requirements.';
 $string['environmentrecommendcustomcheck'] = 'if this test fails, it indicates a potential problem';
@@ -551,7 +551,7 @@ $string['environmentmariadbwrongdbtype'] = 'Wrong <code>$CFG->dbtype</code>: you
 $string['errordeletingconfig'] = 'An error occurred while deleting the configuration records for plugin \'{$a}\'.';
 $string['errorsetting'] = 'Could not save setting:';
 $string['errorwithsettings'] = 'Some settings were not changed due to an error.';
-$string['eventshandlersinuse'] = 'The following plugins in your system are using Events 1 API deprecated handlers: \'{$a}\'. Please, update them to use Events 2 API. See https://docs.Salaren.org/dev/Event_2#Event_dispatching_and_observers.';
+$string['eventshandlersinuse'] = 'The following plugins in your system are using Events 1 API deprecated handlers: \'{$a}\'. Please, update them to use Events 2 API. See https://docs.moodle.org/dev/Event_2#Event_dispatching_and_observers.';
 $string['everyonewhocan'] = 'Everyone who can \'{$a}\'';
 $string['exceptions'] = 'exceptions';
 $string['execpathnotallowed'] = 'Setting executable and local paths disabled in config.php';
@@ -559,7 +559,7 @@ $string['experimental'] = 'Experimental';
 $string['experimentalsettings'] = 'Experimental settings';
 $string['extendedusernamechars'] = 'Allow extended characters in usernames';
 $string['extramemorylimit'] = 'Extra PHP memory limit';
-$string['fatalsessionautostart'] = '<p>Serious configuration error detected, please notify server administrator.</p><p> To operate properly, Salaren requires that administrator changes PHP settings.</p><p><code>session.auto_start</code> must be set to <code>off</code>.</p><p>This setting is controlled by editing <code>php.ini</code>, Apache/IIS <br />configuration or <code>.htaccess</code> file on the server.</p>';
+$string['fatalsessionautostart'] = '<p>Serious configuration error detected, please notify server administrator.</p><p> To operate properly, Moodle requires that administrator changes PHP settings.</p><p><code>session.auto_start</code> must be set to <code>off</code>.</p><p>This setting is controlled by editing <code>php.ini</code>, Apache/IIS <br />configuration or <code>.htaccess</code> file on the server.</p>';
 $string['fileconversioncleanuptask'] = 'Cleanup of temporary records for file conversions.';
 $string['filecreated'] = 'New file created';
 $string['filestoredin'] = 'Save file into folder :';
@@ -591,7 +591,7 @@ $string['frontpageroles'] = 'Front page roles';
 $string['frontpagesettings'] = 'Front page settings';
 $string['fullnamedisplay'] = 'Full name format';
 $string['fullnamedisplayprivate'] = 'Full name format - private';
-$string['gdrequired'] = 'The GD extension is now required by Salaren for image conversion.';
+$string['gdrequired'] = 'The GD extension is now required by Moodle for image conversion.';
 $string['generalsettings'] = 'General settings';
 $string['geoipfile'] = 'GeoLite2 City MaxMind DB';
 $string['getremoteaddrconf'] = 'Logged IP address source';
@@ -605,7 +605,7 @@ $string['gotofirst'] = 'Go to first missing string';
 $string['gradebook'] = 'Gradebook';
 $string['gradebookroles'] = 'Graded roles';
 $string['gravatardefaulturl'] = 'Gravatar default image URL';
-$string['gravatardefaulturl_help'] = 'Gravatar needs a default image to display if it is unable to find a picture for a given user. Provide a full URL for an image. If you leave this setting empty, Salaren will attempt to use the most appropriate default image for the page you are viewing. Note also that Gravatar has a number of codes which can be used to <a href="https://en.gravatar.com/site/implement/images/#default-image">generate default images</a>.';
+$string['gravatardefaulturl_help'] = 'Gravatar needs a default image to display if it is unable to find a picture for a given user. Provide a full URL for an image. If you leave this setting empty, Moodle will attempt to use the most appropriate default image for the page you are viewing. Note also that Gravatar has a number of codes which can be used to <a href="https://en.gravatar.com/site/implement/images/#default-image">generate default images</a>.';
 $string['gradeexport'] = 'Primary grade export methods';
 $string['guestroleid'] = 'Role for guest';
 $string['guestroleid_help'] = 'This role is automatically assigned to the guest user. It is also temporarily assigned to not enrolled users that enter the course via guest enrolment plugin.';
@@ -653,7 +653,7 @@ $string['ipblocker'] = 'IP blocker';
 $string['ipblockersyntax'] = 'Put every entry on one line. Valid entries are either full IP address (such as <b>192.168.10.1</b>) which matches a single host; or partial address (such as <b>192.168</b>) which matches any address starting with those numbers; or CIDR notation (such as <b>231.54.211.0/20</b>); or a range of IP addresses (such as <b>231.3.56.10-20</b>) where the range applies to the last part of the address. Text domain names (like \'example.com\') are not supported. Blank lines, and text following a "#" character are ignored.';
 $string['iplookup'] = 'IP address lookup';
 $string['iplookupgeoplugin'] = 'The <a href="https://www.geoplugin.com">geoPlugin</a> service is currently being used to look up geographical information. For more accurate results we recommend installing a local copy of the MaxMind GeoLite database.';
-$string['iplookupinfo'] = 'By default Salaren uses the free online NetGeo (The Internet Geographic Database) server to lookup location of IP addresses, unfortunately this database is not maintained anymore and may return <em>wildly incorrect</em> data.
+$string['iplookupinfo'] = 'By default Moodle uses the free online NetGeo (The Internet Geographic Database) server to lookup location of IP addresses, unfortunately this database is not maintained anymore and may return <em>wildly incorrect</em> data.
 It is recommended to install local copy of free GeoLite2 City database from MaxMind.<br />
 IP address location is displayed on simple map or using Google Maps. Please note that you need to have a Google account and apply for free Google Maps API key to enable interactive maps.';
 $string['iplookupmaxmindnote'] = 'This product includes GeoLite2 data created by MaxMind, available from <a href="https://www.maxmind.com">https://www.maxmind.com</a>.';
@@ -664,7 +664,7 @@ $string['langcache'] = 'Cache language menu';
 $string['langcache_desc'] = 'Cache the language menu. If enabled, the list of available translations is cached. The cache is automatically refreshed when you install or delete a language pack via the in-built language packs management tool. If you install a new language pack manually, you have to use Purge all caches feature to refresh the cached list.';
 $string['langlist'] = 'Languages on language menu';
 $string['langmenu'] = 'Display language menu';
-$string['langpackwillbeupdated'] = 'NOTE: Salaren will try to download updates for your language packs during the upgrade.';
+$string['langpackwillbeupdated'] = 'NOTE: Moodle will try to download updates for your language packs during the upgrade.';
 $string['langstringcache'] = 'Cache all language strings';
 $string['languagesettings'] = 'Language settings';
 $string['latinexcelexport'] = 'Excel encoding';
@@ -743,10 +743,10 @@ $string['maturity150'] = 'Release candidate';
 $string['maturity200'] = 'Stable version';
 $string['maturityallowunstable'] = 'Hint: You may want to run this script with --allow-unstable option';
 $string['maturitycoreinfo'] = 'Your site is currently running unstable "{$a}" development code.';
-$string['maturitycorewarning'] = 'The version of Salaren that you are about to install or upgrade to contains
+$string['maturitycorewarning'] = 'The version of Moodle that you are about to install or upgrade to contains
 unstable "{$a}" development code that is not suitable for use on most production
 sites. If this is not what you wanted then you should make sure you are updating
-from a STABLE branch of the Salaren code. See Salaren Docs for more details.';
+from a STABLE branch of the Moodle code. See Moodle Docs for more details.';
 $string['maxbytes'] = 'Maximum uploaded file size';
 $string['maxconsecutiveidentchars'] = 'Consecutive identical characters';
 $string['maxeditingtime'] = 'Maximum time to edit posts';
@@ -782,12 +782,12 @@ $string['minpasswordlower'] = 'Lowercase letters';
 $string['minpasswordnonalphanum'] = 'Non-alphanumeric characters';
 $string['minpasswordupper'] = 'Uppercase letters';
 $string['misc'] = 'Miscellaneous';
-$string['mnetrestore_extusers'] = '<strong>Note:</strong> This backup file contains remote Salaren Network user accounts which will be restored as part of the process.';
-$string['mnetrestore_extusers_admin'] = '<strong>Note:</strong> This backup file seems to come from a different Salaren installation and contains remote Salaren Network user accounts. The restore process will try to match the Salaren Network hosts for all created users. Those not matching will be automatically switched to internal authentication (instead of mnet one). The restore log will inform you about that.';
-$string['mnetrestore_extusers_mismatch'] = '<strong>Note:</strong> This backup file apparently originates from a different Salaren installation and contains remote Salaren Network user accounts that may fail to restore. This operation is unsupported. If you are certain that it was created on this Salaren installation, or you can ensure that all the needed Salaren Network Hosts are configured, you may want to still try the restore.';
-$string['mnetrestore_extusers_noadmin'] = '<strong>Note:</strong> This backup file seems to come from a different Salaren installation and contains remote Salaren Network user accounts. You are not allowed to execute this type of restore. Contact the administrator of the site or, alternatively, restore this course without any user information (modules, files...)';
-$string['mnetrestore_extusers_switchuserauth'] = 'Remote Salaren Network user {$a->username} (coming from {$a->mnethosturl}) switched to local {$a->auth} authenticated user.';
-$string['mobilenotconfiguredwarning'] = 'The Salaren app is not enabled.';
+$string['mnetrestore_extusers'] = '<strong>Note:</strong> This backup file contains remote Moodle Network user accounts which will be restored as part of the process.';
+$string['mnetrestore_extusers_admin'] = '<strong>Note:</strong> This backup file seems to come from a different Moodle installation and contains remote Moodle Network user accounts. The restore process will try to match the Moodle Network hosts for all created users. Those not matching will be automatically switched to internal authentication (instead of mnet one). The restore log will inform you about that.';
+$string['mnetrestore_extusers_mismatch'] = '<strong>Note:</strong> This backup file apparently originates from a different Moodle installation and contains remote Moodle Network user accounts that may fail to restore. This operation is unsupported. If you are certain that it was created on this Moodle installation, or you can ensure that all the needed Moodle Network Hosts are configured, you may want to still try the restore.';
+$string['mnetrestore_extusers_noadmin'] = '<strong>Note:</strong> This backup file seems to come from a different Moodle installation and contains remote Moodle Network user accounts. You are not allowed to execute this type of restore. Contact the administrator of the site or, alternatively, restore this course without any user information (modules, files...)';
+$string['mnetrestore_extusers_switchuserauth'] = 'Remote Moodle Network user {$a->username} (coming from {$a->mnethosturl}) switched to local {$a->auth} authenticated user.';
+$string['mobilenotconfiguredwarning'] = 'The Moodle app is not enabled.';
 $string['modchooserdefault'] = 'Activity chooser default';
 $string['modeditdefaults'] = 'Default values for activity settings';
 $string['modsettings'] = 'Manage activities';
@@ -796,8 +796,8 @@ $string['multilangforceold'] = 'Force old multilang syntax: &lt;span&gt; without
 $string['mustenablestats'] = 'Statistics have not yet been enabled on this site.';
 $string['mycoursesperpage'] = 'Number of courses';
 $string['mydashboard'] = 'System default dashboard';
-$string['mySalaren'] = 'Dashboard';
-$string['mySalarenredirect'] = 'Force users to use My Salaren';
+$string['mymoodle'] = 'Dashboard';
+$string['mymoodleredirect'] = 'Force users to use My Moodle';
 $string['mypage'] = 'Default Dashboard page';
 $string['myprofile'] = 'Default profile page';
 $string['mypagelocked'] = 'Lock default page';
@@ -820,27 +820,27 @@ $string['neverdeleteruns'] = 'Never delete runs';
 $string['newestdocindexed'] = 'Newest document indexed';
 $string['nobookmarksforuser'] = 'You do not have any bookmarks.';
 $string['nodatabase'] = 'No database';
-$string['nohttpsformobilewarning'] = 'It is recommended to enable HTTPS with a valid certificate. The Salaren app will always try to use a secured connection first.';
+$string['nohttpsformobilewarning'] = 'It is recommended to enable HTTPS with a valid certificate. The Moodle app will always try to use a secured connection first.';
 $string['nomissingstrings'] = 'No missing strings';
 $string['none'] = 'None';
 $string['nonewsettings'] = 'No new settings were added during this upgrade.';
 $string['nonexistentbookmark'] = 'The bookmark you requested does not exist.';
 $string['nosupportedlogstore'] = 'No supported logstore found';
 $string['maxtimelimit'] = 'Maximum time limit';
-$string['maxtimelimit_desc'] = 'To restrict the maximum PHP execution time that Salaren will allow without any output being displayed, enter a value in seconds here. 0 means that Salaren default restrictions are used. If you have a front-end server with its own time limit, set this value lower to receive PHP errors in logs. Does not apply to CLI scripts.';
-$string['Salarenapp'] = 'Salaren app';
-$string['Salarenapp_help'] = '<p>If you have an account on a Salaren site, you can access all your courses on your mobile devices with our free mobile app for Salaren.</p>
-<a href="https://Salaren.com/mobile-app">Get the Salaren app</a>';
-$string['Salarenbrandedapp'] = 'Branded Salaren app';
-$string['Salarenbrandedapp_help'] = '<p>The Branded Salaren app has all the functionality of our free mobile app for Salaren combined with your own custom branding.</p>
-<a href="https://Salaren.com/branded-app">About the Branded Salaren app</a>';
-$string['Salarenbrandedappreference'] = 'Alternatively, get a <a href="https://Salaren.com/branded-app/">Branded Salaren app</a> with your own custom branding.';
-$string['Salarenpartners'] = 'Salaren Partners';
-$string['Salarenpartners_help'] = '<p>Salaren Partners are services providers that are certified by Salaren HQ to provide high quality Salaren services for your organisation\'s online learning environment.</p>
-<a href="https://Salaren.com/about-partners/">About our Partners</a><br />
-<a href="https://Salaren.com/partners">Find a Partner</a>';
-$string['Salarenservices'] = 'Salaren services';
-$string['Salarenservices_help'] = 'Make sure you get the best from your Salaren learning environment by using these Salaren services:';
+$string['maxtimelimit_desc'] = 'To restrict the maximum PHP execution time that Moodle will allow without any output being displayed, enter a value in seconds here. 0 means that Moodle default restrictions are used. If you have a front-end server with its own time limit, set this value lower to receive PHP errors in logs. Does not apply to CLI scripts.';
+$string['moodleapp'] = 'Moodle app';
+$string['moodleapp_help'] = '<p>If you have an account on a Moodle site, you can access all your courses on your mobile devices with our free mobile app for Moodle.</p>
+<a href="https://moodle.com/mobile-app">Get the Moodle app</a>';
+$string['moodlebrandedapp'] = 'Branded Moodle app';
+$string['moodlebrandedapp_help'] = '<p>The Branded Moodle app has all the functionality of our free mobile app for Moodle combined with your own custom branding.</p>
+<a href="https://moodle.com/branded-app">About the Branded Moodle app</a>';
+$string['moodlebrandedappreference'] = 'Alternatively, get a <a href="https://moodle.com/branded-app/">Branded Moodle app</a> with your own custom branding.';
+$string['moodlepartners'] = 'Moodle Partners';
+$string['moodlepartners_help'] = '<p>Moodle Partners are services providers that are certified by Moodle HQ to provide high quality Moodle services for your organisation\'s online learning environment.</p>
+<a href="https://moodle.com/about-partners/">About our Partners</a><br />
+<a href="https://moodle.com/partners">Find a Partner</a>';
+$string['moodleservices'] = 'Moodle services';
+$string['moodleservices_help'] = 'Make sure you get the best from your Moodle learning environment by using these Moodle services:';
 $string['noreplyaddress'] = 'No-reply address';
 $string['noreplydomain'] = 'No-reply and domain';
 $string['noreplydomaindetail'] = 'Settings for No-reply and configured domains';
@@ -856,8 +856,8 @@ $string['oauthrefreshtokenexpired'] = 'The refresh token for one of the OAuth se
 $string['oauthrefreshtokenexpiredshort'] = 'OAuth refresh token expired for {$a->issuer} on your site {$a->siteurl}.';
 $string['onlynoreply'] = 'Only when from a no-reply address';
 $string['opcacherecommended'] = 'PHP opcode caching improves performance and lowers memory requirements, OPcache extension is recommended and fully supported.';
-$string['opensslrecommended'] = 'Installing the optional OpenSSL library is highly recommended -- it enables Salaren Networking functionality.';
-$string['opensslrequired'] = 'The OpenSSL PHP extension is now required by Salaren to provide stronger cryptographic services.';
+$string['opensslrecommended'] = 'Installing the optional OpenSSL library is highly recommended -- it enables Moodle Networking functionality.';
+$string['opensslrequired'] = 'The OpenSSL PHP extension is now required by Moodle to provide stronger cryptographic services.';
 $string['opentogoogle'] = 'Open to Google';
 $string['optionalmaintenancemessage'] = 'Optional maintenance message';
 $string['order1'] = 'First';
@@ -890,7 +890,7 @@ $string['pathtopsqlinvalid'] = 'Invalid path to psql - either wrong path or not 
 $string['pathtopython'] = 'Path to Python';
 $string['pathtopythondesc'] = 'Path to your executable Python binary (both Python 2 and Python 3 are acceptable).';
 $string['pathtosassc'] = 'Path to SassC';
-$string['pathtosassc_help'] = 'Specifying the location of the SassC binary will switch the SASS compiler from Salaren\'s PHP implementation to SassC. See https://github.com/sass/sassc for more information.';
+$string['pathtosassc_help'] = 'Specifying the location of the SassC binary will switch the SASS compiler from Moodle\'s PHP implementation to SassC. See https://github.com/sass/sassc for more information.';
 $string['pcreunicodewarning'] = 'It is strongly recommended to use PCRE PHP extension that is compatible with Unicode characters.';
 $string['perfdebug'] = 'Performance info';
 $string['performance'] = 'Performance';
@@ -904,7 +904,7 @@ $string['plugin'] = 'Plugin';
 $string['plugins'] = 'Plugins';
 $string['pluginscheck'] = 'Plugin dependencies check';
 $string['pluginscheckfailed'] = 'Dependencies check failed for {$a->pluginslist}';
-$string['pluginschecktodo'] = 'You must solve all the plugin requirements before proceeding to install this Salaren version!';
+$string['pluginschecktodo'] = 'You must solve all the plugin requirements before proceeding to install this Moodle version!';
 $string['pluginsoverview'] = 'Plugins overview';
 $string['pluginsoverviewsee'] = 'See <a href="{$a->url}">plugins overview</a> page for more details.';
 $string['policysettings'] = 'Policy settings';
@@ -967,7 +967,7 @@ $string['profilevisiblenone'] = 'Not visible';
 $string['profilevisibleprivate'] = 'Visible to user';
 $string['profiling'] = 'Profiling';
 $string['profilingallowall'] = 'Continuous profiling';
-$string['profilingallowall_help'] = 'If you enable this setting, then, at any moment, you can use the PROFILEALL parameter anywhere (PGC) to enable profiling for all the executed scripts along the Salaren session life. Analogously, you can use the PROFILEALLSTOP parameter to stop it.';
+$string['profilingallowall_help'] = 'If you enable this setting, then, at any moment, you can use the PROFILEALL parameter anywhere (PGC) to enable profiling for all the executed scripts along the Moodle session life. Analogously, you can use the PROFILEALLSTOP parameter to stop it.';
 $string['profilingallowme'] = 'Selective profiling';
 $string['profilingallowme_help'] = 'If you enable this setting, then, selectively, you can use the PROFILEME parameter anywhere (PGC) and profiling for that script will happen. Analogously, you can use the DONTPROFILEME parameter to prevent profiling to happen';
 $string['profilingautofrec'] = 'Automatic profiling';
@@ -994,28 +994,28 @@ $string['proxyuser'] = 'Proxy username';
 $string['query'] = 'Query';
 $string['question'] = 'Question';
 $string['questionbehaviours'] = 'Question behaviours';
-$string['questioncwqpfscheck'] = 'One or more \'random\' questions in a quiz are set up to select questions from a mixture of shared and unshared question categories. There is a more detailed report <a href="{$a->reporturl}">here</a> and see Salaren Docs page <a href="{$a->docsurl}">here</a>.';
+$string['questioncwqpfscheck'] = 'One or more \'random\' questions in a quiz are set up to select questions from a mixture of shared and unshared question categories. There is a more detailed report <a href="{$a->reporturl}">here</a> and see Moodle Docs page <a href="{$a->docsurl}">here</a>.';
 $string['questioncwqpfsok'] = 'Good. There are no \'random\' questions in your quizzes that are set up to select questions from a mixture of shared and unshared question categories.';
 $string['questiontype'] = 'Question type';
 $string['questiontypes'] = 'Question types';
-$string['quizattemptsupgradedmessage'] = 'In Salaren 2.1 there was a major upgrade to questions. It was possible to delay parts of the database upgrade to be run later. Before upgrading to Salaren 2.7, this upgrade must be completed.';
+$string['quizattemptsupgradedmessage'] = 'In Moodle 2.1 there was a major upgrade to questions. It was possible to delay parts of the database upgrade to be run later. Before upgrading to Moodle 2.7, this upgrade must be completed.';
 $string['recaptchaprivatekey'] = 'ReCAPTCHA secret key';
 $string['recaptchapublickey'] = 'ReCAPTCHA site key';
 $string['register'] = 'Register your site';
-$string['registerSalarennet'] = '<p>We\'d love to stay in touch and provide you with important things for your Salaren site!</p><p>By registering:</p><ul><li>You can subscribe to receive notifications of new Salaren releases, security alerts and other important news.</li><li>You can access and activate mobile push notifications from your Salaren site through our free <a href="https://download.Salaren.org/mobile/">Salaren app</a>.</li><li>You are contributing to our <a href="https://Salaren.net/stats/">Salaren statistics</a> of the worldwide community, which help us improve Salaren and our community sites.</li><li>If you wish, your site can be included in the <a href="https://Salaren.net/sites/">list of registered Salaren sites</a> in your country.</li></ul>';
-$string['registerSalarenorg'] = 'When you register your site';
-$string['registerSalarenorgli1'] = 'You are added to a low-volume mailing list for important notifications such as security alerts and new releases of Salaren.';
-$string['registerSalarenorgli2'] = 'Statistics about your site will be added to the {$a} of the worldwide Salaren community.';
-$string['registerwithSalarenorg'] = 'Register your site';
+$string['registermoodlenet'] = '<p>We\'d love to stay in touch and provide you with important things for your Moodle site!</p><p>By registering:</p><ul><li>You can subscribe to receive notifications of new Moodle releases, security alerts and other important news.</li><li>You can access and activate mobile push notifications from your Moodle site through our free <a href="https://download.moodle.org/mobile/">Moodle app</a>.</li><li>You are contributing to our <a href="https://moodle.net/stats/">Moodle statistics</a> of the worldwide community, which help us improve Moodle and our community sites.</li><li>If you wish, your site can be included in the <a href="https://moodle.net/sites/">list of registered Moodle sites</a> in your country.</li></ul>';
+$string['registermoodleorg'] = 'When you register your site';
+$string['registermoodleorgli1'] = 'You are added to a low-volume mailing list for important notifications such as security alerts and new releases of Moodle.';
+$string['registermoodleorgli2'] = 'Statistics about your site will be added to the {$a} of the worldwide Moodle community.';
+$string['registerwithmoodleorg'] = 'Register your site';
 $string['registration'] = 'Registration';
 $string['registration_help'] = 'By registering:
 
 * You will receive security alerts
 * You can activate mobile app push notifications from your site
-* You are contributing to our Salaren statistics of the worldwide community';
+* You are contributing to our Moodle statistics of the worldwide community';
 $string['registrationwarning'] = 'Your site is not yet registered.';
 $string['registrationwarningcontactadmin'] = 'Your site is not yet registered. Please notify your administrator.';
-$string['releasenoteslink'] = 'For information about this version of Salaren, please see the online <a target="_blank" href="{$a}">Release Notes</a>';
+$string['releasenoteslink'] = 'For information about this version of Moodle, please see the online <a target="_blank" href="{$a}">Release Notes</a>';
 $string['rememberusername'] = 'Remember username';
 $string['rememberusername_desc'] = 'Enable if you want to store permanent cookies with usernames during user login. Permanent cookies may be considered a privacy issue if used without consent.';
 $string['reportsmanage'] = 'Manage reports';
@@ -1024,7 +1024,7 @@ $string['requiremodintro'] = 'Require activity description';
 $string['requiremodintro_desc'] = 'If enabled, users will be forced to enter a description for each activity.';
 $string['requires'] = 'Requires';
 $string['purgecaches'] = 'Purge all caches';
-$string['purgecachesconfirm'] = 'Salaren can cache themes, javascript, language strings, filtered text, rss feeds and many other pieces of calculated data.  Purging these caches will delete that data from the server and force browsers to refetch data, so that you can be sure you are seeing the most up-to-date values produced by the current code.  There is no danger in purging caches, but your site may appear slower for a while until the server and clients calculate new information and cache it.';
+$string['purgecachesconfirm'] = 'Moodle can cache themes, javascript, language strings, filtered text, rss feeds and many other pieces of calculated data.  Purging these caches will delete that data from the server and force browsers to refetch data, so that you can be sure you are seeing the most up-to-date values produced by the current code.  There is no danger in purging caches, but your site may appear slower for a while until the server and clients calculate new information and cache it.';
 $string['purgecachesfinished'] = 'All caches were purged.';
 $string['purgecachesnoneselected'] = 'Select one or more caches to purge';
 $string['purgecachespage'] = 'Purge caches';
@@ -1106,7 +1106,7 @@ $string['selecttheme'] = 'Select theme for {$a} device';
 $string['server'] = 'Server';
 $string['serverchecks'] = 'Server checks';
 $string['serverlimit'] = 'Server limit';
-$string['sessionautostartwarning'] = '<p>Serious configuration error detected, please notify server administrator.</p><p> To operate properly, Salaren requires that administrator changes PHP settings.</p><p><code>session.auto_start</code> must be set to <code>off</code>.</p><p>This setting is controlled by editing <code>php.ini</code>, Apache/IIS <br />configuration or <code>.htaccess</code> file on the server.</p>';
+$string['sessionautostartwarning'] = '<p>Serious configuration error detected, please notify server administrator.</p><p> To operate properly, Moodle requires that administrator changes PHP settings.</p><p><code>session.auto_start</code> must be set to <code>off</code>.</p><p>This setting is controlled by editing <code>php.ini</code>, Apache/IIS <br />configuration or <code>.htaccess</code> file on the server.</p>';
 $string['sessioncookie'] = 'Cookie prefix';
 $string['sessioncookiedomain'] = 'Cookie domain';
 $string['sessioncookiepath'] = 'Cookie path';
@@ -1115,13 +1115,13 @@ $string['sessiontimeout'] = 'Timeout';
 $string['settingdependenton'] = 'This setting may be hidden, based on the value of <strong>{$a}</strong>.';
 $string['settingfileuploads'] = 'File uploading is required for normal operation, please enable it in PHP configuration.';
 $string['settingmemorylimit'] = 'Insufficient memory detected, please set higher memory limit in PHP settings.';
-$string['settingsafemode'] = 'Salaren is not fully compatible with safe mode, please ask server administrator to turn it off. Running Salaren under safe mode is not supported, please expect various problems if you do so.';
+$string['settingsafemode'] = 'Moodle is not fully compatible with safe mode, please ask server administrator to turn it off. Running Moodle under safe mode is not supported, please expect various problems if you do so.';
 $string['setupsearchengine'] = 'Setup search engine';
 $string['showcommentscount'] = 'Show comments count';
 $string['showdetails'] = 'Show details';
 $string['showuseridentity'] = 'Show user identity';
-$string['showuseridentity_desc'] = 'When selecting or searching for users, and when displaying lists of users, these fields may be shown in addition to their full name. The fields are only shown to users who have the Salaren/site:viewuseridentity capability; by default, teachers and managers. (This option makes most sense if you choose one or two fields that are mandatory at your institution.)';
-$string['simplexmlrequired'] = 'The SimpleXML PHP extension is now required by Salaren.';
+$string['showuseridentity_desc'] = 'When selecting or searching for users, and when displaying lists of users, these fields may be shown in addition to their full name. The fields are only shown to users who have the moodle/site:viewuseridentity capability; by default, teachers and managers. (This option makes most sense if you choose one or two fields that are mandatory at your institution.)';
+$string['simplexmlrequired'] = 'The SimpleXML PHP extension is now required by Moodle.';
 $string['sitemenubar'] = 'Site navigation';
 $string['sitemailcharset'] = 'Character set';
 $string['sitemaintenance'] = 'The site is undergoing maintenance and is currently not available';
@@ -1143,7 +1143,7 @@ $string['sitepolicyguest_help'] = 'The URL of the site policy that all guests mu
 $string['sitesectionhelp'] = 'If selected, a topic section will be displayed on the site\'s front page.';
 $string['sixtyfourbitswarning'] = 'It has been detected that your site is not using a 64-bit PHP version. It is recommended that you upgrade your site to ensure future compatibility.';
 $string['slasharguments'] = 'Use slash arguments';
-$string['slashargumentswarning'] = 'It is recommended that the use of slash arguments is enabled. In future it will be required. For more details, see the documentation <a href="https://docs.Salaren.org/en/admin/environment/slasharguments">Using slash arguments</a>.';
+$string['slashargumentswarning'] = 'It is recommended that the use of slash arguments is enabled. In future it will be required. For more details, see the documentation <a href="https://docs.moodle.org/en/admin/environment/slasharguments">Using slash arguments</a>.';
 $string['smartpix'] = 'Smart pix search';
 $string['smtp'] = 'SMTP';
 $string['smtpauthtype'] = 'SMTP Auth Type';
@@ -1160,18 +1160,18 @@ $string['sort_shortname'] = 'Course short name';
 $string['sort_sortorder'] = 'Sort order';
 $string['spellengine'] = 'Spell engine';
 $string['spelllanguagelist'] = 'Spell language list';
-$string['splrequired'] = 'The SPL PHP extension is now required by Salaren.';
+$string['splrequired'] = 'The SPL PHP extension is now required by Moodle.';
 $string['stats'] = 'Statistics';
 $string['statsfirstrun'] = 'Maximum processing interval';
 $string['statsmaxruntime'] = 'Maximum runtime';
-$string['statsSalarenorg'] = 'statistics';
+$string['statsmoodleorg'] = 'statistics';
 $string['statsruntimedays'] = 'Days to process';
 $string['statsruntimestart'] = 'Run at';
 $string['statsuserthreshold'] = 'User threshold';
 $string['stickyblocks'] = 'Sticky blocks';
 $string['stickyblockscourseview'] = 'Course page';
 $string['stickyblocksduplicatenotice'] = 'If any block you add here is already present in a particular page, it will result in a duplicate.<br />Only the pinned block will be non-editable, the duplicate will still be editable.';
-$string['stickyblocksmySalaren'] = 'My Salaren';
+$string['stickyblocksmymoodle'] = 'My Moodle';
 $string['stickyblockspagetype'] = 'Page type to configure';
 $string['strictformsrequired'] = 'Strict validation of required fields';
 $string['stripalltitletags'] = 'Remove HTML tags from all activity names';
@@ -1288,7 +1288,7 @@ $string['timezoneserver'] = 'Server timezone ({$a})';
 $string['tlswarning'] = 'No PHP/cURL extension with TLSv1.2 support has been detected. Some services may not work. It is strongly recommended to upgrade your TLS libraries.';
 $string['tokenduration'] = 'User created token duration';
 $string['tokenduration_desc'] = 'Length of time for which a web services token created by a user (for example via the mobile app) is valid.';
-$string['tokenizerrecommended'] = 'Installing the optional PHP Tokenizer extension is recommended -- it improves Salaren Networking functionality.';
+$string['tokenizerrecommended'] = 'Installing the optional PHP Tokenizer extension is recommended -- it improves Moodle Networking functionality.';
 $string['tools'] = 'Admin tools';
 $string['toolsmanage'] = 'Manage admin tools';
 $string['unattendedoperation'] = 'Unattended operation';
@@ -1299,11 +1299,11 @@ $string['unlockaccount'] = 'Unlock account';
 $string['unoconvwarning'] = 'The version of unoconv you have installed is not supported.';
 $string['unsettheme'] = 'Unset theme';
 $string['unsupported'] = 'Unsupported';
-$string['unsupporteddbfileformat'] = 'Your database uses Antelope as the file format. Full UTF-8 support in MySQL and MariaDB requires the Barracuda file format. Please switch to the Barracuda file format. See the documentation <a href="https://docs.Salaren.org/en/admin/environment/custom check/mysql full unicode support">MySQL full unicode support</a> for details.';
+$string['unsupporteddbfileformat'] = 'Your database uses Antelope as the file format. Full UTF-8 support in MySQL and MariaDB requires the Barracuda file format. Please switch to the Barracuda file format. See the documentation <a href="https://docs.moodle.org/en/admin/environment/custom check/mysql full unicode support">MySQL full unicode support</a> for details.';
 $string['unsupporteddbfilepertable'] = 'For full support of UTF-8 both MySQL and MariaDB require you to change your MySQL setting \'innodb_file_per_table\' to \'ON\'. See the documentation for further details.';
 $string['unsupporteddblargeprefix'] = 'For full support of UTF-8 both MySQL and MariaDB require you to change your MySQL setting \'innodb_large_prefix\' to \'ON\'. See the documentation for further details.';
 $string['unsupporteddbstorageengine'] = 'The database storage engine being used is no longer supported.';
-$string['unsupporteddbtablerowformat'] = 'Your database has tables using Antelope as the file format. You are recommended to convert the tables to the Barracuda file format. See the documentation <a href="https://docs.Salaren.org/en/cli">Administration via command line</a> for details of a tool for converting InnoDB tables to Barracuda.';
+$string['unsupporteddbtablerowformat'] = 'Your database has tables using Antelope as the file format. You are recommended to convert the tables to the Barracuda file format. See the documentation <a href="https://docs.moodle.org/en/cli">Administration via command line</a> for details of a tool for converting InnoDB tables to Barracuda.';
 $string['unsupportedphpversion7'] = 'PHP version 7 is not supported.';
 $string['unsupportedphpversion71'] = 'PHP version 7.1 is not supported.';
 $string['unsupportedphpversion72'] = 'PHP version 7.2 is not supported.';
@@ -1311,59 +1311,59 @@ $string['unsupportedphpversion73'] = 'PHP version 7.3 is not supported.';
 $string['unsuspenduser'] = 'Activate user account';
 $string['updateaccounts'] = 'Update existing accounts';
 $string['updatecomponent'] = 'Update component';
-$string['updateavailable'] = 'There is a newer Salaren version available!';
+$string['updateavailable'] = 'There is a newer Moodle version available!';
 $string['updateavailabledetailslink'] = 'See {$a->url} for more details';
 $string['updateavailableforplugin'] = 'There is a newer version for some of your plugins available!';
 $string['updateavailable_moreinfo'] = 'More info...';
-$string['updateavailable_release'] = 'Salaren {$a}';
+$string['updateavailable_release'] = 'Moodle {$a}';
 $string['updateavailable_version'] = 'Version {$a}';
 $string['updateavailableinstall'] = 'Install this update';
 $string['updateavailableinstallall'] = 'Install available updates ({$a})';
 $string['updateavailableinstallallhead'] = 'Installing available updates';
-$string['updateavailablenot'] = 'Your Salaren code is up-to-date!';
+$string['updateavailablenot'] = 'Your Moodle code is up-to-date!';
 $string['updateavailablerecommendation'] = 'It is strongly recommended that you update your site to the latest version to obtain all recent security and bug fixes.';
 $string['updatenotifications'] = 'Update notifications';
-$string['updatenotificationfooter'] = 'Your Salaren site {$a->siteurl} is configured to automatically check for available updates. You are receiving this message as the administrator of the site. You can disable automatic checks for available updates in Site administration / Server / Update notifications or customise the delivery of this message via your preferences page.';
-$string['updatenotificationsubject'] = 'Salaren updates are available ({$a->siteurl})';
+$string['updatenotificationfooter'] = 'Your Moodle site {$a->siteurl} is configured to automatically check for available updates. You are receiving this message as the administrator of the site. You can disable automatic checks for available updates in Site administration / Server / Update notifications or customise the delivery of this message via your preferences page.';
+$string['updatenotificationsubject'] = 'Moodle updates are available ({$a->siteurl})';
 $string['updateautocheck'] = 'Automatically check for available updates';
-$string['updateautocheck_desc'] = 'If enabled, your site will automatically check for available updates for both Salaren code and all additional plugins. If there is a new update available, a notification will be sent to site admins.';
+$string['updateautocheck_desc'] = 'If enabled, your site will automatically check for available updates for both Moodle code and all additional plugins. If there is a new update available, a notification will be sent to site admins.';
 $string['updateminmaturity'] = 'Required code maturity';
 $string['updateminmaturity_desc'] = 'Notify about available updates only if the available code has the selected maturity level at least. Updates for plugins that do not declare their code maturity level are always reported regardless this setting.';
 $string['updatenotifybuilds'] = 'Notify about new builds';
-$string['updatenotifybuilds_desc'] = 'If enabled, the available update for Salaren code is also reported when a new build for the current version is available. Builds are continuous improvements of a given Salaren version. They are generally released every week. If disabled, the available update will be reported only when there is a higher version of Salaren released. Checks for plugins are not affected by this setting.';
-$string['upgradestart'] = 'Upgrade Salaren database now';
+$string['updatenotifybuilds_desc'] = 'If enabled, the available update for Moodle code is also reported when a new build for the current version is available. Builds are continuous improvements of a given Moodle version. They are generally released every week. If disabled, the available update will be reported only when there is a higher version of Moodle released. Checks for plugins are not affected by this setting.';
+$string['upgradestart'] = 'Upgrade Moodle database now';
 $string['upgradepluginsfirst'] = 'It is recommended to install all available updates first';
 $string['upgradepluginsinfo'] = 'Updating plugins';
-$string['upgradepluginsinfo_help'] = 'There are available updates for some of your plugins. You should install them all prior to upgrading Salaren database. If your site does not support automatic updates deployment, you have to download and install new plugin versions at your server manually.';
+$string['upgradepluginsinfo_help'] = 'There are available updates for some of your plugins. You should install them all prior to upgrading Moodle database. If your site does not support automatic updates deployment, you have to download and install new plugin versions at your server manually.';
 $string['upgradepluginsinfo_link'] = 'admin/upgradepluginsinfo';
 $string['upgradeerror'] = 'Unknown error upgrading {$a->plugin} to version {$a->version}, can not continue.';
-$string['upgradeforumread'] = 'A new feature has been added in Salaren 1.5 to track read/unread forum posts.<br />To use this functionality you need to <a href="{$a}">update your tables</a>.';
-$string['upgradeforumreadinfo'] = 'A new feature has been added in Salaren 1.5 to track read/unread forum posts.  To use this functionality you need to update your tables with all the tracking information for existing posts.  Depending on the size of your site this can take a long time (hours) and can be quite taxing on the database, so it\'s best to do it during a quiet period.  However, your site will continue functioning during this upgrade and users won\'t be affected.  Once you start this process you should let it finish (keep your browser window open).  However, if you stop the process by closing the window: don\'t worry, you can start over.<br /><br />Do you want to start the upgrading process now?';
+$string['upgradeforumread'] = 'A new feature has been added in Moodle 1.5 to track read/unread forum posts.<br />To use this functionality you need to <a href="{$a}">update your tables</a>.';
+$string['upgradeforumreadinfo'] = 'A new feature has been added in Moodle 1.5 to track read/unread forum posts.  To use this functionality you need to update your tables with all the tracking information for existing posts.  Depending on the size of your site this can take a long time (hours) and can be quite taxing on the database, so it\'s best to do it during a quiet period.  However, your site will continue functioning during this upgrade and users won\'t be affected.  Once you start this process you should let it finish (keep your browser window open).  However, if you stop the process by closing the window: don\'t worry, you can start over.<br /><br />Do you want to start the upgrading process now?';
 $string['upgradekeyreq'] = 'Upgrade key required';
 $string['upgradekeyset'] = 'Upgrade key (leave empty to not set it)';
 $string['upgradelogs'] = 'For full functionality, your old logs need to be upgraded.  <a href="{$a}">More information</a>';
 $string['upgradelogsinfo'] = 'Some changes have recently been made in the way logs are stored.  To be able to view all of your old logs on a per-activity basis, your old logs need to be upgraded.  Depending on your site this can take a long time (eg several hours) and can be quite taxing on the database for large sites.  Once you start this process you should let it finish (by keeping the browser window open).  Don\'t worry - your site will work fine for other people while the logs are being upgraded.<br /><br />Do you want to upgrade your logs now?';
 $string['upgradesettings'] = 'New settings';
-$string['upgradesettingsintro'] = 'The settings shown below were added during your last Salaren upgrade. Make any changes necessary to the defaults and then click the \'Save changes\' button at the bottom of this page.';
-$string['upgradestalefiles'] = 'Mixed Salaren versions detected, upgrade cannot continue';
-$string['upgradestalefilesinfo'] = 'The Salaren update process has been paused because PHP scripts from at least two major versions of Salaren have been detected in the Salaren directory.
+$string['upgradesettingsintro'] = 'The settings shown below were added during your last Moodle upgrade. Make any changes necessary to the defaults and then click the \'Save changes\' button at the bottom of this page.';
+$string['upgradestalefiles'] = 'Mixed Moodle versions detected, upgrade cannot continue';
+$string['upgradestalefilesinfo'] = 'The Moodle update process has been paused because PHP scripts from at least two major versions of Moodle have been detected in the Moodle directory.
 
-This can cause significant problems later, so in order to continue you must ensure that the Salaren directory contains only files for a single version of Salaren.
+This can cause significant problems later, so in order to continue you must ensure that the Moodle directory contains only files for a single version of Moodle.
 
-The recommended way to clean your Salaren directory is as follows:
+The recommended way to clean your Moodle directory is as follows:
 
-* rename the current Salaren directory to "Salaren_old"
-* create a new Salaren directory containing only files from either a standard Salaren package download, or from the Salaren Git repository
-* move the original config.php file and any non-standard plugins from the "Salaren_old" directory to the new Salaren directory
+* rename the current Moodle directory to "moodle_old"
+* create a new Moodle directory containing only files from either a standard Moodle package download, or from the Moodle Git repository
+* move the original config.php file and any non-standard plugins from the "moodle_old" directory to the new Moodle directory
 
-When you have a clean Salaren directory, refresh this page to resume the Salaren update process.
+When you have a clean Moodle directory, refresh this page to resume the Moodle update process.
 
-This warning is often caused by unzipping a standard Salaren package over a previous version of Salaren. While this is OK for minor upgrades, it is strongly discouraged for major Salaren upgrades.
+This warning is often caused by unzipping a standard Moodle package over a previous version of Moodle. While this is OK for minor upgrades, it is strongly discouraged for major Moodle upgrades.
 
 This warning can also be caused by an incomplete checkout or update operation from the Git repository, in which case you may just have to wait for the operation to complete, or perhaps run the appropriate clean-up command and retry the operation.
 
 You can find more information in upgrade documentation at <a href="{$a}">{$a}</a>.';
-$string['upgradesure'] = '<p>Your Salaren files have been changed, and you are about to automatically upgrade your server to this version:</p>
+$string['upgradesure'] = '<p>Your Moodle files have been changed, and you are about to automatically upgrade your server to this version:</p>
 <p><strong>{$a}</strong></p>
 <p>Once you do this you can not go back again. Please note that this process can take a long time.</p>
 <p>Are you sure you want to upgrade this server to this version?</p>';
@@ -1394,10 +1394,10 @@ $string['verifychangedemail'] = 'Restrict domains when changing email';
 $string['warningcurrentsetting'] = 'Invalid current value: {$a}';
 $string['warningiconvbuggy'] = 'Your version of the iconv library does not support the //IGNORE modifier. You should install the mbstring extension which can be used instead for cleaning strings containing invalid UTF-8 characters.';
 $string['webproxy'] = 'Web proxy';
-$string['webproxyinfo'] = 'Fill in following options if your Salaren server can not access internet directly. Internet access is required for download of environment data, language packs, RSS feeds, timezones, etc.<br /><em>PHP cURL extension is highly recommended.</em>';
-$string['xmlrpcrecommended'] = 'The XMLRPC extension is useful for web services and Salaren networking.';
+$string['webproxyinfo'] = 'Fill in following options if your Moodle server can not access internet directly. Internet access is required for download of environment data, language packs, RSS feeds, timezones, etc.<br /><em>PHP cURL extension is highly recommended.</em>';
+$string['xmlrpcrecommended'] = 'The XMLRPC extension is useful for web services and Moodle networking.';
 $string['yuicomboloading'] = 'YUI combo loading';
-$string['ziprequired'] = 'The Zip PHP extension is now required by Salaren, info-ZIP binaries or PclZip library are not used anymore.';
+$string['ziprequired'] = 'The Zip PHP extension is now required by Moodle, info-ZIP binaries or PclZip library are not used anymore.';
 
 
 $string['caching'] = 'Caching';
@@ -1409,14 +1409,14 @@ $string['cachesessionhelp'] = 'User specific cache that expires when the user\'s
 $string['cacheapplication'] = 'Application cache';
 $string['cacheapplicationhelp'] = 'Cached items are shared among all users and expire by a determined time to live (ttl).';
 
-// Deprecated since Salaren 3.3.
+// Deprecated since Moodle 3.3.
 $string['loginpasswordautocomplete'] = 'Prevent password autocompletion on login form';
 $string['loginpasswordautocomplete_help'] = 'If enabled, users are not allowed to save their account password in their browser.';
-// Deprecated since Salaren 3.4
-$string['Salarenorghubname'] = 'Salaren';
+// Deprecated since Moodle 3.4
+$string['moodleorghubname'] = 'Moodle';
 $string['hubs'] = 'Hubs';
-$string['configloginhttps'] = 'Turning this on will make Salaren use a secure https connection just for the login page (providing a secure login), and then afterwards revert back to the normal http URL for general speed.  CAUTION: this setting REQUIRES https to be specifically enabled on the web server - if it is not then YOU COULD LOCK YOURSELF OUT OF YOUR SITE.';
+$string['configloginhttps'] = 'Turning this on will make Moodle use a secure https connection just for the login page (providing a secure login), and then afterwards revert back to the normal http URL for general speed.  CAUTION: this setting REQUIRES https to be specifically enabled on the web server - if it is not then YOU COULD LOCK YOURSELF OUT OF YOUR SITE.';
 $string['loginhttps'] = 'Use HTTPS for logins';
-// Deprecated since Salaren 3.7.
+// Deprecated since Moodle 3.7.
 $string['allowblockstodock'] = 'Allow blocks to use the dock';
 $string['configallowblockstodock'] = 'If enabled and supported by the selected theme users can choose to move blocks to a special dock.';

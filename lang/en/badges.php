@@ -1,18 +1,18 @@
 <?php
-// This file is part of Salaren - http://Salaren.org/
+// This file is part of Moodle - http://moodle.org/
 //
-// Salaren is free software: you can redistribute it and/or modify
+// Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Salaren is distributed in the hope that it will be useful,
+// Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * Language file for 'badges' component
@@ -464,7 +464,7 @@ $string['privacy:metadata:external:backpacks:badge'] = 'The name of the badge';
 $string['privacy:metadata:external:backpacks:description'] = 'The description of the badge';
 $string['privacy:metadata:external:backpacks:image'] = 'The image of the badge';
 $string['privacy:metadata:external:backpacks:issuer'] = 'Some information about the issuer';
-$string['privacy:metadata:external:backpacks:url'] = 'The Salaren URL where the issued badge information can be seen';
+$string['privacy:metadata:external:backpacks:url'] = 'The Moodle URL where the issued badge information can be seen';
 $string['privacy:metadata:issued'] = 'A record of badges awarded';
 $string['privacy:metadata:issued:dateexpire'] = 'The date when the badge expires';
 $string['privacy:metadata:issued:dateissued'] = 'The date of the award';
@@ -555,7 +555,7 @@ $string['version_help'] = 'The version field may be used to keep track of the ba
 $string['warnexpired'] = ' (This badge has expired!)';
 $string['year'] = 'Year(s)';
 
-// Deprecated since Salaren 3.3.
+// Deprecated since Moodle 3.3.
 $string['personaconnection'] = 'Sign in with your email';
 $string['personaconnection_help'] = 'Persona is a system for identifying yourself across the web, using an email address that you own. The Open Badges backpack uses Persona as a login system, so to be able to connect to a backpack you will need a Persona account.
 
@@ -566,7 +566,7 @@ $string['error:noassertion'] = 'No assertion was returned by Persona. You may ha
 $string['error:personaneedsjs'] = 'Currently, Javascript is required to connect to your backpack. If you can, enable Javascript and reload the page.';
 $string['signinwithyouremail'] = 'Sign in with your email';
 
-// Deprecated since Salaren 3.6.
+// Deprecated since Moodle 3.6.
 $string['error:invalidbadgeurl'] = 'Invalid issuer URL format. The URL should have a prefix http:// or https://.';
 $string['backpackbadges'] = 'You have {$a->totalbadges} badge(s) displayed from {$a->totalcollections} collection(s). <a href="mybackpack.php">Change backpack settings</a>.';
 $string['error:nogroups'] = '<p>There are no public collections of badges available in your backpack. </p> <p>Only public collections are shown. <a href="https://backpack.openbadges.org">Visit your backpack</a> to create some public collections.</p>';

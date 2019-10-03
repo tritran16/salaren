@@ -1,24 +1,24 @@
 <?php
-// This file is part of Salaren - http://Salaren.org/
+// This file is part of Moodle - http://moodle.org/
 //
-// Salaren is free software: you can redistribute it and/or modify
+// Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Salaren is distributed in the hope that it will be useful,
+// Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'Salaren', language 'en', branch 'Salaren_20_STABLE'
+ * Strings for component 'moodle', language 'en', branch 'MOODLE_20_STABLE'
  *
  * @package   core
- * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -97,11 +97,11 @@ $string['adminhelpmanagedatabase'] = 'Access the database directly (be careful!)
 $string['adminhelpmanagefilters'] = 'Choose text filters and related settings';
 $string['adminhelpmanagemodules'] = 'Manage installed modules and their settings';
 $string['adminhelpmanageroles'] = 'Create and define roles that may be applied to users';
-$string['adminhelpmySalaren'] = 'Configure the My Salaren blocks for users';
+$string['adminhelpmymoodle'] = 'Configure the My Moodle blocks for users';
 $string['adminhelpreports'] = 'Site level reports';
 $string['adminhelpsitefiles'] = 'For publishing general files or uploading external backups';
 $string['adminhelpsitesettings'] = 'Define how the front page of the site looks';
-$string['adminhelpstickyblocks'] = 'Configure Salaren-wide sticky blocks';
+$string['adminhelpstickyblocks'] = 'Configure Moodle-wide sticky blocks';
 $string['adminhelpthemes'] = 'Choose how the site looks (colours, fonts etc)';
 $string['adminhelpuploadusers'] = 'Import new user accounts from a text file';
 $string['adminhelpusers'] = 'Define your users and set up authentication';
@@ -194,7 +194,7 @@ $string['backuplogdetailed'] = 'Detailed execution log';
 $string['backuploglaststatus'] = 'Last execution log';
 $string['backupmissinguserinfoperms'] = 'Note: This backup contains no user data. Exercise and Workshop activities will not be included in the backup, since these modules are not compatible with this type of backup.';
 $string['backupnext'] = 'Next backup';
-$string['backupnonisowarning'] = 'Warning: this backup is from a non-Unicode version of Salaren (pre 1.6). If this backup contains any non-ISO-8859-1 texts then they may be CORRUPTED if you try to restore them to this Unicode version of Salaren. See the <a href="https://docs.Salaren.org/en/Backup_FAQ">Backup FAQ</a> for more information about how to recover this backup correctly.';
+$string['backupnonisowarning'] = 'Warning: this backup is from a non-Unicode version of Moodle (pre 1.6). If this backup contains any non-ISO-8859-1 texts then they may be CORRUPTED if you try to restore them to this Unicode version of Moodle. See the <a href="https://docs.moodle.org/en/Backup_FAQ">Backup FAQ</a> for more information about how to recover this backup correctly.';
 $string['backupnotyetrun'] = 'Automated backup pending';
 $string['backuporiginalname'] = 'Backup name';
 $string['backuproleassignments'] = 'Backup role assignments for these roles';
@@ -276,11 +276,11 @@ $string['convertingwikitomarkdown'] = 'Converting wiki to Markdown';
 $string['cookiesenabled'] = 'Cookies must be enabled in your browser';
 $string['cookiesenabled_help'] = 'Two cookies are used on this site:
 
-The essential one is the session cookie, usually called SalarenSession. You must allow this cookie in your browser to provide continuity and to remain logged in when browsing the site. When you log out or close the browser, this cookie is destroyed (in your browser and on the server).
+The essential one is the session cookie, usually called MoodleSession. You must allow this cookie in your browser to provide continuity and to remain logged in when browsing the site. When you log out or close the browser, this cookie is destroyed (in your browser and on the server).
 
-The other cookie is purely for convenience, usually called SalarenID or similar. It just remembers your username in the browser. This means that when you return to this site, the username field on the login page is already filled in for you. It is safe to refuse this cookie - you will just have to retype your username each time you log in.';
+The other cookie is purely for convenience, usually called MOODLEID or similar. It just remembers your username in the browser. This means that when you return to this site, the username field on the login page is already filled in for you. It is safe to refuse this cookie - you will just have to retype your username each time you log in.';
 $string['cookiesenabledonlysession'] = 'Cookies must be enabled in your browser';
-$string['cookiesenabledonlysession_help'] = 'This site uses one session cookie, usually called SalarenSession. You must allow this cookie in your browser to provide continuity and to remain logged in when browsing the site. When you log out or close the browser, this cookie is destroyed (in your browser and on the server).';
+$string['cookiesenabledonlysession_help'] = 'This site uses one session cookie, usually called MoodleSession. You must allow this cookie in your browser to provide continuity and to remain logged in when browsing the site. When you log out or close the browser, this cookie is destroyed (in your browser and on the server).';
 $string['cookiesnotenabled'] = 'Unfortunately, cookies are currently not enabled in your browser';
 $string['copy'] = 'copy';
 $string['copyasnoun'] = 'copy';
@@ -323,7 +323,7 @@ $string['courseextendednamedisplay'] = '{$a->shortname} {$a->fullname}';
 $string['coursefiles'] = 'Legacy course files';
 $string['coursefilesedit'] = 'Edit legacy course files';
 $string['coursefileswarning'] = 'Course files are deprecated';
-$string['coursefileswarning_help'] = 'Course files are deprecated since Salaren 2.0, please use external repositories instead as much as possible.';
+$string['coursefileswarning_help'] = 'Course files are deprecated since Moodle 2.0, please use external repositories instead as much as possible.';
 $string['courseformatdata'] = 'Course format data';
 $string['courseformats'] = 'Course formats';
 $string['courseformatoptions'] = 'Formatting options for {$a}';
@@ -347,7 +347,7 @@ $string['courseoverviewfiles_help'] = 'The course image is displayed in the cour
 $string['courseinfo'] = 'Course info';
 $string['coursenotaccessible'] = 'This course does not allow public access';
 $string['courselegacyfiles'] = 'Legacy course files';
-$string['courselegacyfiles_help'] = 'The course files area provides some backward compatibility with Salaren 1.9 and earlier.  All files in this area are always accessible to all participants in the course (whether you link to them or not) and there is no way to know where any of these files are being used in Salaren.
+$string['courselegacyfiles_help'] = 'The course files area provides some backward compatibility with Moodle 1.9 and earlier.  All files in this area are always accessible to all participants in the course (whether you link to them or not) and there is no way to know where any of these files are being used in Moodle.
 
 If you use this area to store course files, you can expose yourself to a number of privacy and security issues, as well as experiencing missing files in backups, course imports and any time content is shared or re-used.  It is therefore recommended that you do not use this area unless you really know what you are doing.';
 $string['courselegacyfiles_link'] = 'coursefiles2';
@@ -436,7 +436,7 @@ $string['currentlocaltime'] = 'your current local time';
 $string['currentpicture'] = 'Current picture';
 $string['currentrelease'] = 'Current release information';
 $string['currentversion'] = 'Current version';
-$string['databasechecking'] = 'Upgrading Salaren database from version {$a->oldversion} to {$a->newversion}';
+$string['databasechecking'] = 'Upgrading Moodle database from version {$a->oldversion} to {$a->newversion}';
 $string['databaseperformance'] = 'Database performance';
 $string['databasesetup'] = 'Setting up database';
 $string['databasesuccess'] = 'Database was successfully upgraded';
@@ -526,7 +526,7 @@ $string['dndworkingfile'] = 'Drag and drop files onto course sections to upload 
 $string['dndworkingtextlink'] = 'Drag and drop text or links onto course sections to upload them';
 $string['dndworkingtext'] = 'Drag and drop text onto course sections to upload it';
 $string['dndworkinglink'] = 'Drag and drop links onto course sections to upload them';
-$string['documentation'] = 'Salaren documentation';
+$string['documentation'] = 'Moodle documentation';
 $string['dontsortcategories'] = 'Don\'t sort categories';
 $string['dontsortcourses'] = 'Don\'t sort courses';
 $string['down'] = 'Down';
@@ -856,7 +856,7 @@ $string['format_help'] = 'The course format determines the layout of the course 
 $string['formathtml'] = 'HTML format';
 $string['formatmarkdown'] = 'Markdown format';
 $string['formatplain'] = 'Plain text format';
-$string['formattext'] = 'Salaren auto-format';
+$string['formattext'] = 'Moodle auto-format';
 $string['forumpreferences'] = 'Forum preferences';
 $string['framesetinfo'] = 'This frameset document contains:';
 $string['from'] = 'From';
@@ -884,24 +884,24 @@ $string['general'] = 'General';
 $string['geolocation'] = 'latitude - longitude';
 $string['gettheselogs'] = 'Get these logs';
 $string['go'] = 'Go';
-$string['gpl'] = 'Copyright (C) 1999 onwards Martin Dougiamas (https://Salaren.com)
+$string['gpl'] = 'Copyright (C) 1999 onwards Martin Dougiamas (https://moodle.com)
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-See the Salaren License information page for full details: https://docs.Salaren.org/dev/License';
+See the Moodle License information page for full details: https://docs.moodle.org/dev/License';
 $string['gpllicense'] = 'GPL license';
-$string['gpl3'] = 'Copyright (C) 1999 onwards Martin Dougiamas (https://Salaren.com)
+$string['gpl3'] = 'Copyright (C) 1999 onwards Martin Dougiamas (https://moodle.com)
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-See the Salaren License information page for full details: https://docs.Salaren.org/dev/License';
+See the Moodle License information page for full details: https://docs.moodle.org/dev/License';
 $string['grade'] = 'Grade';
 $string['grades'] = 'Grades';
-$string['gravatarenabled'] = '<a href="https://www.gravatar.com/">Gravatar</a> has been enabled for this site. If you don\'t upload a profile picture Salaren will attempt to load a profile picture for you from Gravatar.';
+$string['gravatarenabled'] = '<a href="https://www.gravatar.com/">Gravatar</a> has been enabled for this site. If you don\'t upload a profile picture Moodle will attempt to load a profile picture for you from Gravatar.';
 $string['group'] = 'Group';
 $string['groupadd'] = 'Add new group';
 $string['groupaddusers'] = 'Add selected to group';
@@ -1090,7 +1090,7 @@ $string['lastname'] = 'Surname';
 $string['lastnamephonetic'] = 'Surname - phonetic';
 $string['lastsiteaccess'] = 'Last access to site';
 $string['lastyear'] = 'Last year';
-$string['latestlanguagepack'] = 'Check for latest language pack on Salaren.org';
+$string['latestlanguagepack'] = 'Check for latest language pack on moodle.org';
 $string['layouttable'] = 'Layout table';
 $string['leavetokeep'] = 'Leave blank to keep current password';
 $string['legacylogginginuse'] = 'This site currently has writing to the legacy log store enabled. Writing to this log store is deprecated. Please write to a supported log store such as "standard" or "external".';
@@ -1238,7 +1238,7 @@ If the course contains many activities or resources, the course page may be simp
 $string['modvisiblehiddensection'] = 'Availability';
 $string['modvisiblehiddensection_help'] = 'If the availability is set to \'Hide from students\', the activity or resource is only available to users with permission to view hidden activities (by default, users with the role of teacher or non-editing teacher).<br><br>
 If the course contains many activities or resources, the course page may be simplified by setting the availability to \'Make available but not shown on course page\'. In this case, a link to the activity or resource must be provided from elsewhere, such as from a page resource. The activity would still be listed in the gradebook and other reports.';
-$string['Salarenlogo'] = 'Salaren logo';
+$string['moodlelogo'] = 'Moodle logo';
 $string['month'] = 'Month';
 $string['months'] = 'Months';
 $string['modified'] = 'Modified';
@@ -1246,10 +1246,10 @@ $string['moduleintro'] = 'Description';
 $string['modulesetup'] = 'Setting up module tables';
 $string['modulesuccess'] = '{$a} tables have been set up correctly';
 $string['modulesused'] = 'Modules used';
-$string['Salarendocs'] = 'Salaren Docs';
-$string['Salarendocslink'] = 'Salaren Docs for this page';
-$string['Salarenversion'] = 'Salaren version';
-$string['Salarenrelease'] = 'Salaren release';
+$string['moodledocs'] = 'Moodle Docs';
+$string['moodledocslink'] = 'Moodle Docs for this page';
+$string['moodleversion'] = 'Moodle version';
+$string['moodlerelease'] = 'Moodle release';
 $string['more'] = 'more';
 $string['morehelp'] = 'More help';
 $string['moreinfo'] = 'More info';
@@ -1289,7 +1289,7 @@ $string['mycourses'] = 'My courses';
 $string['myfiles'] = 'My private files';
 $string['myfilesmanage'] = 'Manage my private files';
 $string['myhome'] = 'Dashboard';
-$string['mySalarendashboard'] = 'My Salaren dashboard';
+$string['mymoodledashboard'] = 'My Moodle dashboard';
 $string['myprofile'] = 'My profile';
 $string['name'] = 'Name';
 $string['namedfiletoolarge'] = 'The file \'{$a->filename}\' is too large and cannot be uploaded';
@@ -1421,7 +1421,7 @@ $string['noteuserschangednonetocourse'] = '<strong>Note:</strong> Course users n
 $string['nothingnew'] = 'No recent activity';
 $string['nothingtodisplay'] = 'Nothing to display';
 $string['notice'] = 'Notice';
-$string['noticenewerbackup'] = 'This backup file has been created with Salaren {$a->backuprelease} ({$a->backupversion}) and it\'s newer than your currently installed Salaren {$a->serverrelease} ({$a->serverversion}). This could cause some inconsistencies because backwards compatibility of backup files cannot be guaranteed.';
+$string['noticenewerbackup'] = 'This backup file has been created with Moodle {$a->backuprelease} ({$a->backupversion}) and it\'s newer than your currently installed Moodle {$a->serverrelease} ({$a->serverversion}). This could cause some inconsistencies because backwards compatibility of backup files cannot be guaranteed.';
 $string['notifications'] = 'Notifications';
 $string['notifyloginfailuresmessage'] = '{$a->time}, IP: {$a->ip}, User: {$a->info}, User full name: {$a->name}';
 $string['notifyloginfailuresmessageend'] = 'You can view these logs at {$a}';
@@ -1482,12 +1482,12 @@ $string['participationratio'] = 'Participation ratio';
 $string['participationreport'] = 'Participation report';
 $string['password'] = 'Password';
 $string['passwordconfirmchange'] = 'Confirm password change';
-$string['passwordextlink'] = 'The following link has been provided to recover your lost password. This will take you out of Salaren.';
+$string['passwordextlink'] = 'The following link has been provided to recover your lost password. This will take you out of Moodle.';
 $string['passwordforgotten'] = 'Forgotten password';
 $string['passwordforgotteninstructions'] = 'Your details must first be found in the user database. Please enter <strong>either</strong> your username or your registered email address in the appropriate box. There is no need to enter both.';
 $string['passwordforgotteninstructions2'] = 'To reset your password, submit your username or your email address below. If we can find you in the database, an email will be sent to your email address, with instructions how to get access again.';
 $string['passwordchanged'] = 'Password has been changed';
-$string['passwordnohelp'] = 'No help is available to find your lost password. Please contact your Salaren administrator.';
+$string['passwordnohelp'] = 'No help is available to find your lost password. Please contact your Moodle administrator.';
 $string['passwordrecovery'] = 'Yes, help me log in';
 $string['passwordsdiffer'] = 'These passwords do not match';
 $string['passwordsent'] = 'Password has been sent';
@@ -1612,23 +1612,23 @@ $string['redirect'] = 'Redirect';
 $string['reducesections'] = 'Reduce the number of sections';
 $string['refresh'] = 'Refresh';
 $string['refreshingevents'] = 'Refreshing events';
-$string['registration'] = 'Salaren registration';
+$string['registration'] = 'Moodle registration';
 $string['registrationcontact'] = 'Contact from the public';
 $string['registrationcontactno'] = 'No, I do not want to be contacted by other people';
-$string['registrationcontactyes'] = 'Yes, provide a form for other Salarenrs to contact me';
+$string['registrationcontactyes'] = 'Yes, provide a form for other Moodlers to contact me';
 $string['registrationemail'] = 'Email notifications';
-$string['registrationinfo'] = '<p>This page allows you to register your Salaren site with Salaren.org.  Registration is free.
+$string['registrationinfo'] = '<p>This page allows you to register your Moodle site with moodle.org.  Registration is free.
 The main benefit of registering is that you will be added to a low-volume mailing list
-for important notifications such as security alerts and new releases of Salaren.</p>
+for important notifications such as security alerts and new releases of Moodle.</p>
 <p>By default, your information will be kept private, and will never be sold or passed on to anyone else.  The only
    reason for collecting this information is for support purposes, and to help build up a statistical
-   picture of the Salaren community as a whole.</p>
-<p>If you choose, you can allow your site name, country and URL to be added to the public list of Salaren Sites.</p>
+   picture of the Moodle community as a whole.</p>
+<p>If you choose, you can allow your site name, country and URL to be added to the public list of Moodle Sites.</p>
 <p>All new registrations are verified manually before they are added to the list, but once you are added you can update your registration (and your entry on the public list) at any time by resubmitting this form.</p>';
 $string['registrationinfotitle'] = 'Registration information';
 $string['registrationno'] = 'No, I do not wish to receive any emails';
-$string['registrationsend'] = 'Send registration information to Salaren.org';
-$string['registrationyes'] = 'Yes, notify me of new Salaren releases, security alerts and other important news';
+$string['registrationsend'] = 'Send registration information to moodle.org';
+$string['registrationyes'] = 'Yes, notify me of new Moodle releases, security alerts and other important news';
 $string['reject'] = 'Reject';
 $string['rejectdots'] = 'Reject...';
 $string['reload'] = 'Reload';
@@ -1951,7 +1951,7 @@ $string['switchrolereturn'] = 'Return to my normal role';
 $string['switchroleto'] = 'Switch role to...';
 $string['switchroleto_help'] = 'Choose a role to get an idea of how someone with that role will see this course.
 
-Please note that this view may not be perfect (<a href="https://docs.Salaren.org/en/Switch_roles">See details and alternatives</a>).';
+Please note that this view may not be perfect (<a href="https://docs.moodle.org/en/Switch_roles">See details and alternatives</a>).';
 $string['tag'] = 'Tag';
 $string['tagalready'] = 'This tag already exists';
 $string['tagmanagement'] = 'Add/delete tags ...';
@@ -2039,8 +2039,8 @@ $string['unzippingbackup'] = 'Unzipping backup';
 $string['up'] = 'Up';
 $string['update'] = 'Update';
 $string['updated'] = 'Updated {$a}';
-$string['updatemySalarenoff'] = 'Stop customising this page';
-$string['updatemySalarenon'] = 'Customise this page';
+$string['updatemymoodleoff'] = 'Stop customising this page';
+$string['updatemymoodleon'] = 'Customise this page';
 $string['updatemyprofile'] = 'Update profile';
 $string['updatesevery'] = 'Updates every {$a} seconds';
 $string['updatethis'] = 'Update this {$a}';
@@ -2188,16 +2188,16 @@ $string['yourwordforx'] = 'Your word for \'{$a}\'';
 $string['zippingbackup'] = 'Zipping backup';
 $string['deprecatedeventname'] = '{$a} (no longer in use)';
 
-// Deprecated since Salaren 3.3.
+// Deprecated since Moodle 3.3.
 $string['deletecomment'] = 'Delete this comment';
 $string['sectionusedefaultname'] = 'Use default section name';
 
-// Deprecated since Salaren 3.4.
+// Deprecated since Moodle 3.4.
 $string['publish'] = 'Publish';
 $string['extendenrol'] = 'Extend enrolment (individual)';
 $string['groupextendenrol'] = 'Extend enrolment (common)';
 
-// Deprecated since Salaren 3.6.
+// Deprecated since Moodle 3.6.
 $string['addedrecip'] = 'Added {$a} new recipient';
 $string['addedrecips'] = 'Added {$a} new recipients';
 $string['allfieldsrequired'] = 'All fields are required';

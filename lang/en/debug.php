@@ -1,24 +1,24 @@
 <?php
-// This file is part of Salaren - http://Salaren.org/
+// This file is part of Moodle - http://moodle.org/
 //
-// Salaren is free software: you can redistribute it and/or modify
+// Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Salaren is distributed in the hope that it will be useful,
+// Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'debug', language 'en', branch 'Salaren_20_STABLE'
+ * Strings for component 'debug', language 'en', branch 'MOODLE_20_STABLE'
  *
  * @package   core
- * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -30,7 +30,7 @@ $string['cannotfindadmin'] = 'Could not find an admin user!';
 $string['cannotinitpage'] = 'Cannot fully initialize page: invalid {$a->name} id {$a->id}';
 $string['cannotsetuptable'] = '{$a} tables could NOT be set up successfully!';
 $string['codingerror'] = 'Coding error detected, it must be fixed by a programmer: {$a}';
-$string['configSalaren'] = 'Salaren has not been configured yet. You need to edit config.php first.';
+$string['configmoodle'] = 'Moodle has not been configured yet. You need to edit config.php first.';
 $string['erroroccur'] = 'An error has occurred during this process';
 $string['invalidarraysize'] = 'Incorrect size of arrays in params of {$a}';
 $string['invalideventdata'] = 'Incorrect event data submitted: {$a}';

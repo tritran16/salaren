@@ -2681,7 +2681,7 @@ function require_login($courseorid = null, $autologinguest = true, $cm = null, $
         } else {
             // NOTE: $USER->site check was obsoleted by session test cookie, $USER->confirmed test is in login/index.php.
             if ($preventredirect) {
-                throw new require_login_exception('You are not logged in 111');
+                throw new require_login_exception('You are not logged in');
             }
 
             if ($setwantsurltome) {

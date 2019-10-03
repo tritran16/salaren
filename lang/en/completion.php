@@ -1,18 +1,18 @@
 <?php
-// This file is part of Salaren - http://Salaren.org/
+// This file is part of Moodle - http://moodle.org/
 //
-// Salaren is free software: you can redistribute it and/or modify
+// Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Salaren is distributed in the hope that it will be useful,
+// Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * Strings for core_completion subsystem.
@@ -147,7 +147,7 @@ $string['enrolmentdurationlength'] = 'User must remain enrolled for';
 $string['err_noactivities'] = 'Completion information is not enabled for any activity, so none can be displayed. You can enable completion information by editing the settings for an activity.';
 $string['err_nocourses'] = 'Course completion is not enabled for any other courses, so none can be displayed. You can enable course completion in the course settings.';
 $string['err_nograde'] = 'A course pass grade has not been set for this course. To enable this criteria type you must create a pass grade for this course.';
-$string['err_noroles'] = 'There are no roles with the capability Salaren/course:markcomplete in this course.';
+$string['err_noroles'] = 'There are no roles with the capability moodle/course:markcomplete in this course.';
 $string['err_nousers'] = 'There are no students in this course or group for whom completion information is displayed. (Completion information is displayed only for users with the capability \'Be shown on completion reports\'. The capability is allowed for the default role of student only, so if there are no students, you will see this message.)';
 $string['err_settingslocked'] = 'One or more students have already completed a criterion so the settings have been locked. Unlocking the completion criteria settings will delete any existing user data and may cause confusion.';
 $string['err_system'] = 'An internal error occurred in the completion system. (System administrators can enable debugging information to see more detail.)';
@@ -162,7 +162,7 @@ $string['gradexrequired'] = '{$a} required';
 $string['inprogress'] = 'In progress';
 $string['manual'] = 'Manual';
 $string['manualcompletionby'] = 'Manual completion by others';
-$string['manualcompletionbynote'] = 'Note: The capability Salaren/course:markcomplete must be allowed for a role to appear in the list.';
+$string['manualcompletionbynote'] = 'Note: The capability moodle/course:markcomplete must be allowed for a role to appear in the list.';
 $string['manualselfcompletion'] = 'Manual self completion';
 $string['manualselfcompletionnote'] = 'Note: The self completion block should be added to the course if manual self completion is enabled.';
 $string['markcomplete'] = 'Mark complete';
@@ -232,6 +232,6 @@ $string['writingcompletiondata'] = 'Writing completion data';
 $string['xdays'] = '{$a} days';
 $string['yourprogress'] = 'Your progress';
 
-// Deprecated since Salaren 3.3.
+// Deprecated since Moodle 3.3.
 $string['completion-title-manual-n'] = 'Mark as complete: {$a}';
 $string['completion-title-manual-y'] = 'Mark as not complete: {$a}';

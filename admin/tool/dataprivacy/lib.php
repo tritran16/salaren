@@ -96,10 +96,10 @@ function tool_dataprivacy_myprofile_navigation(tree $tree, $user, $iscurrentuser
     }
 
     if ($showsummary) {
-        // $summaryurl = new moodle_url('/admin/tool/dataprivacy/summary.php');
-        // $summarynode = new core_user\output\myprofile\node('privacyandpolicies', 'retentionsummary',
-        //    get_string('dataretentionsummary', 'tool_dataprivacy'), null, $summaryurl);
-        // $category->add_node($summarynode);
+        $summaryurl = new moodle_url('/admin/tool/dataprivacy/summary.php');
+        $summarynode = new core_user\output\myprofile\node('privacyandpolicies', 'retentionsummary',
+            get_string('dataretentionsummary', 'tool_dataprivacy'), null, $summaryurl);
+        $category->add_node($summarynode);
     }
 
     // Add the Privacy category to the tree if it's not empty and it doesn't exist.
@@ -130,9 +130,9 @@ function tool_dataprivacy_standard_footer_html() {
     }
 
     if ($showsummary) {
-        // $url = new moodle_url('/admin/tool/dataprivacy/summary.php');
-        //$output = html_writer::link($url, get_string('dataretentionsummary', 'tool_dataprivacy'));
-        //$output = html_writer::div($output, 'tool_dataprivacy');
+        $url = new moodle_url('/admin/tool/dataprivacy/summary.php');
+        $output = html_writer::link($url, get_string('dataretentionsummary', 'tool_dataprivacy'));
+        $output = html_writer::div($output, 'tool_dataprivacy');
     }
     return $output;
 }
