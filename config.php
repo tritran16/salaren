@@ -9,7 +9,7 @@ $CFG->dblibrary = 'native';
 $CFG->dbhost    = 'localhost';
 $CFG->dbname    = 'salaren';
 $CFG->dbuser    = 'root';
-$CFG->dbpass    = '1q2w3e4r';
+$CFG->dbpass    = '';
 $CFG->prefix    = 'slr_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
@@ -18,8 +18,8 @@ $CFG->dboptions = array (
   'dbcollation' => 'utf8mb4_general_ci',
 );
 
-$CFG->wwwroot   = 'http://45.117.171.14/salaren';
-$CFG->dataroot  = '/var/_salarendata';
+$CFG->wwwroot   = 'http://localhost/salaren';
+$CFG->dataroot  = 'D:\php\_salarendata';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;

@@ -36,19 +36,31 @@
         }
     }
 }}
-
+<style>
+    .modules {
+        display:none;
+    }
+    .users {
+        display: block !important;
+    }
+    a.users {
+        color: #495057;
+        background-color: #fff;
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
+</style>
 <ul class="nav nav-tabs" role="tablist">
 <!-- First the top most node and immediate children -->
-    <li class="nav-item">
+  <!--  <li class="nav-item">
         <a class="nav-link active" href="#link{{node.key}}" data-toggle="tab" role="tab">{{node.text}}</a>
-    </li>
+    </li> -->
 <!-- Now the first level children with sub nodes -->
 {{#node.children}}
     {{#children.count}}
         {{#display}}
             {{^is_short_branch}}
                 <li class="nav-item">
-                    <a class="nav-link" href="#link{{key}}" data-toggle="tab" role="tab">{{text}}</a>
+                    <a class="nav-link {{key}}" href="#link{{key}}" data-toggle="tab" role="tab">{{text}}</a>
                 </li>
             {{/is_short_branch}}
         {{/display}}
@@ -57,7 +69,7 @@
 </ul>
 
 <div class="tab-content mt-3">
-    <div class="tab-pane active" id="link{{node.key}}" role="tabpanel">
+    <!--<div class="tab-pane active" id="link{{node.key}}" role="tabpanel">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
@@ -98,10 +110,10 @@
                 {{/display}}
             {{/node.children}}
         </div>
-    </div>
+    </div> -->
     {{#node.children}}
         {{#children.count}}
-            <div class="tab-pane" id="link{{key}}" role="tabpanel">
+            <div class="tab-pane {{key}}" id="link{{key}}" role="tabpanel">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3">

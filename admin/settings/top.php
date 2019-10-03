@@ -36,12 +36,12 @@ $ADMIN->add('root', new admin_category('language', new lang_string('language')))
 $ADMIN->add('root', new admin_category('messaging', new lang_string('messagingcategory', 'admin')));
 $ADMIN->add('root', new admin_category('modules', new lang_string('plugins', 'admin')));
 $ADMIN->add('root', new admin_category('security', new lang_string('security','admin')));
-$ADMIN->add('root', new admin_category('appearance', new lang_string('appearance','admin')));
+// $ADMIN->add('root', new admin_category('appearance', new lang_string('appearance','admin')));
 $ADMIN->add('root', new admin_category('frontpage', new lang_string('frontpage','admin')));
-$ADMIN->add('root', new admin_category('server', new lang_string('server','admin')));
+// $ADMIN->add('root', new admin_category('server', new lang_string('server','admin')));
 $ADMIN->add('root', new admin_category('mnet', new lang_string('net','mnet'), (isset($CFG->mnet_dispatcher_mode) and $CFG->mnet_dispatcher_mode === 'off')));
-$ADMIN->add('root', new admin_category('reports', new lang_string('reports')));
-$ADMIN->add('root', new admin_category('development', new lang_string('development', 'admin')));
+// $ADMIN->add('root', new admin_category('reports', new lang_string('reports')));
+// $ADMIN->add('root', new admin_category('development', new lang_string('development', 'admin')));
 
 // hidden unsupported category
 $ADMIN->add('root', new admin_category('unsupported', new lang_string('unsupported', 'admin'), true));
