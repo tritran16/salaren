@@ -1167,13 +1167,13 @@ class core_renderer extends renderer_base {
         if ($this->page->pagetype == 'site-index') {
             // Special case for site home page - please do not remove
             return '<div class="sitelink">' .
-                   '<a title="Salaren" href="http://moodle.org/">' .
+                   '<a title="Salaren" href="#">' .
                    '<img src="' . $this->image_url('salaren') . '" alt="Salaren" /></a></div>';
 
         } else if (!empty($CFG->target_release) && $CFG->target_release != $CFG->release) {
             // Special case for during install/upgrade.
             return '<div class="sitelink">'.
-                   '<a title="Moodle" href="http://docs.moodle.org/en/Administrator_documentation" onclick="this.target=\'_blank\'">' .
+                   '<a title="Moodle" href="#" onclick="this.target=\'_blank\'">' .
                    '<img src="' . $this->image_url('salaren') . '" alt="Salarent" /></a></div>';
 
         } else if ($this->page->course->id == $SITE->id || strpos($this->page->pagetype, 'course-view') === 0) {
