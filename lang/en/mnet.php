@@ -1,24 +1,24 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'mnet', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'mnet', language 'en', branch 'Salaren_20_STABLE'
  *
  * @package   core_mnet
- * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -69,7 +69,7 @@ $string['eventaccesscontrolupdated'] = 'Access control updated';
 $string['expired'] = 'This key expired on';
 $string['expires'] = 'Valid until';
 $string['expireyourkey'] = 'Delete this key';
-$string['expireyourkeyexplain'] = 'Moodle automatically rotates your keys every 28 days (by default) but you have the option to <em>manually</em> expire this key at any time. This will only be useful if you believe this key has been compromised. A replacement will be immediately automatically generated.<br />Deleting this key will make it impossible for other applications to communicate with you, until you manually contact each administrator and provide them with your new key.';
+$string['expireyourkeyexplain'] = 'Salaren automatically rotates your keys every 28 days (by default) but you have the option to <em>manually</em> expire this key at any time. This will only be useful if you believe this key has been compromised. A replacement will be immediately automatically generated.<br />Deleting this key will make it impossible for other applications to communicate with you, until you manually contact each administrator and provide them with your new key.';
 $string['exportfields'] = 'Fields to export';
 $string['failedaclwrite'] = 'Failed to write to the MNet access control list for user \'{$a}\'.';
 $string['findlogin'] = 'Find login';
@@ -135,7 +135,7 @@ $string['mnetpeers'] = 'Peers';
 $string['mnetservices'] = 'Services';
 $string['mnet_session_prohibited'] = 'Users from your home server are not currently permitted to roam to {$a}.';
 $string['mnetsettings'] = 'MNet settings';
-$string['moodle_home_help'] = 'The path to the homepage of MNet application on the remote host, e.g. /moodle/.';
+$string['Salaren_home_help'] = 'The path to the homepage of MNet application on the remote host, e.g. /Salaren/.';
 $string['name'] = 'Name';
 $string['net'] = 'Networking';
 $string['networksettings'] = 'Network settings';
@@ -159,9 +159,9 @@ $string['notBASE64'] = 'This string is not in base64 encoded format. It cannot b
 $string['notenoughidpinfo'] = 'Your identity provider is not giving us enough information to create or update your account locally. Sorry!';
 $string['not_in_range'] = 'The IP address <code>{$a}</code> does not represent a valid trusted host.';
 $string['notinxmlrpcserver'] = 'Attempt to access the MNet remote client, not during XMLRPC server execution';
-$string['notmoodleapplication'] = 'WARNING: This is not a Moodle application, so some of the inspection methods may not work properly.';
+$string['notSalarenapplication'] = 'WARNING: This is not a Salaren application, so some of the inspection methods may not work properly.';
 $string['notPEM'] = 'This key is not in PEM format. It will not work.';
-$string['notpermittedtojump'] = 'You do not have permission to begin a remote session from this Moodle server.';
+$string['notpermittedtojump'] = 'You do not have permission to begin a remote session from this Salaren server.';
 $string['notpermittedtojumpas'] = 'You can\'t begin a remote session while you are logged in as another user.';
 $string['notpermittedtoland'] = 'You do not have permission to begin a remote session.';
 $string['off'] = 'Off';
@@ -236,7 +236,7 @@ $string['theypublish'] = 'They publish';
 $string['theysubscribe'] = 'They subscribe';
 $string['transport_help'] = 'These options are reciprocal, so you can only force a remote host to use a signed SSL cert if your server also has a signed SSL cert.';
 $string['trustedhosts'] = 'XML-RPC hosts';
-$string['trustedhostsexplain'] = '<p>The trusted hosts mechanism allows specific machines to execute calls via XML-RPC to any part of the Moodle API. This is available for scripts to control Moodle behaviour and can be a very dangerous option to enable. If in doubt, keep it off.</p>
+$string['trustedhostsexplain'] = '<p>The trusted hosts mechanism allows specific machines to execute calls via XML-RPC to any part of the Salaren API. This is available for scripts to control Salaren behaviour and can be a very dangerous option to enable. If in doubt, keep it off.</p>
 <p><strong>This is not needed for any standard MNet feature!</strong> Turn it on only if you know what you are doing.</p>
 <p>To enable it, enter a list of IP addresses or networks,
 one on each line. Some examples:</p>

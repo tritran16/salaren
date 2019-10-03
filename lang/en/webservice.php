@@ -1,24 +1,24 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'webservice', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'webservice', language 'en', branch 'Salaren_20_STABLE'
  *
  * @package   core_webservice
- * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -50,7 +50,7 @@ $string['createtoken'] = 'Create token';
 $string['createtokenforuser'] = 'Create a token for a user';
 $string['createtokenforuserdescription'] = 'Create a token for the web services user.';
 $string['createuser'] = 'Create a specific user';
-$string['createuserdescription'] = 'A web services user is required to represent the system controlling Moodle.';
+$string['createuserdescription'] = 'A web services user is required to represent the system controlling Salaren.';
 $string['criteriaerror'] = 'Missing permissions to search on a criterion.';
 $string['default'] = 'Default to "{$a}"';
 $string['deleteaservice'] = 'Delete service';
@@ -114,7 +114,7 @@ $string['invalidtoken'] = 'Invalid token - token not found';
 $string['iprestriction'] = 'IP restriction';
 $string['iprestriction_help'] = 'The user will need to call the web service from the listed IPs (separated by commas).';
 $string['key'] = 'Key';
-$string['keyshelp'] = 'The keys are used to access your Moodle account from external applications.';
+$string['keyshelp'] = 'The keys are used to access your Salaren account from external applications.';
 $string['loginrequired'] = 'Restricted to logged-in users';
 $string['manageprotocols'] = 'Manage protocols';
 $string['managetokens'] = 'Manage tokens';
@@ -129,8 +129,8 @@ $string['nocapabilitytouseparameter'] = 'The user does not have the required cap
 $string['nofunctions'] = 'This service has no functions.';
 $string['norequiredcapability'] = 'No required capability';
 $string['notoken'] = 'The token list is empty.';
-$string['onesystemcontrolling'] = 'Allow an external system to control Moodle';
-$string['onesystemcontrollingdescription'] = 'The following steps help you to set up the Moodle web services to allow an external system to interact with Moodle. This includes setting up a token (security key) authentication method.';
+$string['onesystemcontrolling'] = 'Allow an external system to control Salaren';
+$string['onesystemcontrollingdescription'] = 'The following steps help you to set up the Salaren web services to allow an external system to interact with Salaren. This includes setting up a token (security key) authentication method.';
 $string['onlyseecreatedtokens'] = 'Any token can be deleted, though you can only view tokens that you created.';
 $string['operation'] = 'Operation';
 $string['optional'] = 'Optional';
@@ -146,7 +146,7 @@ $string['privacy:metadata:serviceusers:iprestriction'] = 'IP restricted to use t
 $string['privacy:metadata:serviceusers:timecreated'] = 'The date when the record was created';
 $string['privacy:metadata:serviceusers:userid'] = 'The ID of the user';
 $string['privacy:metadata:serviceusers:validuntil'] = 'The date that the authorisation is valid until';
-$string['privacy:metadata:tokens'] = 'A record of tokens for interacting with Moodle through web services or Mobile applications.';
+$string['privacy:metadata:tokens'] = 'A record of tokens for interacting with Salaren through web services or Mobile applications.';
 $string['privacy:metadata:tokens:creatorid'] = 'The ID of the user who created the token';
 $string['privacy:metadata:tokens:iprestriction'] = 'IP restricted to use this token';
 $string['privacy:metadata:tokens:lastaccess'] = 'The date when the token was last used';
@@ -197,7 +197,7 @@ $string['shortnametaken'] = 'Short name is already used for another service ({$a
 $string['simpleauthlog'] = 'Simple authentication login';
 $string['step'] = 'Step';
 $string['supplyinfo'] = 'More details';
-$string['testauserwithtestclientdescription'] = 'Simulate external access to the service using the web service test client. Before doing so, log in as a user with the moodle/webservice:createtoken capability and obtain the security key (token) via the user\'s preferences page. You will use this token in the test client. In the test client, also choose an enabled protocol with the token authentication. <strong>WARNING: The functions that you test WILL BE EXECUTED for this user, so be careful what you choose to test!</strong>';
+$string['testauserwithtestclientdescription'] = 'Simulate external access to the service using the web service test client. Before doing so, log in as a user with the Salaren/webservice:createtoken capability and obtain the security key (token) via the user\'s preferences page. You will use this token in the test client. In the test client, also choose an enabled protocol with the token authentication. <strong>WARNING: The functions that you test WILL BE EXECUTED for this user, so be careful what you choose to test!</strong>';
 $string['testclient'] = 'Web service test client';
 $string['testclientdescription'] = '* The web service test client <strong>executes</strong> the functions for <strong>REAL</strong>. Do not test functions that you don\'t know. <br/>* All existing web service functions are not yet implemented into the test client. <br/>* In order to check that a user cannot access some functions, you can test some functions that you didn\'t allow.<br/>* To see clearer error messages set the debugging to <strong>{$a->mode}</strong> into {$a->atag}.';
 $string['testwithtestclient'] = 'Test the service';
@@ -212,7 +212,7 @@ $string['updateusersettings'] = 'Update';
 $string['uploadfiles'] = 'Can upload files';
 $string['uploadfiles_help'] = 'If enabled, any user can upload files with their security keys to their own private files area or a draft file area. Any user file quotas apply.';
 $string['userasclients'] = 'Users as clients with token';
-$string['userasclientsdescription'] = 'The following steps help you to set up the Moodle web service for users as clients. These steps also help to set up the recommended token (security keys) authentication method. In this use case, the user will generate their token from the security keys page via their preferences page.';
+$string['userasclientsdescription'] = 'The following steps help you to set up the Salaren web service for users as clients. These steps also help to set up the recommended token (security keys) authentication method. In this use case, the user will generate their token from the security keys page via their preferences page.';
 $string['usermissingcaps'] = 'Missing capabilities: {$a}';
 $string['usernameorid'] = 'Username / User id';
 $string['usernameorid_help'] = 'Enter a username or a user id.';
@@ -233,7 +233,7 @@ $string['wsaccessuserexpired'] = 'Refused web service access for password expire
 $string['wsaccessusernologin'] = 'Refused web service access for nologin authentication username: {$a}';
 $string['wsaccessusersuspended'] = 'Refused web service access for suspended username: {$a}';
 $string['wsaccessuserunconfirmed'] = 'Refused web service access for unconfirmed username: {$a}';
-$string['wsclientdoc'] = 'Moodle web service client documentation';
+$string['wsclientdoc'] = 'Salaren web service client documentation';
 $string['wsdocapi'] = 'API Documentation';
 $string['wsdocumentation'] = 'Web service documentation';
 $string['wsdocumentationdisable'] = 'Web service documentation is disabled.';

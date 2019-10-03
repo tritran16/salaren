@@ -1,23 +1,23 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * Cache language strings
  *
- * This file is part of Moodle's cache API, affectionately called MUC.
+ * This file is part of Salaren's cache API, affectionately called MUC.
  * It contains the components that are requried in order to use caching.
  *
  * @package    core_cache
@@ -75,7 +75,7 @@ $string['cachedef_grade_categories'] = 'Grade category queries';
 $string['cachedef_string'] = 'Language string cache';
 $string['cachedef_tags'] = 'Tags collections and areas';
 $string['cachedef_temp_tables'] = 'Temporary tables cache';
-$string['cachedef_userselections'] = 'Data used to persist user selections throughout Moodle';
+$string['cachedef_userselections'] = 'Data used to persist user selections throughout Salaren';
 $string['cachedef_user_group_groupings'] = 'User\'s groupings and groups per course';
 $string['cachedef_yuimodules'] = 'YUI Module definitions';
 $string['cachelock_file_default'] = 'Default file locking';
@@ -139,7 +139,7 @@ $string['nativelocking'] = 'This plugin handles its own locking.';
 $string['none'] = 'None';
 $string['plugin'] = 'Plugin';
 $string['pluginsummaries'] = 'Installed cache stores';
-$string['privacy:metadata:cachestore'] = 'The Cache subsystem stores data temporarily on behalf of other parts of Moodle. This data is not easily identifiable, and is very short lived. It serves as a cache of data stored elsewhere in Moodle, and should therefore already be handled by those Moodle components.';
+$string['privacy:metadata:cachestore'] = 'The Cache subsystem stores data temporarily on behalf of other parts of Salaren. This data is not easily identifiable, and is very short lived. It serves as a cache of data stored elsewhere in Salaren, and should therefore already be handled by those Salaren components.';
 $string['purge'] = 'Purge';
 $string['purgedefinitionsuccess'] = 'Successfully purged the requested definition.';
 $string['purgestoresuccess'] = 'Successfully purged the requested store.';

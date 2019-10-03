@@ -1,21 +1,21 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'user', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'user', language 'en', branch 'Salaren_20_STABLE'
  *
  * @package   core_user
  * @copyright 2018 Adrian Greeve <adriangreeve.com>
@@ -30,7 +30,7 @@ $string['privacy:lastaccesspath'] = 'Last access to courses';
 $string['privacy:metadata:address'] = 'The address of the user.';
 $string['privacy:metadata:aim'] = 'The AIM identifier of the user';
 $string['privacy:metadata:alternatename'] = 'An alternative name for the user.';
-$string['privacy:metadata:appid'] = 'The app ID, usually something like com.moodle.moodlemobile';
+$string['privacy:metadata:appid'] = 'The app ID, usually something like com.Salaren.Salarenmobile';
 $string['privacy:metadata:auth'] = 'The authentication plugin used for this user record.';
 $string['privacy:metadata:autosubscribe'] = 'A preference as to if the user should be auto-subscribed to forums the user posts in.';
 $string['privacy:metadata:calendartype'] = 'A user preference for the type of calendar to use.';

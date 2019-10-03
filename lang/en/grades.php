@@ -1,24 +1,24 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'grades', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'grades', language 'en', branch 'Salaren_20_STABLE'
  *
  * @package   core_grades
- * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -328,7 +328,7 @@ $string['gradepreferences'] = 'Grade preferences';
 $string['gradepreferenceshelp'] = 'Grade preferences Help';
 $string['gradepublishing'] = 'Enable publishing';
 $string['gradepublishinglink'] = 'Download: {$a}';
-$string['gradepublishing_help'] = 'Grade publishing is a way of importing and exporting grades via a URL without being logged in to Moodle. If enabled, administrators and users with the permission to publish grades (by default, users with the role of manager only) are provided with grade export publishing settings in each course gradebook.';
+$string['gradepublishing_help'] = 'Grade publishing is a way of importing and exporting grades via a URL without being logged in to Salaren. If enabled, administrators and users with the permission to publish grades (by default, users with the role of manager only) are provided with grade export publishing settings in each course gradebook.';
 $string['gradereport'] = 'Grade report';
 $string['graderreport'] = 'Grader report';
 $string['grades'] = 'Grades';

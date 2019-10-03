@@ -1,24 +1,24 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'message', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'message', language 'en', branch 'Salaren_20_STABLE'
  *
  * @package   core_message
- * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -91,11 +91,11 @@ $string['info'] = 'User info';
 $string['isnotinyourcontacts'] = '{$a} is not in your contacts';
 $string['loadmore'] = 'Load more';
 $string['loggedin'] = 'Online';
-$string['loggedin_help'] = 'Configure how you would like to receive notifications when you are logged into Moodle';
-$string['loggedindescription'] = 'When you are logged into Moodle';
+$string['loggedin_help'] = 'Configure how you would like to receive notifications when you are logged into Salaren';
+$string['loggedindescription'] = 'When you are logged into Salaren';
 $string['loggedoff'] = 'Offline';
-$string['loggedoff_help'] = 'Configure how you would like to receive notifications when you are not logged into Moodle';
-$string['loggedoffdescription'] = 'When you are not logged into Moodle';
+$string['loggedoff_help'] = 'Configure how you would like to receive notifications when you are not logged into Salaren';
+$string['loggedoffdescription'] = 'When you are not logged into Salaren';
 $string['managemessageoutputs'] = 'Default notification preferences';
 $string['messageoutputs'] = 'Notification plugins';
 $string['messagepreferences'] = 'Message preferences';
@@ -270,14 +270,14 @@ $string['you'] = 'You:';
 $string['youhaveblockeduser'] = 'You have blocked this user.';
 $string['yourcontactrequestpending'] = 'Your contact request is pending with {$a}';
 
-// Deprecated since Moodle 3.6.
+// Deprecated since Salaren 3.6.
 $string['eventmessagecontactblocked'] = 'Message contact blocked';
 $string['eventmessagecontactunblocked'] = 'Message contact unblocked';
 $string['messagingdisabled'] = 'Messaging is disabled on this site, emails will be sent instead';
 $string['userisblockingyou'] = 'This user has blocked you from sending messages to them.';
 $string['userisblockingyounoncontact'] = '{$a} only accepts messages from their contacts.';
 
-// Deprecated since Moodle 3.7.
+// Deprecated since Salaren 3.7.
 $string['nomessages'] = 'No messages';
 $string['outputdisabled'] = 'Output disabled';
 $string['outputdoesnotexist'] = 'Message output does not exist';

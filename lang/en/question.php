@@ -1,24 +1,24 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'question', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'question', language 'en', branch 'Salaren_20_STABLE'
  *
  * @package   core_question
- * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -81,7 +81,7 @@ $string['createdby'] = 'Created by';
 $string['createdmodifiedheader'] = 'Created / last saved';
 $string['createnewquestion'] = 'Create a new question ...';
 $string['cwrqpfs'] = 'Random questions selecting questions from sub categories.';
-$string['cwrqpfsinfo'] = '<p>During the upgrade to Moodle 1.9 we will separate question categories into
+$string['cwrqpfsinfo'] = '<p>During the upgrade to Salaren 1.9 we will separate question categories into
 different contexts. Some question categories and questions on your site will have to have their sharing
 status changed. This is necessary in the rare case that one or more \'random\' questions in a quiz are set up to select from a mixture of
 shared and unshared categories (as is the case on this site). This happens when a \'random\' question is set to select
@@ -89,7 +89,7 @@ from subcategories and one or more subcategories have a different sharing status
 the random question is created.</p>
 <p>The following question categories, from which \'random\' questions in parent categories select questions from,
 will have their sharing status changed to the same sharing status as the category with the \'random\' question in
-on upgrading to Moodle 1.9. The following categories will have their sharing status changed. Questions which are
+on upgrading to Salaren 1.9. The following categories will have their sharing status changed. Questions which are
 affected will continue to work in all existing quizzes until you remove them from these quizzes.</p>';
 $string['cwrqpfsnoprob'] = 'No question categories in your site are affected by the \'Random questions selecting questions from sub categories\' issue.';
 $string['defaultfor'] = 'Default for {$a}';
@@ -157,11 +157,11 @@ $string['export'] = 'Export';
 $string['exportcategory'] = 'Export category';
 $string['exportcategory_help'] = 'This setting determines the category from which the exported questions will be taken.
 
-Certain import formats, such as GIFT and Moodle XML, permit category and context data to be included in the export file, enabling them to (optionally) be recreated on import. If required, the appropriate checkboxes should be ticked.';
+Certain import formats, such as GIFT and Salaren XML, permit category and context data to be included in the export file, enabling them to (optionally) be recreated on import. If required, the appropriate checkboxes should be ticked.';
 $string['exporterror'] = 'Errors occur during exporting!';
 $string['exportfilename'] = 'questions';
 $string['exportnameformat'] = '%Y%m%d-%H%M';
-$string['exportonequestion'] = 'Download this question in Moodle XML format';
+$string['exportonequestion'] = 'Download this question in Salaren XML format';
 $string['exportquestions'] = 'Export questions to file';
 $string['exportquestions_help'] = 'This function enables the export of a complete category (and any subcategories) of questions to file. Please note that, depending on the file format selected, some question data and certain question types may not be exported.';
 $string['exportquestions_link'] = 'question/export';
@@ -190,7 +190,7 @@ $string['import'] = 'Import';
 $string['importcategory'] = 'Import category';
 $string['importcategory_help'] = 'This setting determines the category into which the imported questions will go.
 
-Certain import formats, such as GIFT and Moodle XML, may include category and context data in the import file. To make use of this data, rather than the selected category, the appropriate checkboxes should be ticked. If categories specified in the import file do not exist, they will be created.';
+Certain import formats, such as GIFT and Salaren XML, may include category and context data in the import file. To make use of this data, rather than the selected category, the appropriate checkboxes should be ticked. If categories specified in the import file do not exist, they will be created.';
 $string['importerror'] = 'An error occurred during import processing';
 $string['importerrorquestion'] = 'Error importing question';
 $string['importingquestions'] = 'Importing {$a} questions from file';

@@ -1,18 +1,18 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * Language file.
@@ -23,7 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+defined('Salaren_INTERNAL') || die();
 
 $string['privacy:metadata:files'] = 'A record of the files uploaded or shared by users';
 $string['privacy:metadata:files:author'] = 'The author of the file\'s content';
@@ -37,4 +37,4 @@ $string['privacy:metadata:files:source'] = 'The source of the file';
 $string['privacy:metadata:files:timecreated'] = 'The time when the file was created';
 $string['privacy:metadata:files:timemodified'] = 'The time when the file was last modified';
 $string['privacy:metadata:files:userid'] = 'The user who created the file';
-$string['privacy:metadata:core_userkey'] = 'A private token is generated and stored. This token can be used to access Moodle files without requiring you to log in.';
+$string['privacy:metadata:core_userkey'] = 'A private token is generated and stored. This token can be used to access Salaren files without requiring you to log in.';

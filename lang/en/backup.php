@@ -1,18 +1,18 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * This file contains the strings used by backup
@@ -39,7 +39,7 @@ $string['asyncmessagebodydetail'] = 'Message to send when an asynchronous backup
 $string['asyncmessagebodydefault'] = 'Hi {user_firstname},<br/> Your {operation} (ID: {backupid}) has completed successfully. <br/><br/>You can access it here: {link}.';
 $string['asyncmessagesubject'] = 'Subject';
 $string['asyncmessagesubjectdetail'] = 'Message subject';
-$string['asyncmessagesubjectdefault'] = 'Moodle {operation} completed successfully';
+$string['asyncmessagesubjectdefault'] = 'Salaren {operation} completed successfully';
 $string['asyncnowait'] = 'You don\'t need to wait here, as the process will continue in the background.';
 $string['asyncprocesspending'] = 'Process pending';
 $string['asyncrestorecomplete'] = 'The restore process has completed';
@@ -76,10 +76,10 @@ $string['backupcoursesection'] = 'Section: {$a}';
 $string['backupcoursesections'] = 'Course sections';
 $string['backupdate'] = 'Date taken';
 $string['backupdetails'] = 'Backup details';
-$string['backupdetailsnonstandardinfo'] = 'The selected file is not a standard Moodle backup file. The restore process will try to convert the backup file into the standard format and then restore it.';
+$string['backupdetailsnonstandardinfo'] = 'The selected file is not a standard Salaren backup file. The restore process will try to convert the backup file into the standard format and then restore it.';
 $string['backupformat'] = 'Format';
-$string['backupformatmoodle1'] = 'Moodle 1';
-$string['backupformatmoodle2'] = 'Moodle 2';
+$string['backupformatSalaren1'] = 'Salaren 1';
+$string['backupformatSalaren2'] = 'Salaren 2';
 $string['backupformatimscc1'] = 'IMS Common Cartridge 1.0';
 $string['backupformatimscc11'] = 'IMS Common Cartridge 1.1';
 $string['backupformatunknown'] = 'Unknown format';
@@ -117,9 +117,9 @@ $string['choosefilefromautomatedbackup_help'] = 'Contains automatically generate
 $string['config_keep_groups_and_groupings'] = 'By default keep current groups and groupings.';
 $string['config_keep_roles_and_enrolments'] = 'By default keep current roles and enrolments.';
 $string['config_overwrite_conf'] = 'Allows user to overwrite the current course configuration';
-$string['config_overwrite_course_fullname'] = 'By default overwrite course full name with the one from the backup file. This requires "Overwrite course configuration" to be checked and current user to have the capability to change course full name (moodle/course:changefullname)';
-$string['config_overwrite_course_shortname'] = 'By default overwrite course short name with the one from the backup file. This requires "Overwrite course configuration" to be checked and current user to have the capability to change course short name (moodle/course:changeshortname)';
-$string['config_overwrite_course_startdate'] = 'By default overwrite course start date with the one from the backup file. This requires "Overwrite course configuration" to be checked and current user to have the capability to roll course dates on restore (moodle/restore:rolldates)';
+$string['config_overwrite_course_fullname'] = 'By default overwrite course full name with the one from the backup file. This requires "Overwrite course configuration" to be checked and current user to have the capability to change course full name (Salaren/course:changefullname)';
+$string['config_overwrite_course_shortname'] = 'By default overwrite course short name with the one from the backup file. This requires "Overwrite course configuration" to be checked and current user to have the capability to change course short name (Salaren/course:changeshortname)';
+$string['config_overwrite_course_startdate'] = 'By default overwrite course start date with the one from the backup file. This requires "Overwrite course configuration" to be checked and current user to have the capability to roll course dates on restore (Salaren/restore:rolldates)';
 $string['configgeneralactivities'] = 'Sets the default for including activities in a backup.';
 $string['configgeneralbadges'] = 'Sets the default for including badges in a backup.';
 $string['configgeneralanonymize'] = 'If enabled all information pertaining to users will be anonymised by default.';
@@ -177,16 +177,16 @@ $string['errorcopyingbackupfile'] = "Failed to copy the backup file to the tempo
 $string['errorfilenamerequired'] = 'You must enter a valid filename for this backup';
 $string['errorfilenametoolong'] = 'The filename must be less than 255 characters in length.';
 $string['errorfilenamemustbezip'] = 'The filename you enter must be a ZIP file and have the .mbz extension';
-$string['errorminbackup20version'] = 'This backup file has been created with one development version of Moodle backup ({$a->backup}). Minimum required is {$a->min}. Cannot be restored.';
+$string['errorminbackup20version'] = 'This backup file has been created with one development version of Salaren backup ({$a->backup}). Minimum required is {$a->min}. Cannot be restored.';
 $string['errorinvalidformat'] = 'Unknown backup format';
-$string['errorinvalidformatinfo'] = 'The selected file is not a valid Moodle backup file and can\'t be restored.';
+$string['errorinvalidformatinfo'] = 'The selected file is not a valid Salaren backup file and can\'t be restored.';
 $string['errorrestorefrontpagebackup'] = 'You can only restore front page backups on the front page';
 $string['executionsuccess'] = 'The backup file was successfully created.';
 $string['failed'] = 'Backup failed';
 $string['filename'] = 'Filename';
 $string['filealiasesrestorefailures'] = 'Aliases restore failures';
 $string['filealiasesrestorefailuresinfo'] = 'Some aliases included in the backup file could not be restored. The following list contains their expected location and the source file they were referring to at the original site.';
-$string['filealiasesrestorefailures_help'] = 'Aliases are symbolic links to other files, including those stored in external repositories. In some cases, Moodle cannot restore them - for example when restoring the backup at another site or when the referenced file does not exist.
+$string['filealiasesrestorefailures_help'] = 'Aliases are symbolic links to other files, including those stored in external repositories. In some cases, Salaren cannot restore them - for example when restoring the backup at another site or when the referenced file does not exist.
 
 More details and the actual reason of the failure can be found in the restore log file.';
 $string['filealiasesrestorefailures_link'] = 'restore/filealiases';
@@ -252,7 +252,7 @@ $string['lockedbyhierarchy'] = 'Locked by dependencies';
 $string['loglifetime'] = 'Keep logs for';
 $string['managefiles'] = 'Manage backup files';
 $string['missingfilesinpool'] = 'Some files could not be saved during the backup, and so it will not be possible to restore them.';
-$string['moodleversion'] = 'Moodle version';
+$string['Salarenversion'] = 'Salaren version';
 $string['moreresults'] = 'There are too many results, enter a more specific search.';
 $string['nomatchingcourses'] = 'There are no courses to display';
 $string['norestoreoptions'] = 'There are no categories or existing courses you can restore to.';

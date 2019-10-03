@@ -1,24 +1,24 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Salaren - http://Salaren.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Salaren is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Salaren is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Salaren.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'error', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'error', language 'en', branch 'Salaren_20_STABLE'
  *
  * @package   core
- * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright 1999 onwards Martin Dougiamas  {@link http://Salaren.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -29,7 +29,7 @@ $string['agedigitalconsentmapinvalidcountry'] = '"{$a}" is not a valid value for
 $string['agedigitalconsentmapinvaliddefault'] = 'Default (*) value is missing.';
 $string['agelocationverificationdisabled'] = 'Age and location verification disabled';
 $string['authnotexisting'] = 'The autorization plugin doesn\'t exist';
-$string['backupcontainexternal'] = 'This backup file contains external Moodle Network Hosts that are not configured locally';
+$string['backupcontainexternal'] = 'This backup file contains external Salaren Network Hosts that are not configured locally';
 $string['backuptablefail'] = 'Backup tables could NOT be set up successfully!';
 $string['blockcannotconfig'] = 'This block does not support global configuration';
 $string['blockcannotinistantiate'] = 'Problem in instantiating block object';
@@ -75,7 +75,7 @@ $string['cannotdeleterolewithid'] = 'Could not delete role with ID {$a}';
 $string['cannotdeletethisrole'] = 'You cannot delete this role because it is used by the system, or because it is the last role with administrator capabilities.';
 $string['cannotdisableformat'] = 'You can not disable the default format';
 $string['cannotdownloadcomponents'] = 'Cannot download components';
-$string['cannotdownloadlanguageupdatelist'] = 'Cannot download list of language updates from download.moodle.org';
+$string['cannotdownloadlanguageupdatelist'] = 'Cannot download list of language updates from download.Salaren.org';
 $string['cannotdownloadzipfile'] = 'Cannot download ZIP file';
 $string['cannoteditcomment'] = 'This comment is not yours to edit!';
 $string['cannoteditcommentexpired'] = 'You can\'t edit this. The time has expired!';
@@ -385,7 +385,7 @@ $string['loginasonecourse'] = 'You cannot enter this course.<br /> You have to t
 $string['maxbytesfile'] = 'The file {$a->file} is too large. The maximum size you can upload is {$a->size}.';
 $string['maxareabytes'] = 'The file is larger than the space remaining in this area.';
 $string['messagingdisable'] = 'Messaging is disabled on this site';
-$string['mimetexisnotexist'] = 'Your system is not configured to run mimeTeX. You need to obtain the C source from <a href="https://www.forkosh.com/mimetex.zip">https://www.forkosh.com/mimetex.zip</a>, compile it and put the executable into your moodle/filter/tex/ directory.';
+$string['mimetexisnotexist'] = 'Your system is not configured to run mimeTeX. You need to obtain the C source from <a href="https://www.forkosh.com/mimetex.zip">https://www.forkosh.com/mimetex.zip</a>, compile it and put the executable into your Salaren/filter/tex/ directory.';
 $string['mimetexnotexecutable'] = 'Custom mimetex is not executable!';
 $string['missingfield'] = 'Field "{$a}" is missing';
 $string['missingkeyinsql'] = 'ERROR: missing param "{$a}" in query';
@@ -394,7 +394,7 @@ $string['missingparameter'] = 'Parameter missing';
 $string['missingrequiredfield'] = 'Some required field is missing';
 $string['missinguseranditemid'] = 'Missing userid and itemid';
 $string['missingvarname'] = 'Required variable name is missing!';
-$string['missing_moodle_backup_xml_file'] = 'Backup is missing XML file: {$a}';
+$string['missing_Salaren_backup_xml_file'] = 'Backup is missing XML file: {$a}';
 $string['mixedtypesqlparam'] = 'ERROR: Mixed types of sql query parameters!!';
 $string['mnetdisable'] = 'MNET is disabled';
 $string['mnetlocal'] = 'Remote MNET users cannot log in locally';
@@ -406,7 +406,7 @@ $string['movecatcontentstoroot'] = 'Moving the category content to root is not a
 $string['movecategorynotpossible'] = 'You cannot move category \'{$a}\' into the selected category.';
 $string['movecategoryownparent'] = 'You cannot make category \'{$a}\' a parent of itself.';
 $string['movecategoryparentconflict'] = 'You cannot make category \'{$a}\' a subcategory of one of its own subcategories.';
-$string['mssqlrcsmodemissing'] = 'The database is not using the expected READ_COMMITTED_SNAPSHOT mode which can lead to wrong results, especially under high concurrency scenarios. Please enable it for correct behaviour. For further information, see the documentation <a href="https://docs.moodle.org/en/Installing_MSSQL_for_PHP">Installing MSSQL for PHP</a>.';
+$string['mssqlrcsmodemissing'] = 'The database is not using the expected READ_COMMITTED_SNAPSHOT mode which can lead to wrong results, especially under high concurrency scenarios. Please enable it for correct behaviour. For further information, see the documentation <a href="https://docs.Salaren.org/en/Installing_MSSQL_for_PHP">Installing MSSQL for PHP</a>.';
 $string['multiplerecordsfound'] = 'Multiple records found, only one record expected.';
 $string['multiplerestorenotallow'] = 'Multiple restore execution not allowed!';
 $string['mustbeloggedin'] = 'You must be logged in to do this';
@@ -466,7 +466,7 @@ $string['orderidnotfound'] = 'Order ID {$a} not found';
 $string['pagenotexist'] = 'An unusual error occurred (tried to reach a page that does not exist)';
 $string['pathdoesnotstartslash'] = 'No valid arguments supplied, path does not start with slash!';
 $string['pleasereport'] = 'If you have time, please let us know what you were trying to do when the error occurred:';
-$string['pluginrequirementsnotmet'] = 'Plugin "{$a->pluginname}" ({$a->pluginversion}) could not be installed.  It requires a newer version of Moodle (currently you are using {$a->currentmoodle}, you need {$a->requiremoodle}).';
+$string['pluginrequirementsnotmet'] = 'Plugin "{$a->pluginname}" ({$a->pluginversion}) could not be installed.  It requires a newer version of Salaren (currently you are using {$a->currentSalaren}, you need {$a->requireSalaren}).';
 $string['prefixcannotbeempty'] = '<p>Error: database table prefix cannot be empty ({$a})</p>
 <p>The site administrator must fix this problem.</p>';
 $string['prefixtoolong'] = '<p>Error: database table prefix is too long ({$a->dbfamily})</p>
@@ -529,7 +529,7 @@ $string['TODO'] = 'TODO';
 $string['tokengenerationfailed'] = 'Cannot generate a new token.';
 $string['transactionvoid'] = 'Transaction cannot be voided because it has already been voided';
 $string['unenrolerror'] = 'An error occurred while trying to unenrol that person';
-$string['unicodeupgradeerror'] = 'Sorry, but your database is not already in Unicode, and this version of Moodle is not able to migrate your database to Unicode.  Please upgrade to Moodle 1.7.x first and perform the Unicode migration from the Admin page.  After that is done you should be able to migrate to Moodle {$a}';
+$string['unicodeupgradeerror'] = 'Sorry, but your database is not already in Unicode, and this version of Salaren is not able to migrate your database to Unicode.  Please upgrade to Salaren 1.7.x first and perform the Unicode migration from the Admin page.  After that is done you should be able to migrate to Salaren {$a}';
 $string['unknowaction'] = 'Unknown action!';
 $string['unknowcategory'] = 'Category not known!';
 $string['unknowcontext'] = 'This is an unknown context ({$a}) in get_child_contexts!';
@@ -559,7 +559,7 @@ $string['unspecifycourseid'] = 'Must specify course id, short name or idnumber';
 $string['unsupportedevent'] = 'Unsupported event type';
 $string['unsupportedstate'] = 'Unsupported completion state';
 $string['unsupportedwebserver'] = 'Web server software ({$a}) is not supported, sorry.';
-$string['upgraderequires19'] = 'Error: New Moodle version was installed on server, unfortunately upgrade from the previous version is not supported.<br />Please upgrade first to latest 1.9.x release. You can also return to previous version by reinstalling original files.';
+$string['upgraderequires19'] = 'Error: New Salaren version was installed on server, unfortunately upgrade from the previous version is not supported.<br />Please upgrade first to latest 1.9.x release. You can also return to previous version by reinstalling original files.';
 $string['upgraderunning'] = 'Site is being upgraded, please retry later.';
 $string['urlnotdefinerss'] = 'URL not defined for RSS feed';
 $string['useradmineditadmin'] = 'Only administrators are allowed to modify other administrator accounts';

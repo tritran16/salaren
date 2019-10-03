@@ -37,7 +37,7 @@ showgroupsevents,core_calendar
 showuserevents,core_calendar
 errorcronnoxmlrpc,core_hub
 advertiseonhub,core_hub
-advertiseonmoodleorg,core_hub
+advertiseonSalarenorg,core_hub
 all,core_hub
 allowglobalsearch,core_hub
 allowpublicsearch,core_hub
@@ -61,12 +61,12 @@ forceunregister,core_hub
 forceunregisterconfirmation,core_hub
 hub,core_hub
 information,core_hub
-moodleorg,core_hub
+Salarenorg,core_hub
 nocheckstatusfromunreghub,core_hub
 nohubselected,core_hub
 none,core_hub
 nosearch,core_hub
-notregisteredonmoodleorg,core_hub
+notregisteredonSalarenorg,core_hub
 orenterprivatehub,core_hub
 prioritise,core_hub
 private,core_hub
@@ -75,7 +75,7 @@ publichub,core_hub
 publish,core
 publishon,core_hub
 publishonspecifichub,core_hub
-registeredmoodleorg,core_hub
+registeredSalarenorg,core_hub
 registeredon,core_hub
 registerwith,core_hub
 registrationupdated,core_hub
@@ -107,7 +107,7 @@ wrongurlformat,core_hub
 xmlrpcdisabledcommunity,core_hub
 xmlrpcdisabledpublish,core_hub
 xmlrpcdisabledregistration,core_hub
-moodleorghubname,core_admin
+Salarenorghubname,core_admin
 hubs,core_admin
 quickdownloadcalendar,core_calendar
 ical,core_calendar
