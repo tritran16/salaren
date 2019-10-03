@@ -94,31 +94,6 @@ foreach ($settingspage->children as $childpage) {
     if ($childpage->is_hidden() || !$childpage->check_access()) {
         continue;
     }
-    if ($childpage instanceof admin_externalpage) {
-        $outputhtml .= $OUTPUT->heading(html_writer::link($childpage->url, $childpage->visiblename), 3);
-    } else if ($childpage instanceof admin_settingpage) {
-        $outputhtml .= $OUTPUT->heading(html_writer::link(new moodle_url('/'.$CFG->admin.'/settings.php', array('section' => $childpage->name)), $childpage->visiblename), 3);
-        // If its a settings page and has settings lets display them.
-        if (!empty($childpage->settings)) {
-            $outputhtml .= html_writer::start_tag('fieldset', array('class' => 'adminsettings'));
-            foreach ($childpage->settings as $setting) {
-                if (empty($setting->nosave)) {
-                    $savebutton = true;
-                }
-                $fullname = $setting->get_full_name();
-                if (array_key_exists($fullname, $adminroot->errors)) {
-                    $data = $adminroot->errors[$fullname]->data;
-                } else {
-                    $data = $setting->get_setting();
-                }
-                $outputhtml .= html_writer::tag('div', '<!-- -->', array('class' => 'clearer'));
-                $outputhtml .= $setting->output_html($data);
-            }
-            $outputhtml .= html_writer::end_tag('fieldset');
-        }
-    } else if ($childpage instanceof admin_category) {
-        $outputhtml .= $OUTPUT->heading(html_writer::link(new moodle_url('/'.$CFG->admin.'/category.php', array('category' => $childpage->name)), get_string('admincategory', 'admin', $childpage->visiblename)), 3);
-    }
 }
 if ($savebutton) {
     $outputhtml .= html_writer::start_tag('div', array('class' => 'form-buttons'));
