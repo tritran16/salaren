@@ -1173,7 +1173,7 @@ class core_renderer extends renderer_base {
         } else if (!empty($CFG->target_release) && $CFG->target_release != $CFG->release) {
             // Special case for during install/upgrade.
             return '<div class="sitelink">'.
-                   '<a title="Moodle" href="#" onclick="this.target=\'_blank\'">' .
+                   '<a title="Salaren" href="#" onclick="this.target=\'_blank\'">' .
                    '<img src="' . $this->image_url('salaren') . '" alt="Salarent" /></a></div>';
 
         } else if ($this->page->course->id == $SITE->id || strpos($this->page->pagetype, 'course-view') === 0) {
@@ -1415,7 +1415,7 @@ class core_renderer extends renderer_base {
             $footer = $this->unique_performance_info_token . $footer;
         }
         $footer = str_replace($this->unique_performance_info_token, $performanceinfo, $footer);
-
+        $footer = str_replace('tool_dataprivacy', 'tool_dataprivacy hide', $footer);
         // Only show notifications when we have a $PAGE context id.
         if (!empty($PAGE->context->id)) {
             $this->page->requires->js_call_amd('core/notification', 'init', array(

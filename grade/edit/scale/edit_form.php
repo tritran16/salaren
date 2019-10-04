@@ -41,12 +41,12 @@ class edit_scale_form extends moodleform {
         $mform->setType('name', PARAM_TEXT);
 
         $mform->addElement('advcheckbox', 'standard', get_string('scalestandard'));
-        $mform->addHelpButton('standard', 'scalestandard');
+        // $mform->addHelpButton('standard', 'scalestandard');
 
         $mform->addElement('static', 'used', get_string('used'));
 
         $mform->addElement('textarea', 'scale', get_string('scale'), array('cols'=>50, 'rows'=>2));
-        $mform->addHelpButton('scale', 'scale');
+        // $mform->addHelpButton('scale', 'scale');
         $mform->addRule('scale', get_string('required'), 'required', null, 'client');
         $mform->setType('scale', PARAM_TEXT);
 
