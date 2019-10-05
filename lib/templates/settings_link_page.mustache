@@ -46,6 +46,18 @@
     .fitem {
         display: none;
     }
+    .roles {
+        display: none;
+    }
+    .privacy {
+        display: none;
+    }
+    .backups {
+        display: none;
+    }
+    .gradereports {
+        display: none;
+    }
 </style>
 <ul class="nav nav-tabs" role="tablist">
 <!-- First the top most node and immediate children -->
@@ -135,11 +147,11 @@
                             {{#children.count}}
                                 <hr>
                                 <div class="row">
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-3 {{key}}">
                                         {{#action}}<h4><a href="{{action}}">{{text}}</a><h4>{{/action}}
                                         {{^action}}<h4>{{text}}<h4>{{/action}}
                                     </div>
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-9 {{key}}">
                                         <ul class="list-unstyled">
                                             {{#children}}
                                                 {{> core/settings_link_page_single }}
