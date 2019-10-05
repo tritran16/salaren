@@ -667,9 +667,9 @@ function get_module_metadata($course, $modnames, $sectionreturn = null) {
             $defaultmodule->help = get_string('modulename_help', $modname);
             if ($sm->string_exists('modulename_link', $modname)) {  // Link to further info in Moodle docs.
                 $link = get_string('modulename_link', $modname);
-                $linktext = get_string('morehelp');
-                $defaultmodule->help .= html_writer::tag('div',
-                    $OUTPUT->doc_link($link, $linktext, true), array('class' => 'helpdoclink'));
+                //$linktext = get_string('morehelp');
+                // $defaultmodule->help .= html_writer::tag('div',
+                //    $OUTPUT->doc_link($link, $linktext, true), array('class' => 'helpdoclink'));
             }
         }
         $defaultmodule->archetype = plugin_supports('mod', $modname, FEATURE_MOD_ARCHETYPE, MOD_ARCHETYPE_OTHER);
@@ -694,9 +694,9 @@ function get_module_metadata($course, $modnames, $sectionreturn = null) {
                 // If the module provides the helptext property, append it to the help text to match the look and feel
                 // of the default course modules.
                 if (isset($item->help) && isset($item->helplink)) {
-                    $linktext = get_string('morehelp');
-                    $item->help .= html_writer::tag('div',
-                        $OUTPUT->doc_link($item->helplink, $linktext, true), array('class' => 'helpdoclink'));
+                    // $linktext = get_string('morehelp');
+                    // $item->help .= html_writer::tag('div',
+                    //    $OUTPUT->doc_link($item->helplink, $linktext, true), array('class' => 'helpdoclink'));
                 }
                 $modlist[$course->id][$modname][$item->name] = $item;
             }

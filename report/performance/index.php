@@ -71,8 +71,8 @@ if ($issue and ($issueresult = $reportperformance::$issue())) {
     echo $OUTPUT->continue_button(new moodle_url('/report/performance/index.php'));
 } else {
     // Add Performance report description on main list page.
-    $morehelplink = $OUTPUT->doc_link('report/performance', get_string('morehelp', 'report_performance'));
-    echo $OUTPUT->box(get_string('performancereportdesc', 'report_performance', $morehelplink), 'generalbox mdl-align');
+    // $morehelplink = $OUTPUT->doc_link('report/performance', get_string('morehelp', 'report_performance'));
+    // echo $OUTPUT->box(get_string('performancereportdesc', 'report_performance', $morehelplink), 'generalbox mdl-align');
 
     foreach ($issues as $issue) {
         $issueresult = $reportperformance::$issue();
