@@ -28,6 +28,8 @@ if (!file_exists('../config.php')) {
     header('Location: ../install.php');
     die();
 }
+header('Location: ../admin/search.php');
+die();
 
 // Check that PHP is of a sufficient version as soon as possible.
 require_once(__DIR__.'/../lib/phpminimumversionlib.php');
@@ -36,14 +38,14 @@ moodle_require_minimum_php_version();
 // make sure iconv is available and actually works
 if (!function_exists('iconv')) {
     // this should not happen, this must be very borked install
-    echo 'Moodle requires the iconv PHP extension. Please install or enable the iconv extension.';
+    echo 'Salaren requires the iconv PHP extension. Please install or enable the iconv extension.';
     die();
 }
 
 // Make sure php5-json is available.
 if (!function_exists('json_encode') || !function_exists('json_decode')) {
     // This also shouldn't happen.
-    echo 'Moodle requires the json PHP extension. Please install or enable the json extension.';
+    echo 'Salaren requires the json PHP extension. Please install or enable the json extension.';
     die();
 }
 
