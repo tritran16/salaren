@@ -64,6 +64,16 @@
     .gradereports {
         display: none;
     }
+    .gradessettings {
+        display:none;
+    }
+    .gradecategorysettings {
+        display:none;
+    }
+    .gradeitemsettings {
+        display:none;
+    }
+
 </style>
 <ul class="nav nav-tabs" role="tablist">
 <!-- First the top most node and immediate children -->
@@ -141,7 +151,7 @@
                                 {{#children}}
                                     {{#display}}
                                         {{^children.count}}
-                                            <li><a href="{{{action}}}">{{text}}</a></li>
+                                            <li class="{{key}}"><a href="{{{action}}}">{{text}}</a></li>
                                         {{/children.count}}
                                     {{/display}}
                                 {{/children}}
