@@ -72,7 +72,7 @@ $PAGE->set_title($data->name);
 $PAGE->set_heading($course->fullname);
 navigation_node::override_active_url(new moodle_url('/mod/data/import.php', array('d' => $data->id)));
 echo $OUTPUT->header();
-echo $OUTPUT->heading_with_help(get_string('uploadrecords', 'mod_data'), 'uploadrecords', 'mod_data');
+echo $OUTPUT->heading(get_string('uploadrecords', 'mod_data'), 'uploadrecords', 'mod_data');
 
 /// Groups needed for Add entry tab
 $currentgroup = groups_get_activity_group($cm);

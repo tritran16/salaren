@@ -59,7 +59,7 @@ $mform->set_data($data);
     $PAGE->set_heading($course->fullname);
     echo $OUTPUT->header();
     echo $OUTPUT->heading(format_string($lesson->name), 2);
-    echo $OUTPUT->heading_with_help($strimportquestions, 'importquestions', 'lesson', '', '', 3);
+    echo $OUTPUT->heading($strimportquestions, 'importquestions', 'lesson', '', '', 3);
 
 if ($data = $mform->get_data()) {
 

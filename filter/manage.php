@@ -126,7 +126,7 @@ $PAGE->set_pagelayout('admin');
 echo $OUTPUT->header();
 
 /// Print heading.
-echo $OUTPUT->heading_with_help($title, 'filtersettings', 'filters');
+echo $OUTPUT->heading($title, 'filtersettings', 'filters');
 
 if (empty($availablefilters)) {
     echo '<p class="centerpara">' . get_string('nofiltersenabled', 'filters') . "</p>\n";

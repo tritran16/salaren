@@ -123,7 +123,7 @@ if ($action === 'add' and $resettype !== 'none') {
 
     } else {
         echo $OUTPUT->header();
-        echo $OUTPUT->heading_with_help($title, 'roles', 'core_role');
+        echo $OUTPUT->heading($title, 'roles', 'core_role');
         $mform->display();
         echo $OUTPUT->footer();
         die;
@@ -171,7 +171,7 @@ if ($action === 'add' and $resettype !== 'none') {
 
     } else {
         echo $OUTPUT->header();
-        echo $OUTPUT->heading_with_help($title, 'roles', 'core_role');
+        echo $OUTPUT->heading($title, 'roles', 'core_role');
         $mform->display();
         echo $OUTPUT->footer();
         die;
@@ -225,7 +225,7 @@ echo $OUTPUT->header();
 $currenttab = 'manage';
 require('managetabs.php');
 
-echo $OUTPUT->heading_with_help($title, 'roles', 'core_role');
+echo $OUTPUT->heading($title, 'roles', 'core_role');
 
 // Work out some button labels.
 if ($action === 'add') {

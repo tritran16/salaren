@@ -156,7 +156,7 @@ if (optional_param('savechanges', false, PARAM_BOOL) && confirm_sesskey()) {
 
 // Finally start page output.
 echo $OUTPUT->header();
-echo $OUTPUT->heading_with_help($title, 'overridepermissions', 'core_role');
+echo $OUTPUT->heading($title, 'overridepermissions', 'core_role');
 
 // Show UI for overriding roles.
 if (!empty($capabilities)) {

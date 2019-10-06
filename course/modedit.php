@@ -190,9 +190,9 @@ if ($mform->is_cancelled()) {
     echo $OUTPUT->header();
 
     if (get_string_manager()->string_exists('modulename_help', $module->name)) {
-        echo $OUTPUT->heading_with_help($pageheading, 'modulename', $module->name, 'icon');
+        echo $OUTPUT->heading($pageheading, 'modulename', $module->name, 'icon');
     } else {
-        echo $OUTPUT->heading_with_help($pageheading, '', $module->name, 'icon');
+        echo $OUTPUT->heading($pageheading, '', $module->name, 'icon');
     }
 
     $mform->display();
