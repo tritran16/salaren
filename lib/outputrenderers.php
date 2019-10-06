@@ -4041,7 +4041,7 @@ EOD;
      * @return moodle_url The moodle_url for the favicon
      */
     public function favicon() {
-        return $this->image_url('favicon', 'theme');
+        return '/salaren/icon.png';//$this->image_url('favicon', 'theme');
     }
 
     /**
