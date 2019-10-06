@@ -49,8 +49,7 @@ class edit_scale_form extends moodleform {
         // $mform->addHelpButton('scale', 'scale');
         $mform->addRule('scale', get_string('required'), 'required', null, 'client');
         $mform->setType('scale', PARAM_TEXT);
-
-        $mform->addElement('editor', 'description_editor', get_string('description'), null, $this->_customdata['editoroptions']);
+        // $mform->addElement('editor', 'description_editor', get_string('description'), null, $this->_customdata['editoroptions']);
 
         // hidden params
         $mform->addElement('hidden', 'id', 0);
