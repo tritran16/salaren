@@ -3689,12 +3689,12 @@ function get_formatted_help_string($identifier, $component, $ajax = false, $a = 
             $data->doclink = new stdClass();
             $url = new moodle_url(get_docs_url($link));
             if ($ajax) {
-                $data->doclink->link = $url->out();
-                $data->doclink->linktext = $linktext;
-                $data->doclink->class = ($CFG->doctonewwindow) ? 'helplinkpopup' : '';
+                //$data->doclink->link = $url->out();
+                //$data->doclink->linktext = $linktext;
+                //$data->doclink->class = ($CFG->doctonewwindow) ? 'helplinkpopup' : '';
             } else {
-                $data->completedoclink = html_writer::tag('div', $OUTPUT->doc_link($link, $linktext),
-                    array('class' => 'helpdoclink'));
+               // $data->completedoclink = html_writer::tag('div', $OUTPUT->doc_link($link, $linktext),
+               //     array('class' => 'helpdoclink'));
             }
         }
     } else {
