@@ -28,8 +28,8 @@ if (!file_exists('../config.php')) {
     header('Location: ../install.php');
     die();
 }
-header('Location: ../admin/search.php');
-die();
+// header('Location: ../admin/search.php');
+// die();
 
 // Check that PHP is of a sufficient version as soon as possible.
 require_once(__DIR__.'/../lib/phpminimumversionlib.php');
