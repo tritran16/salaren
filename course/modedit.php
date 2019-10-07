@@ -132,6 +132,7 @@ $PAGE->set_pagelayout('admin');
 
 $modmoodleform = "$CFG->dirroot/mod/$module->name/mod_form.php";
 if (file_exists($modmoodleform)) {
+
     require_once($modmoodleform);
 } else {
     print_error('noformdesc');
@@ -172,7 +173,6 @@ if ($mform->is_cancelled()) {
 
     $streditinga = get_string('editinga', 'moodle', $fullmodulename);
     $strmodulenameplural = get_string('modulenameplural', $module->name);
-
     if (!empty($cm->id)) {
         $context = context_module::instance($cm->id);
     } else {
@@ -189,11 +189,11 @@ if ($mform->is_cancelled()) {
 
     echo $OUTPUT->header();
 
-    if (get_string_manager()->string_exists('modulename_help', $module->name)) {
+    /*if (get_string_manager()->string_exists('modulename_help', $module->name)) {
         echo $OUTPUT->heading($pageheading, 'modulename', $module->name, 'icon');
     } else {
         echo $OUTPUT->heading($pageheading, '', $module->name, 'icon');
-    }
+    }*/
 
     $mform->display();
 
