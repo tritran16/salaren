@@ -90,10 +90,10 @@ class login implements renderable, templatable {
         $this->canloginbyemail = !empty($CFG->authloginviaemail);
         $this->cansignup = $CFG->registerauth == 'email' || !empty($CFG->registerauth);
         if ($CFG->rememberusername == 0) {
-            // $this->cookieshelpicon = new help_icon('cookiesenabledonlysession', 'core');
+            $this->cookieshelpicon = new help_icon('cookiesenabledonlysession', 'core');
             $this->rememberusername = false;
         } else {
-            // $this->cookieshelpicon = new help_icon('cookiesenabled', 'core');
+            $this->cookieshelpicon = new help_icon('cookiesenabled', 'core');
             $this->rememberusername = true;
         }
 
@@ -138,7 +138,7 @@ class login implements renderable, templatable {
         $data->canloginasguest = $this->canloginasguest;
         $data->canloginbyemail = $this->canloginbyemail;
         $data->cansignup = $this->cansignup;
-        $data->cookieshelpicon = $this->cookieshelpicon->export_for_template($output);
+        //$data->cookieshelpicon = $this->cookieshelpicon->export_for_template($output);
         $data->error = $this->error;
         $data->forgotpasswordurl = $this->forgotpasswordurl->out(false);
         $data->hasidentityproviders = !empty($this->identityproviders);
