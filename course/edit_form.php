@@ -190,26 +190,26 @@ class course_edit_form extends moodleform {
         // Appearance.
         $mform->addElement('header', 'appearancehdr', get_string('appearance'));
 
-        if (!empty($CFG->allowcoursethemes)) {
-            $themeobjects = get_list_of_themes();
-            $themes=array();
-            $themes[''] = get_string('forceno');
-            foreach ($themeobjects as $key=>$theme) {
-                if (empty($theme->hidefromselector)) {
-                    $themes[$key] = get_string('pluginname', 'theme_'.$theme->name);
-                }
-            }
-            $mform->addElement('select', 'theme', get_string('forcetheme'), $themes);
-        }
-
-        $languages=array();
-        $languages[''] = get_string('forceno');
-        $languages += get_string_manager()->get_list_of_translations();
-        if ((empty($course->id) && guess_if_creator_will_have_course_capability('moodle/course:setforcedlanguage', $categorycontext))
-                || (!empty($course->id) && has_capability('moodle/course:setforcedlanguage', $coursecontext))) {
-            $mform->addElement('select', 'lang', get_string('forcelanguage'), $languages);
-            $mform->setDefault('lang', $courseconfig->lang);
-        }
+//        if (!empty($CFG->allowcoursethemes)) {
+//            $themeobjects = get_list_of_themes();
+//            $themes=array();
+//            $themes[''] = get_string('forceno');
+//            foreach ($themeobjects as $key=>$theme) {
+//                if (empty($theme->hidefromselector)) {
+//                    $themes[$key] = get_string('pluginname', 'theme_'.$theme->name);
+//                }
+//            }
+//            $mform->addElement('select', 'theme', get_string('forcetheme'), $themes);
+//        }
+//
+//        $languages=array();
+//        $languages[''] = get_string('forceno');
+//        $languages += get_string_manager()->get_list_of_translations();
+//        if ((empty($course->id) && guess_if_creator_will_have_course_capability('moodle/course:setforcedlanguage', $categorycontext))
+//                || (!empty($course->id) && has_capability('moodle/course:setforcedlanguage', $coursecontext))) {
+//            $mform->addElement('select', 'lang', get_string('forcelanguage'), $languages);
+//            $mform->setDefault('lang', $courseconfig->lang);
+//        }
 
         // Multi-Calendar Support - see MDL-18375.
         $calendartypes = \core_calendar\type_factory::get_list_of_calendar_types();
@@ -264,52 +264,52 @@ class course_edit_form extends moodleform {
         $mform->setDefault('maxbytes', $courseconfig->maxbytes);
 
         // Completion tracking.
-        if (completion_info::is_enabled_for_site()) {
-            $mform->addElement('header', 'completionhdr', get_string('completion', 'completion'));
-            $mform->addElement('selectyesno', 'enablecompletion', get_string('enablecompletion', 'completion'));
-            $mform->setDefault('enablecompletion', $courseconfig->enablecompletion);
-            $mform->addHelpButton('enablecompletion', 'enablecompletion', 'completion');
-        } else {
-            $mform->addElement('hidden', 'enablecompletion');
-            $mform->setType('enablecompletion', PARAM_INT);
-            $mform->setDefault('enablecompletion', 0);
-        }
+        //if (completion_info::is_enabled_for_site()) {
+//            $mform->addElement('header', 'completionhdr', get_string('completion', 'completion'));
+//            $mform->addElement('selectyesno', 'enablecompletion', get_string('enablecompletion', 'completion'));
+//            $mform->setDefault('enablecompletion', $courseconfig->enablecompletion);
+//            $mform->addHelpButton('enablecompletion', 'enablecompletion', 'completion');
+        //} else {
+         //   $mform->addElement('hidden', 'enablecompletion');
+         //   $mform->setType('enablecompletion', PARAM_INT);
+         //   $mform->setDefault('enablecompletion', 0);
+        //}
 
         enrol_course_edit_form($mform, $course, $context);
 
-        $mform->addElement('header','groups', get_string('groupsettingsheader', 'group'));
-
-        $choices = array();
-        $choices[NOGROUPS] = get_string('groupsnone', 'group');
-        $choices[SEPARATEGROUPS] = get_string('groupsseparate', 'group');
-        $choices[VISIBLEGROUPS] = get_string('groupsvisible', 'group');
-        $mform->addElement('select', 'groupmode', get_string('groupmode', 'group'), $choices);
-        $mform->addHelpButton('groupmode', 'groupmode', 'group');
-        $mform->setDefault('groupmode', $courseconfig->groupmode);
-
-        $mform->addElement('selectyesno', 'groupmodeforce', get_string('groupmodeforce', 'group'));
-        $mform->addHelpButton('groupmodeforce', 'groupmodeforce', 'group');
-        $mform->setDefault('groupmodeforce', $courseconfig->groupmodeforce);
-
-        //default groupings selector
-        $options = array();
-        $options[0] = get_string('none');
-        $mform->addElement('select', 'defaultgroupingid', get_string('defaultgrouping', 'group'), $options);
+//        $mform->addElement('header','groups', get_string('groupsettingsheader', 'group'));
+//
+//        $choices = array();
+//        $choices[NOGROUPS] = get_string('groupsnone', 'group');
+//        $choices[SEPARATEGROUPS] = get_string('groupsseparate', 'group');
+//        $choices[VISIBLEGROUPS] = get_string('groupsvisible', 'group');
+//        $mform->addElement('select', 'groupmode', get_string('groupmode', 'group'), $choices);
+//        $mform->addHelpButton('groupmode', 'groupmode', 'group');
+//        $mform->setDefault('groupmode', $courseconfig->groupmode);
+//
+//        $mform->addElement('selectyesno', 'groupmodeforce', get_string('groupmodeforce', 'group'));
+//        $mform->addHelpButton('groupmodeforce', 'groupmodeforce', 'group');
+//        $mform->setDefault('groupmodeforce', $courseconfig->groupmodeforce);
+//
+//        //default groupings selector
+//        $options = array();
+//        $options[0] = get_string('none');
+//        $mform->addElement('select', 'defaultgroupingid', get_string('defaultgrouping', 'group'), $options);
 
         if ((empty($course->id) && guess_if_creator_will_have_course_capability('moodle/course:renameroles', $categorycontext))
                 || (!empty($course->id) && has_capability('moodle/course:renameroles', $coursecontext))) {
             // Customizable role names in this course.
-            $mform->addElement('header', 'rolerenaming', get_string('rolerenaming'));
-            $mform->addHelpButton('rolerenaming', 'rolerenaming');
-
-            if ($roles = get_all_roles()) {
-                $roles = role_fix_names($roles, null, ROLENAME_ORIGINAL);
-                $assignableroles = get_roles_for_contextlevels(CONTEXT_COURSE);
-                foreach ($roles as $role) {
-                    $mform->addElement('text', 'role_' . $role->id, get_string('yourwordforx', '', $role->localname));
-                    $mform->setType('role_' . $role->id, PARAM_TEXT);
-                }
-            }
+//            $mform->addElement('header', 'rolerenaming', get_string('rolerenaming'));
+//            $mform->addHelpButton('rolerenaming', 'rolerenaming');
+//
+//            if ($roles = get_all_roles()) {
+//                $roles = role_fix_names($roles, null, ROLENAME_ORIGINAL);
+//                $assignableroles = get_roles_for_contextlevels(CONTEXT_COURSE);
+//                foreach ($roles as $role) {
+//                    $mform->addElement('text', 'role_' . $role->id, get_string('yourwordforx', '', $role->localname));
+//                    $mform->setType('role_' . $role->id, PARAM_TEXT);
+//                }
+//            }
         }
 
         if (core_tag_tag::is_enabled('core', 'course') &&
