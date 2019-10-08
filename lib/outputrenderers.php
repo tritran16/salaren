@@ -1427,7 +1427,16 @@ class core_renderer extends renderer_base {
 
         $this->page->set_state(moodle_page::STATE_DONE);
 
-        return $output . $footer;
+        $hide = '<style> 
+                .usertour { display: none}
+            </style>';
+        $pos = strrpos($footer, '</div>');
+        $copyright = '<div class="homelink"> <b>&copy;salaren 2019, all right reserved.</b></div> </div>';
+        if($pos !== false){
+            $footer = substr_replace($footer, $copyright, $pos, strlen('</footer>'));
+        }
+
+        return $output . $hide. $footer;
     }
 
     /**
