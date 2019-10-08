@@ -1429,9 +1429,14 @@ class core_renderer extends renderer_base {
 
         $hide = '<style> 
                 .usertour { display: none}
+                .copyright {
+                    background-color: #373a3c!important;
+                    color: #f8f9fa!important;
+                    padding-left: 18px;
+                }
             </style>';
         $pos = strrpos($footer, '</div>');
-        $copyright = '<div class="homelink"> <b>&copy;salaren 2019, all right reserved.</b></div> </div>';
+        $copyright = '<div class="copyright"> <b>&copy;salaren 2019, all right reserved.</b></div> </div>';
         if($pos !== false){
             $footer = substr_replace($footer, $copyright, $pos, strlen('</footer>'));
         }
