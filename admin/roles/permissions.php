@@ -58,11 +58,11 @@ require_login($course, false, $cm);
 require_capability('moodle/role:review', $context);
 
 navigation_node::override_active_url($url);
-// $pageurl = new moodle_url($url);
+$pageurl = new moodle_url($url);
+$returnurl = '#';
 if ($returnurl) {
     $pageurl->param('returnurl', $returnurl);
 }
-$pageurl->param('returnurl', '#');
 $PAGE->set_url($pageurl);
 
 if ($context->contextlevel == CONTEXT_USER and $USER->id != $context->instanceid) {
