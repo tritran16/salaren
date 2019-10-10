@@ -158,7 +158,7 @@ if ($capability && ($allowoverrides || ($allowsafeoverrides && is_safe_capabilit
         // Display and print.
         echo $OUTPUT->header();
         echo $OUTPUT->heading($title);
-        echo $OUTPUT->confirm($message, $continueurl, $PAGE->url);
+        echo $OUTPUT->confirm($message, $continueurl, '1111');
         echo $OUTPUT->footer();
         die;
     }
