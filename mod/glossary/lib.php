@@ -3086,7 +3086,7 @@ function glossary_reset_userdata($data) {
  * @return array
  */
 function glossary_get_extra_capabilities() {
-    return ['moodle/rating:view', 'moodle/rating:viewany', 'moodle/rating:viewall', 'moodle/rating:rate',
+    return ['salaren/rating:view', 'salaren/rating:viewany', 'salaren/rating:viewall', 'salaren/rating:rate',
             'moodle/comment:view', 'moodle/comment:post', 'moodle/comment:delete'];
 }
 

@@ -514,7 +514,7 @@ abstract class moodleform_mod extends moodleform {
                 $isupdate = true;
                 $context = context_module::instance($this->_cm->id);
 
-                $rolenames = get_role_names_with_caps_in_context($context, array('moodle/rating:rate', 'mod/'.$this->_cm->modname.':rate'));
+                $rolenames = get_role_names_with_caps_in_context($context, array('salaren/rating:rate', 'mod/'.$this->_cm->modname.':rate'));
                 $rolenamestring = implode(', ', $rolenames);
             } else {
                 $rolenamestring = get_string('capabilitychecknotavailable','rating');
