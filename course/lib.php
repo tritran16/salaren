@@ -1894,7 +1894,7 @@ function course_get_cm_edit_actions(cm_info $mod, $indent = -1, $sr = null) {
     if (!isset($str)) {
         $str = get_strings(array('delete', 'move', 'moveright', 'moveleft',
             'editsettings', 'duplicate', 'modhide', 'makeavailable', 'makeunavailable', 'modshow'), 'moodle');
-        // $str->assign         = get_string('assignroles', 'role');
+        $str->assign         = get_string('assignroles', 'role');
         $str->groupsnone     = get_string('clicktochangeinbrackets', 'moodle', get_string("groupsnone"));
         $str->groupsseparate = get_string('clicktochangeinbrackets', 'moodle', get_string("groupsseparate"));
         $str->groupsvisible  = get_string('clicktochangeinbrackets', 'moodle', get_string("groupsvisible"));
@@ -2058,12 +2058,12 @@ function course_get_cm_edit_actions(cm_info $mod, $indent = -1, $sr = null) {
 
     // Assign.
     if (has_capability('moodle/role:assign', $modcontext)){
-        $actions['assign'] = new action_menu_link_secondary(
-            new moodle_url('/admin/roles/assign.php', array('contextid' => $modcontext->id)),
-            new pix_icon('t/assignroles', '', 'moodle', array('class' => 'iconsmall')),
-            $str->assign,
-            array('class' => 'editing_assign', 'data-action' => 'assignroles', 'data-sectionreturn' => $sr)
-        );
+//        $actions['assign'] = new action_menu_link_secondary(
+//            new moodle_url('/admin/roles/assign.php', array('contextid' => $modcontext->id)),
+//            new pix_icon('t/assignroles', '', 'moodle', array('class' => 'iconsmall')),
+//            $str->assign,
+//            array('class' => 'editing_assign', 'data-action' => 'assignroles', 'data-sectionreturn' => $sr)
+//        );
     }
 
     // Delete.
