@@ -158,7 +158,7 @@ if ($capability && ($allowoverrides || ($allowsafeoverrides && is_safe_capabilit
         // Display and print.
         echo $OUTPUT->header();
         echo $OUTPUT->heading($title);
-        //echo $OUTPUT->confirm($message, $continueurl, $PAGE->url);
+        echo $OUTPUT->confirm($message, $continueurl, $PAGE->url);
         echo $OUTPUT->footer();
         die;
     }
@@ -222,7 +222,7 @@ if ($overridableroles) {
     $overrideurl = new moodle_url('/admin/roles/override.php', array('contextid' => $context->id));
     $select = new single_select($overrideurl, 'roleid', $nameswithcounts);
     $select->label = get_string('advancedoverride', 'core_role');
-    echo html_writer::tag('div', $OUTPUT->render($select), array('class'=>'advancedoverride'));
+    //echo html_writer::tag('div', $OUTPUT->render($select), array('class'=>'advancedoverride'));
 }
 $table->display();
 echo $OUTPUT->box_end();
