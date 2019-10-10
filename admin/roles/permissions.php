@@ -62,7 +62,7 @@ navigation_node::override_active_url($url);
 if ($returnurl) {
     $pageurl->param('returnurl', $returnurl);
 }
-$pageurl = '#';
+$pageurl->param('returnurl', '#');
 $PAGE->set_url($pageurl);
 
 if ($context->contextlevel == CONTEXT_USER and $USER->id != $context->instanceid) {
