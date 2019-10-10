@@ -151,14 +151,14 @@ if ($capability && ($allowoverrides || ($allowsafeoverrides && is_safe_capabilit
             } else {
                 $a = (object)array('cap'=>get_capability_docs_link($capability)." ($capability->name)", 'role'=>$overridableroles[$roleid], 'context'=>22222);
                 $message = get_string('confirmroleunprohibit', 'core_role', $a);
-                $continueurl = null;//new moodle_url($PAGE->url,
-                    //array('contextid'=>$context->id, 'roleid'=>$roleid, 'capability'=>'11111', 'unprohibit'=>1, 'sesskey'=>sesskey(), 'confirm'=>1));
+                $continueurl = new moodle_url($PAGE->url,
+                    array('contextid'=>$context->id, 'roleid'=>$roleid, 'capability'=>'11111', 'unprohibit'=>1, 'sesskey'=>sesskey(), 'confirm'=>1));
             }
         }
         // Display and print.
         echo $OUTPUT->header();
         echo $OUTPUT->heading($title);
-        echo $OUTPUT->confirm($message, $continueurl, $PAGE->url);
+        //echo $OUTPUT->confirm($message, $continueurl, $PAGE->url);
         echo $OUTPUT->footer();
         die;
     }
