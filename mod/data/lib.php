@@ -725,7 +725,7 @@ function data_generate_tag_form($recordid = false, $selected = []) {
     }
     $str .= '</select>';
 
-    if (has_capability('moodle/tag:manage', context_system::instance()) && $showstandard) {
+    if (has_capability('salaren/tag:manage', context_system::instance()) && $showstandard) {
         $url = new moodle_url('/tag/manage.php', array('tc' => core_tag_area::get_collection('mod_data',
             'data_records')));
         $str .= ' ' . $OUTPUT->action_link($url, get_string('managestandardtags', 'tag'));
@@ -1193,7 +1193,7 @@ function data_user_outline($course, $user, $mod, $data) {
                                            ORDER BY timemodified DESC', array($data->id, $user->id), true);
         $result->time = $lastrecord->timemodified;
         if ($grade) {
-            if (!$grade->hidden || has_capability('moodle/grade:viewhidden', context_course::instance($course->id))) {
+            if (!$grade->hidden || has_capability('salaren/grade:viewhidden', context_course::instance($course->id))) {
                 $result->info .= ', ' . get_string('grade') . ': ' . $grade->str_long_grade;
             } else {
                 $result->info = get_string('grade') . ': ' . get_string('hidden', 'grades');
@@ -1202,7 +1202,7 @@ function data_user_outline($course, $user, $mod, $data) {
         return $result;
     } else if ($grade) {
         $result = new stdClass();
-        if (!$grade->hidden || has_capability('moodle/grade:viewhidden', context_course::instance($course->id))) {
+        if (!$grade->hidden || has_capability('salaren/grade:viewhidden', context_course::instance($course->id))) {
             $result->info = get_string('grade') . ': ' . $grade->str_long_grade;
         } else {
             $result->info = get_string('grade') . ': ' . get_string('hidden', 'grades');
@@ -1238,7 +1238,7 @@ function data_user_complete($course, $user, $mod, $data) {
     $grades = grade_get_grades($course->id, 'mod', 'data', $data->id, $user->id);
     if (!empty($grades->items[0]->grades)) {
         $grade = reset($grades->items[0]->grades);
-        if (!$grade->hidden || has_capability('moodle/grade:viewhidden', context_course::instance($course->id))) {
+        if (!$grade->hidden || has_capability('salaren/grade:viewhidden', context_course::instance($course->id))) {
             echo $OUTPUT->container(get_string('grade').': '.$grade->str_long_grade);
             if ($grade->str_feedback) {
                 echo $OUTPUT->container(get_string('feedback').': '.$grade->str_feedback);
@@ -1703,7 +1703,7 @@ function data_rating_validate($params) {
             throw new rating_exception('cannotfindgroup');//something is wrong
         }
 
-        if (!groups_is_member($groupid) and !has_capability('moodle/site:accessallgroups', $context)) {
+        if (!groups_is_member($groupid) and !has_capability('salaren/site:accessallgroups', $context)) {
             // do not allow rating of posts from other groups when in SEPARATEGROUPS or VISIBLEGROUPS
             throw new rating_exception('notmemberofgroup');
         }
@@ -2167,18 +2167,18 @@ function data_convert_to_roles($data, $teacherroles=array(), $studentroles=array
             break;
         case SEPARATEGROUPS:
             foreach ($studentroles as $studentrole) {
-                assign_capability('moodle/site:accessallgroups', CAP_PREVENT, $studentrole->id, $context->id);
+                assign_capability('salaren/site:accessallgroups', CAP_PREVENT, $studentrole->id, $context->id);
             }
             foreach ($teacherroles as $teacherrole) {
-                assign_capability('moodle/site:accessallgroups', CAP_ALLOW, $teacherrole->id, $context->id);
+                assign_capability('salaren/site:accessallgroups', CAP_ALLOW, $teacherrole->id, $context->id);
             }
             break;
         case VISIBLEGROUPS:
             foreach ($studentroles as $studentrole) {
-                assign_capability('moodle/site:accessallgroups', CAP_ALLOW, $studentrole->id, $context->id);
+                assign_capability('salaren/site:accessallgroups', CAP_ALLOW, $studentrole->id, $context->id);
             }
             foreach ($teacherroles as $teacherrole) {
-                assign_capability('moodle/site:accessallgroups', CAP_ALLOW, $teacherrole->id, $context->id);
+                assign_capability('salaren/site:accessallgroups', CAP_ALLOW, $teacherrole->id, $context->id);
             }
             break;
     }
@@ -2360,7 +2360,7 @@ function data_user_can_add_entry($data, $currentgroup, $groupmode, $context = nu
         return false;
     }
 
-    if (!$groupmode or has_capability('moodle/site:accessallgroups', $context)) {
+    if (!$groupmode or has_capability('salaren/site:accessallgroups', $context)) {
         return true;
     }
 
@@ -3020,8 +3020,8 @@ function data_reset_userdata($data) {
  * @return array
  */
 function data_get_extra_capabilities() {
-    return ['moodle/rating:view', 'moodle/rating:viewany', 'moodle/rating:viewall', 'moodle/rating:rate',
-            'moodle/comment:view', 'moodle/comment:post', 'moodle/comment:delete'];
+    return ['salaren/rating:view', 'salaren/rating:viewany', 'salaren/rating:viewall', 'salaren/rating:rate',
+            'salaren/comment:view', 'salaren/comment:post', 'salaren/comment:delete'];
 }
 
 /**
@@ -3306,7 +3306,7 @@ function data_get_file_info($browser, $areas, $course, $cm, $context, $filearea,
     // group access
     if ($record->groupid) {
         $groupmode = groups_get_activity_groupmode($cm, $course);
-        if ($groupmode == SEPARATEGROUPS and !has_capability('moodle/site:accessallgroups', $context)) {
+        if ($groupmode == SEPARATEGROUPS and !has_capability('salaren/site:accessallgroups', $context)) {
             if (!groups_is_member($record->groupid)) {
                 return null;
             }
@@ -3328,7 +3328,7 @@ function data_get_file_info($browser, $areas, $course, $cm, $context, $filearea,
 
     // Checks to see if the user can manage files or is the owner.
     // TODO MDL-33805 - Do not use userid here and move the capability check above.
-    if (!has_capability('moodle/course:managefiles', $context) && $storedfile->get_userid() != $USER->id) {
+    if (!has_capability('salaren/course:managefiles', $context) && $storedfile->get_userid() != $USER->id) {
         return null;
     }
 
@@ -3392,7 +3392,7 @@ function data_pluginfile($course, $cm, $context, $filearea, $args, $forcedownloa
         // group access
         if ($record->groupid) {
             $groupmode = groups_get_activity_groupmode($cm, $course);
-            if ($groupmode == SEPARATEGROUPS and !has_capability('moodle/site:accessallgroups', $context)) {
+            if ($groupmode == SEPARATEGROUPS and !has_capability('salaren/site:accessallgroups', $context)) {
                 if (!groups_is_member($record->groupid)) {
                     return false;
                 }
@@ -3806,7 +3806,7 @@ function data_comment_validate($comment_param) {
     // group access
     if ($record->groupid) {
         $groupmode = groups_get_activity_groupmode($cm, $course);
-        if ($groupmode == SEPARATEGROUPS and !has_capability('moodle/site:accessallgroups', $context)) {
+        if ($groupmode == SEPARATEGROUPS and !has_capability('salaren/site:accessallgroups', $context)) {
             if (!groups_is_member($record->groupid)) {
                 throw new comment_exception('notmemberofgroup');
             }
@@ -4667,7 +4667,7 @@ function mod_data_core_calendar_event_timestart_updated(\calendar_event $event, 
     $context = context_module::instance($coursemodule->id);
 
     // The user does not have the capability to modify this activity.
-    if (!has_capability('moodle/course:manageactivities', $context)) {
+    if (!has_capability('salaren/course:manageactivities', $context)) {
         return;
     }
 
