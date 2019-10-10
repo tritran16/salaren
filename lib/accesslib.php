@@ -2372,7 +2372,7 @@ function get_all_risks() {
 function get_capability_docs_link($capability) {
     $url = get_docs_url('Capabilities/' . $capability->name);
     //return '<a onclick="this.target=\'docspopup\'" href="' . $url . '">' . get_capability_string($capability->name) . '</a>';
-    return '<a onclick="javascript:void(0)" href="#">' . get_capability_string(str_replace('moodle', 'salaren', $capability->name, 1) ). '</a>';
+    return '<a onclick="javascript:void(0)" href="#">' . get_capability_string(str_replace('moodle', 'salaren', $capability->name) ). '</a>';
 }
 
 /**
