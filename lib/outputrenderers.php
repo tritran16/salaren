@@ -1438,7 +1438,7 @@ class core_renderer extends renderer_base {
         $pos = strrpos($footer, '</div>');
         $copyright = '<div class="copyright"> <b>&copy;salaren 2019, all right reserved.</b></div> </div>';
         if($pos !== false){
-            $footer = substr_replace($footer, $copyright, $pos, strlen('</footer>'));
+            $footer = substr_replace($footer, $copyright, $pos, strlen('</div>'));
         }
 
         return $output . $hide. $footer;

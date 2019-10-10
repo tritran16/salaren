@@ -2606,7 +2606,7 @@ class page_wiki_admin extends page_wiki {
         $a = new stdClass();
         $a->date = userdate($this->page->timecreated, get_string('strftimedaydatetime', 'langconfig'));
         $a->username = fullname($creator);
-        echo $OUTPUT->heading(get_string('createddate', 'wiki', $a), 4);
+        echo $OUTPUT->heading(get_string('createddate', 2, 'wiki', $a), 4);
         if ($versioncount > 0) {
             /// If there is only one version, we don't need radios nor forms
             if (count($versions) == 1) {
