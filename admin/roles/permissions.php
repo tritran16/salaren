@@ -82,7 +82,7 @@ list($overridableroles, $overridecounts, $nameswithcounts) = get_overridable_rol
 if ($capability) {
     $capability = $DB->get_record('capabilities', array('name'=>$capability), '*', MUST_EXIST);
 }
-
+print_r($capability); die;
 $allowoverrides     = has_capability('moodle/role:override', $context);
 $allowsafeoverrides = has_capability('moodle/role:safeoverride', $context);
 
