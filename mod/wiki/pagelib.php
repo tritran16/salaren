@@ -1197,7 +1197,7 @@ class page_wiki_history extends page_wiki {
         $html = '';
 
         $html .= $OUTPUT->container_start('wiki_headingtitle');
-        $html .= $OUTPUT->heading(format_string($this->title), 'history', 'wiki', '', '', 3);
+        $html .= $OUTPUT->heading(format_string($this->title), 2,'history', 'wiki', '', '', 3);
         $html .= $OUTPUT->container_end();
         echo $html;
     }
