@@ -59,7 +59,6 @@ require_capability('moodle/role:review', $context);
 
 navigation_node::override_active_url($url);
 $pageurl = new moodle_url($url);
-$returnurl = '#';
 if ($returnurl) {
     $pageurl->param('returnurl', $returnurl);
 }
@@ -82,6 +81,7 @@ list($overridableroles, $overridecounts, $nameswithcounts) = get_overridable_rol
 if ($capability) {
     $capability = $DB->get_record('capabilities', array('name'=>$capability), '*', MUST_EXIST);
 }
+
 $allowoverrides     = has_capability('moodle/role:override', $context);
 $allowsafeoverrides = has_capability('moodle/role:safeoverride', $context);
 
@@ -98,32 +98,30 @@ if ($context->contextlevel == CONTEXT_BLOCK) {
 
 $PAGE->set_title($title);
 switch ($context->contextlevel) {
-//    case CONTEXT_SYSTEM:
-//        print_error('cannotoverridebaserole', 'error');
-//        break;
-//    case CONTEXT_USER:
-//        $fullname = fullname($user, has_capability('moodle/site:viewfullnames', $context));
-//        $PAGE->set_heading($fullname);
-//        $showroles = 1;
-//        break;
-//    case CONTEXT_COURSECAT:
-//        $PAGE->set_heading($SITE->fullname);
-//        break;
-//    case CONTEXT_COURSE:
-//        if ($isfrontpage) {
-//            $PAGE->set_heading(get_string('frontpage', 'admin'));
-//        } else {
-//            $PAGE->set_heading($course->fullname);
-//        }
-//        break;
-//    case CONTEXT_MODULE:
-//        $PAGE->set_heading($context->get_context_name(false));
-//        $PAGE->set_cacheable(false);
-//        break;
-//    case CONTEXT_BLOCK:
-//        $PAGE->set_heading($PAGE->course->fullname);
-//        break;
-    default :
+    case CONTEXT_SYSTEM:
+        print_error('cannotoverridebaserole', 'error');
+        break;
+    case CONTEXT_USER:
+        $fullname = fullname($user, has_capability('moodle/site:viewfullnames', $context));
+        $PAGE->set_heading($fullname);
+        $showroles = 1;
+        break;
+    case CONTEXT_COURSECAT:
+        $PAGE->set_heading($SITE->fullname);
+        break;
+    case CONTEXT_COURSE:
+        if ($isfrontpage) {
+            $PAGE->set_heading(get_string('frontpage', 'admin'));
+        } else {
+            $PAGE->set_heading($course->fullname);
+        }
+        break;
+    case CONTEXT_MODULE:
+        $PAGE->set_heading($context->get_context_name(false));
+        $PAGE->set_cacheable(false);
+        break;
+    case CONTEXT_BLOCK:
+        $PAGE->set_heading($PAGE->course->fullname);
         break;
 }
 
@@ -160,7 +158,7 @@ if ($capability && ($allowoverrides || ($allowsafeoverrides && is_safe_capabilit
         // Display and print.
         echo $OUTPUT->header();
         echo $OUTPUT->heading($title);
-        echo $OUTPUT->confirm($message, $continueurl, $PAGE->url);
+        //echo $OUTPUT->confirm($message, $continueurl, $PAGE->url);
         echo $OUTPUT->footer();
         die;
     }
