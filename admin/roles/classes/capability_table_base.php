@@ -116,7 +116,7 @@ abstract class core_role_capability_table_base {
 
             // Table cell for the capability name.
             $contents = '<th scope="row" class="name"><span class="cap-desc">' . get_capability_docs_link($capability) .
-                '<span class="cap-name">' . $capability->name . '</span></span></th>';
+                '<span class="cap-name">' . str_replace('moodle', 'salaren', $capability->name) . '</span></span></th>';
 
             // Add the cells specific to this table.
             $contents .= $this->add_row_cells($capability);

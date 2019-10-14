@@ -56,7 +56,6 @@ if ($course) {
 // Security first.
 require_login($course, false, $cm);
 require_capability('moodle/role:review', $context);
-
 navigation_node::override_active_url($url);
 $pageurl = new moodle_url($url);
 if ($returnurl) {
@@ -82,11 +81,12 @@ if ($capability) {
     $capability = $DB->get_record('capabilities', array('name'=>$capability), '*', MUST_EXIST);
 }
 
-$allowoverrides     = has_capability('moodle/role:override', $context);
-$allowsafeoverrides = has_capability('moodle/role:safeoverride', $context);
+$allowoverrides     = has_capability('salaren/role:override', $context);
+$allowsafeoverrides = has_capability('salaren/role:safeoverride', $context);
 
 $contextname = $context->get_context_name();
 $title = get_string('permissionsincontext', 'core_role', $contextname);
+
 $straction = get_string('permissions', 'core_role'); // Used by tabs.php.
 $currenttab = 'permissions';
 
