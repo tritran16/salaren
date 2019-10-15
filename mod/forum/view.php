@@ -80,8 +80,15 @@ $PAGE->set_context($forum->get_context());
 $PAGE->set_title($forum->get_name());
 $PAGE->add_body_class('forumtype-' . $forum->get_type());
 $PAGE->set_heading($course->fullname);
-$PAGE->set_button(forum_search_form($course, $search));
 
+if (empty($cm->visible) && !has_capability('moodle/course:viewhiddenactivities', $forum->get_context())) {
+    redirect(
+        $urlfactory->get_course_url_from_forum($forum),
+        get_string('activityiscurrentlyhidden'),
+        null,
+        \core\output\notification::NOTIFY_WARNING
+    );
+}
 
 if (!$capabilitymanager->can_view_discussions($USER)) {
     redirect(
