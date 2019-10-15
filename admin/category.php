@@ -117,15 +117,16 @@ foreach ($settingspage->children as $childpage) {
             $outputhtml .= html_writer::end_tag('fieldset');
         }
     } else if ($childpage instanceof admin_category) {
-        $outputhtml .= $OUTPUT->heading(html_writer::link(new moodle_url('/'.$CFG->admin.'/category.php', array('category' => $childpage->name)), get_string('admincategory', 'admin', $childpage->visiblename)), 3);
+        $outputhtml .= $OUTPUT->heading(html_writer::link(new moodle_url('/'.$CFG->admin.'/category.php', array('category' => $childpage->name)), get_string('admincategory', 'admin', $childpage->visiblename), ['class' => $childpage->name]), 3);
     }
 }
 if ($savebutton) {
     $outputhtml .= html_writer::start_tag('div', array('class' => 'form-buttons'));
     $outputhtml .= html_writer::empty_tag('input', array('class' => 'btn btn-primary form-submit', 'type' => 'submit', 'value' => get_string('savechanges','admin')));
     $outputhtml .= html_writer::end_tag('div');
-}
 
+}
+$outputhtml .= '<style>.roles { display: none; } .privacy { display: none; }</style>';
 $visiblepathtosection = array_reverse($settingspage->visiblepath);
 $PAGE->set_title("$SITE->shortname: " . implode(": ",$visiblepathtosection));
 $PAGE->set_heading($SITE->fullname);
