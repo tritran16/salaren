@@ -123,13 +123,14 @@ if (!empty($CFG->enablerssfeeds) && !empty($CFG->forum_enablerssfeeds) && $forum
 }
 
 echo $OUTPUT->header();
+echo $OUTPUT->heading(format_string($forum->get_name()), 2);
 
 if ('single' !== $forum->get_type() && !empty($forum->get_intro())) {
     echo $OUTPUT->box(format_module_intro('forum', $forumrecord, $cm->id), 'generalbox', 'intro');
 }
 
 if ($mode) {
-    set_user_preference('forum_displaymode', $mode);
+    //set_user_preference('forum_displaymode', $mode);
 }
 
 $displaymode = get_user_preferences('forum_displaymode', $CFG->forum_displaymode);
