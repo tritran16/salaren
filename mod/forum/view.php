@@ -130,7 +130,7 @@ if ('single' !== $forum->get_type() && !empty($forum->get_intro())) {
 }
 
 if ($mode) {
-    //set_user_preference('forum_displaymode', $mode);
+    set_user_preference('forum_displaymode', $mode);
 }
 
 $displaymode = get_user_preferences('forum_displaymode', $CFG->forum_displaymode);
@@ -139,7 +139,7 @@ if ($sortorder) {
     set_user_preference('forum_discussionlistsortorder', $sortorder);
 }
 
-$sortorder = get_user_preferences('forum_discussionlistsortorder', $discussionlistvault::SORTORDER_LASTPOST_DESC);
+//$sortorder = get_user_preferences('forum_discussionlistsortorder', $discussionlistvault::SORTORDER_LASTPOST_DESC);
 
 // Fetch the current groupid.
 $groupid = groups_get_activity_group($cm, true) ?: null;
