@@ -1598,7 +1598,7 @@ class admin_settingpage implements part_of_admin_tree {
                 $data = $setting->get_setting();
                 // do not use defaults if settings not available - upgrade settings handles the defaults!
             }
-            $return .= $setting->output_html($data);
+            $return .= str_replace('moodle', 'salaren', $setting->output_html($data));
         }
         $return .= '</fieldset>';
         return $return;
