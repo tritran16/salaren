@@ -144,47 +144,6 @@ $sortorder = get_user_preferences('forum_discussionlistsortorder', $discussionli
 // Fetch the current groupid.
 $groupid = groups_get_activity_group($cm, true) ?: null;
 $rendererfactory = mod_forum\local\container::get_renderer_factory();
-switch ($forum->get_type()) {
-    case 'single':
-        $discussion = $discussionvault->get_last_discussion_in_forum($forum);
-        $discussioncount = $discussionvault->get_count_discussions_in_forum($forum);
-        $hasmultiplediscussions = $discussioncount > 1;
-        $discussionsrenderer = $rendererfactory->get_single_discussion_list_renderer($forum, $discussion,
-            $hasmultiplediscussions, $displaymode);
-        $post = $postvault->get_from_id($discussion->get_first_post_id());
-        $orderpostsby = $displaymode == FORUM_MODE_FLATNEWEST ? 'created DESC' : 'created ASC';
-        $replies = $postvault->get_replies_to_post(
-                $USER,
-                $post,
-                $capabilitymanager->can_view_any_private_reply($USER),
-                $orderpostsby
-            );
-        echo $discussionsrenderer->render($USER, $post, $replies);
 
-        if (!$CFG->forum_usermarksread && forum_tp_is_tracked($forumrecord, $USER)) {
-            $postids = array_map(function($post) {
-                return $post->get_id();
-            }, array_merge([$post], array_values($replies)));
-            forum_tp_mark_posts_read($USER, $postids);
-        }
-        break;
-    case 'blog':
-        $discussionsrenderer = $rendererfactory->get_blog_discussion_list_renderer($forum);
-        // Blog forums always show discussions newest first.
-        echo $discussionsrenderer->render($USER, $cm, $groupid, $discussionlistvault::SORTORDER_CREATED_DESC,
-            $pageno, $pagesize);
-
-        if (!$CFG->forum_usermarksread && forum_tp_is_tracked($forumrecord, $USER)) {
-            $discussions = mod_forum_get_discussion_summaries($forum, $USER, $groupid, null, $pageno, $pagesize);
-            $firstpostids = array_map(function($discussion) {
-                return $discussion->get_first_post()->get_id();
-            }, array_values($discussions));
-            forum_tp_mark_posts_read($USER, $firstpostids);
-        }
-        break;
-    default:
-        $discussionsrenderer = $rendererfactory->get_discussion_list_renderer($forum);
-        echo $discussionsrenderer->render($USER, $cm, $groupid, $sortorder, $pageno, $pagesize);
-}
 
 echo $OUTPUT->footer();
