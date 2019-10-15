@@ -82,14 +82,6 @@ $PAGE->add_body_class('forumtype-' . $forum->get_type());
 $PAGE->set_heading($course->fullname);
 $PAGE->set_button(forum_search_form($course, $search));
 
-if (empty($cm->visible) && !has_capability('moodle/course:viewhiddenactivities', $forum->get_context())) {
-    redirect(
-        $urlfactory->get_course_url_from_forum($forum),
-        get_string('activityiscurrentlyhidden'),
-        null,
-        \core\output\notification::NOTIFY_WARNING
-    );
-}
 
 if (!$capabilitymanager->can_view_discussions($USER)) {
     redirect(
@@ -103,7 +95,12 @@ if (!$capabilitymanager->can_view_discussions($USER)) {
 // Mark viewed and trigger the course_module_viewed event.
 $forumdatamapper = $legacydatamapperfactory->get_forum_data_mapper();
 $forumrecord = $forumdatamapper->to_legacy_object($forum);
-
+forum_view(
+    $forumrecord,
+    $forum->get_course_record(),
+    $forum->get_course_module_record(),
+    $forum->get_context()
+);
 
 // Return here if we post or set subscription etc.
 $SESSION->fromdiscussion = qualified_me();
