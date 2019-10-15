@@ -674,13 +674,13 @@ class rating_manager {
         // Check site capabilities.
         $settings->permissions = new stdClass;
         // Can view the aggregate of ratings of their own items.
-        $settings->permissions->view    = has_capability('salaren/rating:view', $options->context);
+        $settings->permissions->view    = has_capability('moodle/rating:view', $options->context);
         // Can view the aggregate of ratings of other people's items.
-        $settings->permissions->viewany = has_capability('salaren/rating:viewany', $options->context);
+        $settings->permissions->viewany = has_capability('moodle/rating:viewany', $options->context);
         // Can view individual ratings.
-        $settings->permissions->viewall = has_capability('salaren/rating:viewall', $options->context);
+        $settings->permissions->viewall = has_capability('moodle/rating:viewall', $options->context);
         // Can submit ratings.
-        $settings->permissions->rate    = has_capability('salaren/rating:rate', $options->context);
+        $settings->permissions->rate    = has_capability('moodle/rating:rate', $options->context);
 
         // Check module capabilities
         // This is mostly for backwards compatability with old modules that previously implemented their own ratings.

@@ -1910,7 +1910,7 @@ $capabilities = array(
             'user' => CAP_ALLOW
         )
     ),
-    'salaren/rating:view' => array(
+    'moodle/rating:view' => array(
 
         'captype' => 'read',
         'contextlevel' => CONTEXT_COURSE,
@@ -1922,20 +1922,7 @@ $capabilities = array(
             'manager' => CAP_ALLOW
         )
     ),
-    'salaren/rating:viewany' => array(
-
-        'riskbitmask' => RISK_PERSONAL,
-        'captype' => 'read',
-        'contextlevel' => CONTEXT_COURSE,
-        'archetypes' => array(
-            'user' => CAP_ALLOW,
-            'student' => CAP_ALLOW,
-            'teacher' => CAP_ALLOW,
-            'editingteacher' => CAP_ALLOW,
-            'manager' => CAP_ALLOW
-        )
-    ),
-    'salaren/rating:viewall' => array(
+    'moodle/rating:viewany' => array(
 
         'riskbitmask' => RISK_PERSONAL,
         'captype' => 'read',
@@ -1948,7 +1935,20 @@ $capabilities = array(
             'manager' => CAP_ALLOW
         )
     ),
-    'salaren/rating:rate' => array(
+    'moodle/rating:viewall' => array(
+
+        'riskbitmask' => RISK_PERSONAL,
+        'captype' => 'read',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => array(
+            'user' => CAP_ALLOW,
+            'student' => CAP_ALLOW,
+            'teacher' => CAP_ALLOW,
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        )
+    ),
+    'moodle/rating:rate' => array(
 
         'captype' => 'write',
         'contextlevel' => CONTEXT_COURSE,

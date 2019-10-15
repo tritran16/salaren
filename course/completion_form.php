@@ -96,7 +96,7 @@ class course_completion_form extends moodleform {
                 $criteria = new completion_criteria_activity(array_merge($params, $params_a));
                 $criteria->config_form_display($mform, $activity);
             }
-            $mform->addElement('static', 'criteria_role_note', '', get_string('activitiescompletednote', 'core_completion'));
+            $mform->addElement('static', 'criteria_role_note', '', str_replace("moodle", "salaren", get_string('activitiescompletednote', 'core_completion')));
 
             if (count($activities) > 1) {
                 // Map aggregation methods to context-sensitive human readable dropdown menu.

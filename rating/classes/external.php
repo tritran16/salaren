@@ -101,7 +101,7 @@ class core_rating_external extends external_api {
                         'ratingarea' => $ratingarea,
                         'itemid' => $itemid,
                         'scaleid' => $scaleid);
-        if (!has_capability('salaren/rating:view', $context) ||
+        if (!has_capability('moodle/rating:view', $context) ||
                 !component_callback($component, 'rating_can_see_item_ratings', array($callbackparams), true)) {
             throw new moodle_exception('noviewrate', 'rating');
         }
@@ -109,7 +109,7 @@ class core_rating_external extends external_api {
         list($context, $course, $cm) = get_context_info_array($context->id);
 
         // Can we see all ratings?
-        $canviewallratings = has_capability('salaren/rating:viewall', $context);
+        $canviewallratings = has_capability('moodle/rating:viewall', $context);
 
         // Create the Sql sort order string.
         switch ($params['sort']) {
@@ -258,7 +258,7 @@ class core_rating_external extends external_api {
         self::validate_context($context);
         $cm = get_coursemodule_from_id(false, $context->instanceid, 0, false, MUST_EXIST);
 
-        require_capability('salaren/rating:rate', $context);
+        require_capability('moodle/rating:rate', $context);
 
         $rm = new rating_manager();
         $result = $rm->add_rating($cm, $context, $params['component'], $params['ratingarea'], $params['itemid'], $params['scaleid'],

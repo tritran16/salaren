@@ -5414,7 +5414,7 @@ function forum_get_forum_types_all() {
  * @return array
  */
 function forum_get_extra_capabilities() {
-    return ['salaren/rating:view', 'salaren/rating:viewany', 'salaren/rating:viewall', 'salaren/rating:rate'];
+    return ['moodle/rating:view', 'moodle/rating:viewany', 'moodle/rating:viewall', 'moodle/rating:rate'];
 }
 
 /**

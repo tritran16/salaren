@@ -55,7 +55,7 @@ $contextid = null; // Now we have a context object, throw away the id from the u
 $PAGE->set_context($context);
 $PAGE->set_url('/rating/rate_ajax.php', array('contextid' => $context->id));
 
-if (!confirm_sesskey() || !has_capability('salaren/rating:rate', $context)) {
+if (!confirm_sesskey() || !has_capability('moodle/rating:rate', $context)) {
     echo $OUTPUT->header();
     echo get_string('ratepermissiondenied', 'rating');
     echo $OUTPUT->footer();
