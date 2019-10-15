@@ -80,7 +80,11 @@ foreach ($settings->children as $setting) {
 if (!empty($orphans)) {
     $groups[] = new preferences_group(get_string('miscellaneous'), $orphans);
 }
-$preferences = new preferences_groups($groups);
+//unset($groups[2]);
+$_groups[] = $groups[0];
+$_groups[] = $groups[1];
+$_groups[] = $groups[3];
+$preferences = new preferences_groups($_groups);
 
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('preferences'));
