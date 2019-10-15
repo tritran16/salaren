@@ -48,7 +48,7 @@ if (empty($importid)) {
         }
     } else {
         echo $OUTPUT->header();
-        echo $OUTPUT->heading(get_string('uploadcourses', 'tool_uploadcourse'), 'uploadcourses', 'tool_uploadcourse');
+        echo $OUTPUT->heading(get_string('uploadcourses', 'tool_uploadcourse'), 2, 'uploadcourses', 'tool_uploadcourse');
         $mform1->display();
         echo $OUTPUT->footer();
         die();
