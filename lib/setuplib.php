@@ -716,9 +716,9 @@ function get_docs_url($path = null) {
     }
     $end = '/' . $branch . '/' . $lang . '/' . $path;
     if (empty($CFG->docroot)) {
-        return 'http://docs.moodle.org'. $end;
+        return '#';//'http://docs.moodle.org'. $end;
     } else {
-        return $CFG->docroot . $end ;
+        return '#';//$CFG->docroot . $end ;
     }
 }
 
