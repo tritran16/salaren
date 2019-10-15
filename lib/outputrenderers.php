@@ -200,7 +200,7 @@ class renderer_base {
             $mustache->addHelper('uniqid', $uniqidhelper);
         }
 
-        return $renderedtemplate;
+        return str_replace('Moodle', 'Salaren', $renderedtemplate);
     }
 
 
