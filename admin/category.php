@@ -155,7 +155,7 @@ echo html_writer::input_hidden_params(new moodle_url($PAGE->url, array('sesskey'
 echo html_writer::end_tag('div');
 echo html_writer::start_tag('fieldset');
 echo html_writer::tag('div', '<!-- -->', array('class' => 'clearer'));
-echo $outputhtml;
+echo str_replace('Moodle', 'Salaren', $outputhtml);
 echo html_writer::end_tag('fieldset');
 echo html_writer::end_tag('form');
 
