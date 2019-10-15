@@ -103,12 +103,7 @@ if (!$capabilitymanager->can_view_discussions($USER)) {
 // Mark viewed and trigger the course_module_viewed event.
 $forumdatamapper = $legacydatamapperfactory->get_forum_data_mapper();
 $forumrecord = $forumdatamapper->to_legacy_object($forum);
-forum_view(
-    $forumrecord,
-    $forum->get_course_record(),
-    $forum->get_course_module_record(),
-    $forum->get_context()
-);
+
 
 // Return here if we post or set subscription etc.
 $SESSION->fromdiscussion = qualified_me();
