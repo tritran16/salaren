@@ -138,7 +138,7 @@ if (empty($iid)) {
     } else {
         echo $OUTPUT->header();
 
-        echo $OUTPUT->heading(get_string('uploadusers', 'tool_uploaduser'), 'uploadusers', 'tool_uploaduser');
+        echo $OUTPUT->heading(get_string('uploadusers', 'tool_uploaduser'), 1, 'uploadusers', 'tool_uploaduser');
 
         $mform1->display();
         echo $OUTPUT->footer();
@@ -1176,7 +1176,7 @@ if ($formdata = $mform2->is_cancelled()) {
 // Print the header
 echo $OUTPUT->header();
 
-echo $OUTPUT->heading(get_string('uploaduserspreview', 'tool_uploaduser'));
+echo $OUTPUT->heading(get_string('uploaduserspreview', 'tool_uploaduser'), 1);
 
 // NOTE: this is JUST csv processing preview, we must not prevent import from here if there is something in the file!!
 //       this was intended for validation of csv formatting and encoding, not filtering the data!!!!
