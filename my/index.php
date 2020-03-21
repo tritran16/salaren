@@ -134,7 +134,7 @@ if (empty($CFG->forcedefaultmymoodle) && $PAGE->user_allowed_editing()) {
             $USER->editing = $edit = 0;          // Disable editing completely, just to be safe
         }
     }
-    /**
+
     // Add button for editing page
     $params = array('edit' => !$edit);
 
@@ -151,7 +151,7 @@ if (empty($CFG->forcedefaultmymoodle) && $PAGE->user_allowed_editing()) {
     } else {
         $editstring = get_string('updatemymoodleoff');
         $resetbutton = $OUTPUT->single_button($reseturl, $resetstring);
-    } **/
+    }
 
     $url = new moodle_url("$CFG->wwwroot/my/index.php", $params);
     $button = $OUTPUT->single_button($url, $editstring);

@@ -435,13 +435,13 @@ class qtype_calculated extends question_type {
                 return;
 
             case 'datasetdefinitions':
-                echo $OUTPUT->heading(
+                echo $OUTPUT->heading_with_help(
                         get_string('choosedatasetproperties', 'qtype_calculated'),
                         'questiondatasets', 'qtype_calculated');
                 break;
 
             case 'datasetitems':
-                echo $OUTPUT->heading(get_string('editdatasets', 'qtype_calculated'),
+                echo $OUTPUT->heading_with_help(get_string('editdatasets', 'qtype_calculated'),
                         'questiondatasets', 'qtype_calculated');
                 break;
         }

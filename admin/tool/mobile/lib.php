@@ -158,7 +158,7 @@ function tool_mobile_standard_footer_html() {
     if (!empty($CFG->enablemobilewebservice) && $url = tool_mobile_create_app_download_url()) {
         $output .= html_writer::link($url, get_string('getmoodleonyourmobile', 'tool_mobile'));
     }
-    return null; //$output;
+    return $output;
 }
 
 /**

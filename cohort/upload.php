@@ -67,7 +67,7 @@ $strheading = get_string('uploadcohorts', 'cohort');
 $PAGE->navbar->add($strheading);
 
 echo $OUTPUT->header();
-echo $OUTPUT->heading($strheading, 'uploadcohorts', 'cohort');
+echo $OUTPUT->heading_with_help($strheading, 'uploadcohorts', 'cohort');
 
 if ($editcontrols = cohort_edit_controls($context, $baseurl)) {
     echo $OUTPUT->render($editcontrols);

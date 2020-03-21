@@ -31,17 +31,18 @@ $ADMIN->add('root', new admin_category('grades', new lang_string('grades')));
 $ADMIN->add('root', new admin_category('analytics', new lang_string('analytics', 'analytics')));
 $ADMIN->add('root', new admin_category('competencies', new lang_string('competencies', 'core_competency')));
 $ADMIN->add('root', new admin_category('badges', new lang_string('badges'), empty($CFG->enablebadges)));
+$ADMIN->add('root', new admin_category('h5p', new lang_string('h5p', 'core_h5p')));
 $ADMIN->add('root', new admin_category('location', new lang_string('location','admin')));
 $ADMIN->add('root', new admin_category('language', new lang_string('language')));
 $ADMIN->add('root', new admin_category('messaging', new lang_string('messagingcategory', 'admin')));
 $ADMIN->add('root', new admin_category('modules', new lang_string('plugins', 'admin')));
 $ADMIN->add('root', new admin_category('security', new lang_string('security','admin')));
-// $ADMIN->add('root', new admin_category('appearance', new lang_string('appearance','admin')));
+$ADMIN->add('root', new admin_category('appearance', new lang_string('appearance','admin')));
 $ADMIN->add('root', new admin_category('frontpage', new lang_string('frontpage','admin')));
-// $ADMIN->add('root', new admin_category('server', new lang_string('server','admin')));
+$ADMIN->add('root', new admin_category('server', new lang_string('server','admin')));
 $ADMIN->add('root', new admin_category('mnet', new lang_string('net','mnet'), (isset($CFG->mnet_dispatcher_mode) and $CFG->mnet_dispatcher_mode === 'off')));
-// $ADMIN->add('root', new admin_category('reports', new lang_string('reports')));
-// $ADMIN->add('root', new admin_category('development', new lang_string('development', 'admin')));
+$ADMIN->add('root', new admin_category('reports', new lang_string('reports')));
+$ADMIN->add('root', new admin_category('development', new lang_string('development', 'admin')));
 
 // hidden unsupported category
 $ADMIN->add('root', new admin_category('unsupported', new lang_string('unsupported', 'admin'), true));

@@ -96,7 +96,7 @@ if ($from_form = $export_form->get_data()) {
 }
 
 /// Display export form
-echo $OUTPUT->heading($strexportquestions, 'exportquestions', 'question');
+echo $OUTPUT->heading_with_help($strexportquestions, 'exportquestions', 'question');
 
 $export_form->display();
 

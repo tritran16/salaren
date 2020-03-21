@@ -104,6 +104,7 @@ $editoroptions = array(
     'noclean'   => true,
     'context'   => $systemcontext
 );
+
 if (!empty($scale_rec->id)) {
     $editoroptions['subdirs'] = file_area_contains_subdirs($systemcontext, 'grade', 'scale', $scale_rec->id);
     $scale_rec = file_prepare_standard_editor($scale_rec, 'description', $editoroptions, $systemcontext, 'grade', 'scale', $scale_rec->id);
@@ -123,9 +124,8 @@ if ($mform->is_cancelled()) {
     $data->userid = $USER->id;
 
     if (empty($scale->id)) {
-        $data->description = 'description_editor';//$data->description_editor['text'];
-
-        $data->descriptionformat = 0;//$data->description_editor['format'];
+        $data->description = $data->description_editor['text'];
+        $data->descriptionformat = $data->description_editor['format'];
         grade_scale::set_properties($scale, $data);
         if (!has_capability('moodle/grade:manage', $systemcontext)) {
             $data->standard = 0;
@@ -135,15 +135,7 @@ if ($mform->is_cancelled()) {
         $data = file_postupdate_standard_editor($data, 'description', $editoroptions, $systemcontext, 'grade', 'scale', $scale->id);
         $DB->set_field($scale->table, 'description', $data->description, array('id'=>$scale->id));
     } else {
-
-        $description_editor['text'] = 'description_editor';
-        $description_editor['format'] = 0;
-        $description_editor['itemid'] = '11111';
-        $data->description_editor = $description_editor;
-        //print_r($data->description_editor); die;
         $data = file_postupdate_standard_editor($data, 'description', $editoroptions, $systemcontext, 'grade', 'scale', $id);
-
-
         grade_scale::set_properties($scale, $data);
         if (isset($data->standard)) {
             $scale->courseid = !empty($data->standard) ? 0 : $courseid;
