@@ -128,7 +128,7 @@ if (!is_null($reportuser)) {
 echo $OUTPUT->header();
 
 // Print heading.
-echo $OUTPUT->heading($title);
+echo $output->heading($title, 1);
 
 // If a user has been chosen, show all the permissions for this user.
 if (!is_null($reportuser)) {

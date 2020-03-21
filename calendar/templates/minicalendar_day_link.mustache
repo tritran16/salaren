@@ -33,10 +33,16 @@
     }} data-container="body"{{!
     }} data-toggle="popover"{{!
     }} data-html="true"{{!
-    }} data-trigger="hover"{{!
+    }} data-region="mini-day-link"{{!
+    }} data-trigger="hover focus"{{!
     }} data-placement="top"{{!
+    }} data-year="{{year}}"{{!
+    }} data-month="{{date.mon}}"{{!
+    }} data-courseid="{{courseid}}"{{!
+    }} data-categoryid="{{categoryid}}"{{!
     }} data-title="{{$title}}{{title}}{{/title}}"{{!
     }} data-alternate="{{$nocontent}}{{/nocontent}}"{{!
+    }} aria-label="{{viewdaylinktitle}}"{{!
 }}>{{$day}}{{day}}{{/day}}</a>
 <div class="hidden">
     {{$content}}{{/content}}

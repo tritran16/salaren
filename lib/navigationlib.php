@@ -1483,9 +1483,7 @@ class global_navigation extends navigation_node {
         }
 
         // Give the local plugins a chance to include some navigation if they want.
-        foreach (get_plugin_list_with_function('local', 'extend_navigation') as $function) {
-            $function($this);
-        }
+        $this->load_local_plugin_navigation();
 
         // Remove any empty root nodes
         foreach ($this->rootnodes as $node) {
@@ -1515,6 +1513,15 @@ class global_navigation extends navigation_node {
             }
         }
         return true;
+    }
+
+    /**
+     * This function gives local plugins an opportunity to modify navigation.
+     */
+    protected function load_local_plugin_navigation() {
+        foreach (get_plugin_list_with_function('local', 'extend_navigation') as $function) {
+            $function($this);
+        }
     }
 
     /**
@@ -3260,6 +3267,9 @@ class global_navigation_for_ajax extends global_navigation {
         if ($this->page->context->contextlevel == CONTEXT_COURSE && $this->page->context->instanceid != $SITE->id) {
             $this->load_for_user(null, true);
         }
+
+        // Give the local plugins a chance to include some navigation if they want.
+        $this->load_local_plugin_navigation();
 
         $this->find_expandable($this->expandable);
         return $this->expandable;
@@ -5011,6 +5021,16 @@ class settings_navigation extends navigation_node {
                 $passwordchangeurl = new moodle_url('/login/change_password.php', array('id'=>$course->id));
             }
             $useraccount->add(get_string("changepassword"), $passwordchangeurl, self::TYPE_SETTING, null, 'changepassword');
+        }
+
+        // Default homepage.
+        $defaulthomepageuser = (!empty($CFG->defaulthomepage) && ($CFG->defaulthomepage == HOMEPAGE_USER));
+        if (isloggedin() && !isguestuser($user) && $defaulthomepageuser) {
+            if ($currentuser && has_capability('moodle/user:editownprofile', $systemcontext) ||
+                    has_capability('moodle/user:editprofile', $usercontext)) {
+                $url = new moodle_url('/user/defaulthomepage.php', ['id' => $user->id]);
+                $useraccount->add(get_string('defaulthomepageuser'), $url, self::TYPE_SETTING, null, 'defaulthomepageuser');
+            }
         }
 
         if (isloggedin() && !isguestuser($user) && !is_mnet_remote_user($user)) {

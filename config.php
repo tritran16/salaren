@@ -7,19 +7,19 @@ $CFG = new stdClass();
 $CFG->dbtype    = 'mariadb';
 $CFG->dblibrary = 'native';
 $CFG->dbhost    = 'localhost';
-$CFG->dbname    = 'salaren';
+$CFG->dbname    = 'moodle';
 $CFG->dbuser    = 'root';
 $CFG->dbpass    = '';
-$CFG->prefix    = 'slr_';
+$CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
   'dbport' => 3306,
   'dbsocket' => '',
-  'dbcollation' => 'utf8mb4_general_ci',
+  'dbcollation' => 'utf8mb4_unicode_ci',
 );
 
-$CFG->wwwroot   = 'http://localhost/salaren';
-$CFG->dataroot  = 'D:\php\_salarendata';
+$CFG->wwwroot   = 'http://moodle.local';
+$CFG->dataroot  = 'D:\\xamp\\htdocs\\moodledata';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;

@@ -46,7 +46,7 @@ $PAGE->set_title($title);
 $PAGE->set_heading($course->fullname);
 $PAGE->navbar->add($title);
 echo $OUTPUT->header();
-echo $OUTPUT->heading($title);
+echo $output->heading($title, 1);
 
 if ($node) {
     echo $OUTPUT->render_from_template('core/settings_link_page', ['node' => $node]);

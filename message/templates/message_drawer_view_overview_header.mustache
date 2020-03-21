@@ -37,7 +37,7 @@
     <div class="d-flex align-items-center">
         <div class="input-group">
             <div class="input-group-prepend">
-                <span class="input-group-text pr-0 bg-white">
+                <span class="input-group-text pr-2 bg-white">
                     {{#pix}} a/search, core {{/pix}}
                 </span>
             </div>
@@ -65,7 +65,7 @@
         <a href="#" data-route="view-contacts" role="button">
             {{#pix}} i/user, core {{/pix}}
             {{#str}} contacts, core_message {{/str}}
-            <span class="badge bg-primary ml-2 {{^contactrequestcount}}hidden{{/contactrequestcount}}"
+            <span class="badge badge-primary bg-primary ml-2 {{^contactrequestcount}}hidden{{/contactrequestcount}}"
             data-region="contact-request-count"
             aria-label="{{#str}} pendingcontactrequests, core_message, {{contactrequestcount}} {{/str}}">
                 {{contactrequestcount}}

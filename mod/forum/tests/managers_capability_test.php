@@ -27,6 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 global $CFG;
 require_once(__DIR__ . '/generator_trait.php');
 
+use mod_forum\local\entities\forum;
 use mod_forum\local\managers\capability as capability_manager;
 
 /**
@@ -36,7 +37,6 @@ use mod_forum\local\managers\capability as capability_manager;
  * @copyright  2019 Ryan Wyllie <ryan@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @coversDefaultClass \mod_forum\local\managers\capability
- * @covers ::<!public>
  */
 class mod_forum_managers_capability_testcase extends advanced_testcase {
     // Make use of the test generator trait.
@@ -123,7 +123,7 @@ class mod_forum_managers_capability_testcase extends advanced_testcase {
      * Helper function to create a forum entity.
      *
      * @param array $forumproperties List of properties to override the prebuilt forum
-     * @return forum_entity
+     * @return forum
      */
     private function create_forum(array $forumproperties = []) {
         $forumrecord = (object) array_merge((array) $this->forumrecord, $forumproperties);
@@ -943,6 +943,52 @@ class mod_forum_managers_capability_testcase extends advanced_testcase {
     }
 
     /**
+     * Test for \mod_forum\local\managers\capability::can_reply_to_post() involving Q & A forums.
+     */
+    public function test_can_reply_to_post_in_qanda_forum() {
+        global $CFG;
+
+        $this->resetAfterTest();
+
+        // Set max editing time to 10 seconds.
+        $CFG->maxeditingtime = 10;
+
+        $qandaforum = $this->create_forum(['type' => 'qanda']);
+        $datagenerator = $this->getDataGenerator();
+        $capabilitymanager = $this->managerfactory->get_capability_manager($qandaforum);
+
+        // Student 1.
+        $student1 = $datagenerator->create_user(['firstname' => 'S1']);
+        $datagenerator->enrol_user($student1->id, $this->course->id, 'student');
+        // Confirm Student 1 can reply to the question.
+        $this->assertTrue($capabilitymanager->can_reply_to_post($student1, $this->discussion, $this->post));
+
+        // Student 2.
+        $student2 = $datagenerator->create_user(['firstname' => 'S2']);
+        $datagenerator->enrol_user($student2->id, $this->course->id, 'student');
+        // Confirm Student 2 can reply to the question.
+        $this->assertTrue($capabilitymanager->can_reply_to_post($student2, $this->discussion, $this->post));
+
+        // Reply to the question as student 1.
+        $now = time();
+        $options = ['parent' => $this->post->get_id(), 'created' => $now - 100];
+        $student1post = $this->helper_post_to_discussion($this->forumrecord, $this->discussionrecord, $student1, $options);
+        $student1postentity = $this->entityfactory->get_post_from_stdclass($student1post);
+
+        // Confirm Student 2 cannot reply student 1's answer yet.
+        $this->assertFalse($capabilitymanager->can_reply_to_post($student2, $this->discussion, $student1postentity));
+
+        // Reply to the question as student 2.
+        $this->helper_post_to_discussion($this->forumrecord, $this->discussionrecord, $student2, $options);
+
+        // Reinitialise capability manager first to ensure we don't return cached values.
+        $capabilitymanager = $this->managerfactory->get_capability_manager($qandaforum);
+
+        // Confirm Student 2 can now reply to student 1's answer.
+        $this->assertTrue($capabilitymanager->can_reply_to_post($student2, $this->discussion, $student1postentity));
+    }
+
+    /**
      * Ensure that can_reply_privately_to_post works as expected.
      *
      * @covers ::can_reply_privately_to_post
@@ -1188,4 +1234,98 @@ class mod_forum_managers_capability_testcase extends advanced_testcase {
         $this->prevent_capability('mod/forum:readprivatereplies');
         $this->assertFalse($capabilitymanager->can_view_any_private_reply($this->user));
     }
+
+
+    /**
+     * Test delete a post with ratings.
+     */
+    public function test_validate_delete_post_with_ratings() {
+        global $DB;
+        $this->resetAfterTest(true);
+
+        // Setup test data.
+        $course = $this->getDataGenerator()->create_course();
+        $forum = $this->getDataGenerator()->create_module('forum', array('course' => $course->id));
+        $user = $this->getDataGenerator()->create_user();
+        $role = $DB->get_record('role', array('shortname' => 'student'), '*', MUST_EXIST);
+        self::getDataGenerator()->enrol_user($user->id, $course->id, $role->id);
+
+        // Add a discussion.
+        $record = new stdClass();
+        $record->course = $course->id;
+        $record->userid = $user->id;
+        $record->forum = $forum->id;
+        $record->created =
+        $discussion = $this->getDataGenerator()->get_plugin_generator('mod_forum')->create_discussion($record);
+
+        // Add rating.
+        $post = $DB->get_record('forum_posts', array('discussion' => $discussion->id));
+        $post->totalscore = 80;
+        $DB->update_record('forum_posts', $post);
+
+        $vaultfactory = mod_forum\local\container::get_vault_factory();
+        $forumvault = $vaultfactory->get_forum_vault();
+        $discussionvault = $vaultfactory->get_discussion_vault();
+        $postvault = $vaultfactory->get_post_vault();
+
+        $postentity = $postvault->get_from_id($post->id);
+        $discussionentity = $discussionvault->get_from_id($postentity->get_discussion_id());
+        $forumentity = $forumvault->get_from_id($discussionentity->get_forum_id());
+        $capabilitymanager = $this->managerfactory->get_capability_manager($forumentity);
+
+        $this->setUser($user);
+        $this->expectExceptionMessage(get_string('couldnotdeleteratings', 'rating'));
+        $capabilitymanager->validate_delete_post($user, $discussionentity, $postentity, false);
+    }
+
+    /**
+     * Test delete a post with replies.
+     */
+    public function test_validate_delete_post_with_replies() {
+        global $DB;
+        $this->resetAfterTest(true);
+
+        // Setup test data.
+        $course = $this->getDataGenerator()->create_course();
+        $forum = $this->getDataGenerator()->create_module('forum', array('course' => $course->id));
+        $user = $this->getDataGenerator()->create_user();
+        $role = $DB->get_record('role', array('shortname' => 'student'), '*', MUST_EXIST);
+        self::getDataGenerator()->enrol_user($user->id, $course->id, $role->id);
+
+        // Add a discussion.
+        $record = new stdClass();
+        $record->course = $course->id;
+        $record->userid = $user->id;
+        $record->forum = $forum->id;
+        $record->created =
+        $discussion = $this->getDataGenerator()->get_plugin_generator('mod_forum')->create_discussion($record);
+
+        $parentpost = $DB->get_record('forum_posts', array('discussion' => $discussion->id));
+        // Add a post.
+        $record = new stdClass();
+        $record->course = $course->id;
+        $record->userid = $user->id;
+        $record->forum = $forum->id;
+        $record->discussion = $discussion->id;
+        $record->parent = $parentpost->id;
+        $this->getDataGenerator()->get_plugin_generator('mod_forum')->create_post($record);
+
+        $vaultfactory = mod_forum\local\container::get_vault_factory();
+        $forumvault = $vaultfactory->get_forum_vault();
+        $discussionvault = $vaultfactory->get_discussion_vault();
+        $postvault = $vaultfactory->get_post_vault();
+
+        $postentity = $postvault->get_from_id($parentpost->id);
+        $discussionentity = $discussionvault->get_from_id($postentity->get_discussion_id());
+        $forumentity = $forumvault->get_from_id($discussionentity->get_forum_id());
+        $capabilitymanager = $this->managerfactory->get_capability_manager($forumentity);
+
+        $this->setUser($user);
+        // Get reply count.
+        $replycount = $postvault->get_reply_count_for_post_id_in_discussion_id(
+            $user, $postentity->get_id(), $discussionentity->get_id(), true);
+        $this->expectExceptionMessage(get_string('couldnotdeletereplies', 'forum'));
+        $capabilitymanager->validate_delete_post($user, $discussionentity, $postentity, $replycount);
+    }
+
 }

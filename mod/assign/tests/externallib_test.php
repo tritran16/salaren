@@ -140,6 +140,13 @@ class mod_assign_external_testcase extends externallib_advanced_testcase {
 
         $this->resetAfterTest(true);
 
+        // Enable multilang filter to on content and heading.
+        filter_set_global_state('multilang', TEXTFILTER_ON);
+        filter_set_applies_to_strings('multilang', 1);
+        // Set WS filtering.
+        $wssettings = external_settings::get_instance();
+        $wssettings->set_filter(true);
+
         $category = self::getDataGenerator()->create_category(array(
             'name' => 'Test category'
         ));
@@ -166,7 +173,7 @@ class mod_assign_external_testcase extends externallib_advanced_testcase {
         // Create the assignment module with links to a filerecord.
         $assign1 = self::getDataGenerator()->create_module('assign', array(
             'course' => $course1->id,
-            'name' => 'lightwork assignment',
+            'name' => '<span lang="en" class="multilang">English</span><span lang="es" class="multilang">Español</span>',
             'intro' => 'the assignment intro text here <a href="@@PLUGINFILE@@/intro.txt">link</a>',
             'introformat' => FORMAT_HTML,
             'markingworkflow' => 1,
@@ -221,7 +228,7 @@ class mod_assign_external_testcase extends externallib_advanced_testcase {
         $assignment = $course['assignments'][0];
         $this->assertEquals($assign1->id, $assignment['id']);
         $this->assertEquals($course1->id, $assignment['course']);
-        $this->assertEquals('lightwork assignment', $assignment['name']);
+        $this->assertEquals('English', $assignment['name']);
         $this->assertContains('the assignment intro text here', $assignment['intro']);
         $this->assertNotEmpty($assignment['configs']);
         // Check the url of the file attatched.
@@ -249,7 +256,7 @@ class mod_assign_external_testcase extends externallib_advanced_testcase {
         $assignment = $course['assignments'][0];
         $this->assertEquals($assign1->id, $assignment['id']);
         $this->assertEquals($course1->id, $assignment['course']);
-        $this->assertEquals('lightwork assignment', $assignment['name']);
+        $this->assertEquals('English', $assignment['name']);
         $this->assertArrayNotHasKey('intro', $assignment);
         $this->assertArrayNotHasKey('introattachments', $assignment);
         $this->assertEquals(1, $assignment['markingworkflow']);
@@ -287,7 +294,7 @@ class mod_assign_external_testcase extends externallib_advanced_testcase {
         $assignment = $course['assignments'][0];
         $this->assertEquals($assign1->id, $assignment['id']);
         $this->assertEquals($course1->id, $assignment['course']);
-        $this->assertEquals('lightwork assignment', $assignment['name']);
+        $this->assertEquals('English', $assignment['name']);
         $this->assertArrayNotHasKey('intro', $assignment);
         $this->assertArrayNotHasKey('introattachments', $assignment);
         $this->assertEquals(1, $assignment['markingworkflow']);
@@ -2029,7 +2036,7 @@ class mod_assign_external_testcase extends externallib_advanced_testcase {
         $this->assertEquals(0, $result['gradingsummary']['submissiondraftscount']);
         $this->assertEquals(1, $result['gradingsummary']['submissionssubmittedcount']);  // One student from G1 submitted.
         $this->assertEquals(1, $result['gradingsummary']['submissionsneedgradingcount']);    // One student from G1 submitted.
-        $this->assertFalse($result['gradingsummary']['warnofungroupedusers']);
+        $this->assertEmpty($result['gradingsummary']['warnofungroupedusers']);
 
         // Second group.
         $result = mod_assign_external::get_submission_status($assign->get_instance()->id, 0, $g2->id);
@@ -2226,6 +2233,65 @@ class mod_assign_external_testcase extends externallib_advanced_testcase {
         $this->assertTrue(isset($result['feedback']));
         $this->assertTrue(isset($result['feedback']['grade']));
         $this->assertEquals($teacher->id, $result['feedback']['grade']['grader']);
+    }
+
+    /**
+     * Test get_submission_status with override for student.
+     */
+    public function test_get_submission_status_with_override() {
+        global $DB;
+
+        $this->resetAfterTest(true);
+
+        list($assign, $instance, $student1, $student2, $teacher, $g1, $g2) = $this->create_submission_for_testing_status();
+
+        $overridedata = new \stdClass();
+        $overridedata->assignid = $assign->get_instance()->id;
+        $overridedata->userid = $student1->id;
+        $overridedata->allowsubmissionsfromdate = time() + YEARSECS;
+        $DB->insert_record('assign_overrides', $overridedata);
+
+        $result = mod_assign_external::get_submission_status($assign->get_instance()->id);
+        // We expect debugging because of the $PAGE object, this won't happen in a normal WS request.
+        $this->assertDebuggingCalled();
+        $result = external_api::clean_returnvalue(mod_assign_external::get_submission_status_returns(), $result);
+
+        $this->assertCount(0, $result['warnings']);
+        $this->assertFalse(isset($result['gradingsummary']));
+        $this->assertFalse(isset($result['feedback']));
+        $this->assertFalse(isset($result['previousattempts']));
+
+        $this->assertTrue($result['lastattempt']['submissionsenabled']);
+        $this->assertFalse($result['lastattempt']['canedit']);  // False because of override.
+        $this->assertFalse($result['lastattempt']['cansubmit']);
+        $this->assertFalse($result['lastattempt']['locked']);
+        $this->assertFalse($result['lastattempt']['graded']);
+        $this->assertEmpty($result['lastattempt']['extensionduedate']);
+        $this->assertFalse($result['lastattempt']['blindmarking']);
+        $this->assertCount(0, $result['lastattempt']['submissiongroupmemberswhoneedtosubmit']);
+        $this->assertEquals('notgraded', $result['lastattempt']['gradingstatus']);
+
+        // Same assignment but user without override.
+        $this->setUser($student2);
+
+        $result = mod_assign_external::get_submission_status($assign->get_instance()->id);
+        $result = external_api::clean_returnvalue(mod_assign_external::get_submission_status_returns(), $result);
+
+        // The submission is now in draft mode.
+        $this->assertCount(0, $result['warnings']);
+        $this->assertFalse(isset($result['gradingsummary']));
+        $this->assertFalse(isset($result['feedback']));
+        $this->assertFalse(isset($result['previousattempts']));
+
+        $this->assertTrue($result['lastattempt']['submissionsenabled']);
+        $this->assertTrue($result['lastattempt']['canedit']);  // True because there is not override for this user.
+        $this->assertFalse($result['lastattempt']['cansubmit']);
+        $this->assertFalse($result['lastattempt']['locked']);
+        $this->assertFalse($result['lastattempt']['graded']);
+        $this->assertEmpty($result['lastattempt']['extensionduedate']);
+        $this->assertFalse($result['lastattempt']['blindmarking']);
+        $this->assertCount(0, $result['lastattempt']['submissiongroupmemberswhoneedtosubmit']);
+        $this->assertEquals('notgraded', $result['lastattempt']['gradingstatus']);
     }
 
     /**
@@ -2465,6 +2531,66 @@ class mod_assign_external_testcase extends externallib_advanced_testcase {
         $this->assertEquals($student->id, $result['id']);
         $this->assertEquals($group->id, $result['groupid']);
         $this->assertEquals($group->name, $result['groupname']);
+    }
+
+    /**
+     * Test get_participant() when relative dates mode is enabled on the course.
+     *
+     * @dataProvider get_participant_relative_dates_provider
+     * @param array $courseconfig the config to use when creating the course.
+     * @param array $assignconfig the config to use when creating the assignment.
+     * @param array $enrolconfig the enrolement to create.
+     * @param array $expectedproperties array of expected assign properties.
+     */
+    public function test_get_participant_relative_dates(array $courseconfig, array $assignconfig, array $enrolconfig,
+            array $expectedproperties) {
+        $this->resetAfterTest();
+
+        set_config('enablecourserelativedates', true); // Enable relative dates at site level.
+
+        $course = $this->getDataGenerator()->create_course($courseconfig);
+        $generator = $this->getDataGenerator()->get_plugin_generator('mod_assign');
+        $assignconfig['course'] = $course->id;
+        $instance = $generator->create_instance($assignconfig);
+        $cm = get_coursemodule_from_instance('assign', $instance->id);
+        $context = context_module::instance($cm->id);
+        $assign = new assign($context, $cm, $course);
+
+        $user = $this->getDataGenerator()->create_and_enrol($course, ...array_values($enrolconfig));
+
+        $teacher = $this->getDataGenerator()->create_and_enrol($course, 'teacher', null, 'manual', time() - 50 * DAYSECS);
+
+        $this->setUser($teacher);
+        $result = mod_assign_external::get_participant($assign->get_instance()->id, $user->id, false);
+        $result = external_api::clean_returnvalue(mod_assign_external::get_participant_returns(), $result);
+
+        foreach ($expectedproperties as $propertyname => $propertyval) {
+            $this->assertEquals($propertyval, $result[$propertyname]);
+        }
+    }
+
+    /**
+     * The test_get_participant_relative_dates data provider.
+     */
+    public function get_participant_relative_dates_provider() {
+        $timenow = time();
+
+        return [
+            'Student whose enrolment starts after the course start date, relative dates mode enabled' => [
+                'courseconfig' => ['relativedatesmode' => true, 'startdate' => $timenow - 10 * DAYSECS],
+                'assignconfig' => ['duedate' => $timenow + 4 * DAYSECS],
+                'enrolconfig' => ['shortname' => 'student', 'userparams' => null, 'method' => 'manual',
+                    'startdate' => $timenow - 8 * DAYSECS],
+                'expectedproperties' => ['duedate' => $timenow + 6 * DAYSECS]
+            ],
+            'Student whose enrolment starts before the course start date, relative dates mode enabled' => [
+                'courseconfig' => ['relativedatesmode' => true, 'startdate' => $timenow - 10 * DAYSECS],
+                'assignconfig' => ['duedate' => $timenow + 4 * DAYSECS],
+                'enrolconfig' => ['shortname' => 'student', 'userparams' => null, 'method' => 'manual',
+                    'startdate' => $timenow - 12 * DAYSECS],
+                'expectedproperties' => ['duedate' => $timenow + 4 * DAYSECS]
+            ],
+        ];
     }
 
     /**

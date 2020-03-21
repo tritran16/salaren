@@ -5,7 +5,7 @@
 require_once('../config.php');
 require_once($CFG->libdir.'/adminlib.php');
 
-redirect_if_major_upgrade_required();
+//redirect_if_major_upgrade_required();
 
 $query = trim(optional_param('query', '', PARAM_NOTAGS));  // Search string
 

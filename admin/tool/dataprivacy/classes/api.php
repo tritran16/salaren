@@ -712,7 +712,7 @@ class api {
             'requestedby' => $requestedby->fullname,
             'requesttype' => $typetext,
             'requestdate' => userdate($requestdata->timecreated),
-            'requestorigin' => $SITE->fullname,
+            'requestorigin' => format_string($SITE->fullname, true, ['context' => context_system::instance()]),
             'requestoriginurl' => new moodle_url('/'),
             'requestcomments' => $requestdata->messagehtml,
             'datarequestsurl' => $datarequestsurl
@@ -774,7 +774,8 @@ class api {
     public static function can_create_data_deletion_request_for_self(int $userid = null): bool {
         global $USER;
         $userid = $userid ?: $USER->id;
-        return has_capability('tool/dataprivacy:requestdelete', \context_user::instance($userid), $userid);
+        return has_capability('tool/dataprivacy:requestdelete', \context_user::instance($userid), $userid)
+            && !is_primary_admin($userid);
     }
 
     /**
@@ -803,7 +804,7 @@ class api {
         global $USER;
         $requesterid = $requesterid ?: $USER->id;
         return has_capability('tool/dataprivacy:makedatadeletionrequestsforchildren', \context_user::instance($userid),
-            $requesterid);
+            $requesterid) && !is_primary_admin($userid);
     }
 
     /**

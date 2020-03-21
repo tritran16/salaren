@@ -157,7 +157,7 @@ if ($capability && ($allowoverrides || ($allowsafeoverrides && is_safe_capabilit
         }
         // Display and print.
         echo $OUTPUT->header();
-        echo $OUTPUT->heading($title);
+        echo $output->heading($title, 1);
         echo $OUTPUT->confirm($message, $continueurl, $PAGE->url);
         echo $OUTPUT->footer();
         die;
@@ -195,7 +195,7 @@ if ($capability && ($allowoverrides || ($allowsafeoverrides && is_safe_capabilit
             }
         }
         echo $OUTPUT->header();
-        echo $OUTPUT->heading($title);
+        echo $output->heading($title, 1);
         echo $OUTPUT->box($message);
         $mform->display();
         echo $OUTPUT->footer();
@@ -204,7 +204,7 @@ if ($capability && ($allowoverrides || ($allowsafeoverrides && is_safe_capabilit
 }
 
 echo $OUTPUT->header();
-echo $OUTPUT->heading($title);
+echo $output->heading($title, 1);
 
 $adminurl = new moodle_url('/admin/');
 $arguments = array('contextid' => $contextid,

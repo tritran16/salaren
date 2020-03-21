@@ -33,6 +33,9 @@
  */
 class behat_partial_named_selector extends \Behat\Mink\Selector\PartialNamedSelector {
 
+    // Use the named selector trait.
+    use behat_named_selector;
+
     /**
      * Creates selector instance.
      */
@@ -75,6 +78,7 @@ class behat_partial_named_selector extends \Behat\Mink\Selector\PartialNamedSele
         'group_message_header' => 'group_message_header',
         'group_message' => 'group_message',
         'autocomplete' => 'autocomplete',
+        'iframe' => 'iframe',
     );
 
     /**
@@ -118,6 +122,7 @@ class behat_partial_named_selector extends \Behat\Mink\Selector\PartialNamedSele
         'autocomplete_selection' => 'autocomplete_selection',
         'autocomplete_suggestions' => 'autocomplete_suggestions',
         'autocomplete' => 'autocomplete',
+        'iframe' => 'iframe',
     );
 
     /**
@@ -227,6 +232,9 @@ XPATH
         , 'autocomplete' => <<<XPATH
 .//descendant::input[@id = //label[contains(normalize-space(string(.)), %locator%)]/@for]/ancestor::*[@data-fieldtype = 'autocomplete']
 XPATH
+        , 'iframe' => <<<XPATH
+.//iframe[contains(concat(' ', normalize-space(@class), ' '), %locator% )]
+XPATH
     );
 
     protected static $customselectors = [
@@ -269,6 +277,15 @@ XPATH
         '%ariaLabelMatch%' => [
             'moodle' => 'contains(./@aria-label, %locator%)',
         ],
+    ];
+
+    /** @var List of deprecated selectors */
+    protected static $deprecatedselectors = [
+        'group_message' => 'core_message > Message',
+        'group_message_member' => 'core_message > Message member',
+        'group_message_tab' => 'core_message > Message tab',
+        'group_message_list_area' => 'core_message > Message list area',
+        'group_message_message_content' => 'core_message > Message content',
     ];
 
     /**

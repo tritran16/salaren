@@ -412,6 +412,12 @@ class tool_uploadcourse_course {
                 $this->error('invalidshortname', new lang_string('invalidshortname', 'tool_uploadcourse'));
                 return false;
             }
+
+            // Ensure we don't overflow the maximum length of the shortname field.
+            if (core_text::strlen($this->shortname) > 255) {
+                $this->error('invalidshortnametoolong', new lang_string('invalidshortnametoolong', 'tool_uploadcourse', 255));
+                return false;
+            }
         }
 
         $exists = $this->exists();
@@ -476,6 +482,12 @@ class tool_uploadcourse_course {
             foreach ($errors as $key => $message) {
                 $this->error($key, $message);
             }
+            return false;
+        }
+
+        // Ensure we don't overflow the maximum length of the fullname field.
+        if (!empty($coursedata['fullname']) && core_text::strlen($coursedata['fullname']) > 254) {
+            $this->error('invalidfullnametoolong', new lang_string('invalidfullnametoolong', 'tool_uploadcourse', 254));
             return false;
         }
 
@@ -718,6 +730,12 @@ class tool_uploadcourse_course {
             } else {
                 $coursedata['numsections'] = get_config('moodlecourse', 'numsections');
             }
+        }
+
+        // Visibility can only be 0 or 1.
+        if (!empty($coursedata['visible']) AND !($coursedata['visible'] == 0 OR $coursedata['visible'] == 1)) {
+            $this->error('invalidvisibilitymode', new lang_string('invalidvisibilitymode', 'tool_uploadcourse'));
+            return false;
         }
 
         // Saving data.
