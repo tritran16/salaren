@@ -185,7 +185,7 @@ switch ($context->contextlevel) {
 echo $OUTPUT->header();
 
 // Print heading.
-echo $OUTPUT->heading_with_help($title, 'assignroles', 'core_role');
+echo $OUTPUT->heading($title, 2, 'assignroles', 'core_role');
 
 if ($roleid) {
     // Show UI for assigning a particular role to users.

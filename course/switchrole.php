@@ -97,7 +97,7 @@ if ($switchrole > 0 && has_capability('moodle/role:switchroles', $context)) {
             $roles[$key] = $role;
         }
     }
-    echo $OUTPUT->box(markdown_to_html(get_string('switchroleto_help')));
+    // echo $OUTPUT->box(markdown_to_html(get_string('switchroleto_help')));
 
     foreach ($roles as $key => $role) {
         $url = new moodle_url('/course/switchrole.php', array('id' => $id, 'switchrole' => $key, 'returnurl' => $returnurl));

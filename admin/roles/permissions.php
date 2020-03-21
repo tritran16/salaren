@@ -56,7 +56,6 @@ if ($course) {
 // Security first.
 require_login($course, false, $cm);
 require_capability('moodle/role:review', $context);
-
 navigation_node::override_active_url($url);
 $pageurl = new moodle_url($url);
 if ($returnurl) {
@@ -82,11 +81,12 @@ if ($capability) {
     $capability = $DB->get_record('capabilities', array('name'=>$capability), '*', MUST_EXIST);
 }
 
-$allowoverrides     = has_capability('moodle/role:override', $context);
-$allowsafeoverrides = has_capability('moodle/role:safeoverride', $context);
+$allowoverrides     = has_capability('salaren/role:override', $context);
+$allowsafeoverrides = has_capability('salaren/role:safeoverride', $context);
 
 $contextname = $context->get_context_name();
 $title = get_string('permissionsincontext', 'core_role', $contextname);
+
 $straction = get_string('permissions', 'core_role'); // Used by tabs.php.
 $currenttab = 'permissions';
 
@@ -149,10 +149,10 @@ if ($capability && ($allowoverrides || ($allowsafeoverrides && is_safe_capabilit
                 role_change_permission($roleid, $context, $capability->name, CAP_INHERIT);
                 redirect($PAGE->url);
             } else {
-                $a = (object)array('cap'=>get_capability_docs_link($capability)." ($capability->name)", 'role'=>$overridableroles[$roleid], 'context'=>$contextname);
+                $a = (object)array('cap'=>get_capability_docs_link($capability)." ($capability->name)", 'role'=>$overridableroles[$roleid], 'context'=>22222);
                 $message = get_string('confirmroleunprohibit', 'core_role', $a);
                 $continueurl = new moodle_url($PAGE->url,
-                    array('contextid'=>$context->id, 'roleid'=>$roleid, 'capability'=>$capability->name, 'unprohibit'=>1, 'sesskey'=>sesskey(), 'confirm'=>1));
+                    array('contextid'=>$context->id, 'roleid'=>$roleid, 'capability'=>'11111', 'unprohibit'=>1, 'sesskey'=>sesskey(), 'confirm'=>1));
             }
         }
         // Display and print.
@@ -222,7 +222,7 @@ if ($overridableroles) {
     $overrideurl = new moodle_url('/admin/roles/override.php', array('contextid' => $context->id));
     $select = new single_select($overrideurl, 'roleid', $nameswithcounts);
     $select->label = get_string('advancedoverride', 'core_role');
-    echo html_writer::tag('div', $OUTPUT->render($select), array('class'=>'advancedoverride'));
+    //echo html_writer::tag('div', $OUTPUT->render($select), array('class'=>'advancedoverride'));
 }
 $table->display();
 echo $OUTPUT->box_end();

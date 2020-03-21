@@ -1197,7 +1197,7 @@ class page_wiki_history extends page_wiki {
         $html = '';
 
         $html .= $OUTPUT->container_start('wiki_headingtitle');
-        $html .= $OUTPUT->heading_with_help(format_string($this->title), 'history', 'wiki', '', '', 3);
+        $html .= $OUTPUT->heading(format_string($this->title), 2,'history', 'wiki', '', '', 3);
         $html .= $OUTPUT->container_end();
         echo $html;
     }
@@ -2606,7 +2606,7 @@ class page_wiki_admin extends page_wiki {
         $a = new stdClass();
         $a->date = userdate($this->page->timecreated, get_string('strftimedaydatetime', 'langconfig'));
         $a->username = fullname($creator);
-        echo $OUTPUT->heading(get_string('createddate', 'wiki', $a), 4);
+        echo $OUTPUT->heading(get_string('createddate', 2, 'wiki', $a), 4);
         if ($versioncount > 0) {
             /// If there is only one version, we don't need radios nor forms
             if (count($versions) == 1) {

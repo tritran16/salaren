@@ -154,7 +154,7 @@ if ($deactivate && has_capability('moodle/badges:configuredetails', $PAGE->conte
 
 echo $OUTPUT->header();
 if ($type == BADGE_TYPE_SITE) {
-    echo $OUTPUT->heading_with_help($PAGE->heading, 'sitebadges', 'badges');
+    echo $OUTPUT->heading($PAGE->heading, 'sitebadges', 'badges');
 } else {
     echo $OUTPUT->heading($PAGE->heading);
 }

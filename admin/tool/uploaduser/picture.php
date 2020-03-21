@@ -60,7 +60,7 @@ $overwritepicture = optional_param('overwritepicture', 0, PARAM_BOOL);
 /// Print the header
 echo $OUTPUT->header();
 
-echo $OUTPUT->heading_with_help($struploadpictures, 'uploadpictures', 'tool_uploaduser');
+echo $OUTPUT->heading($struploadpictures, 1, 'uploadpictures', 'tool_uploaduser');
 
 $mform = new admin_uploadpicture_form(null, $userfields);
 if ($formdata = $mform->get_data()) {

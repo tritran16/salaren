@@ -142,7 +142,7 @@ if ($backpack) {
 }
 
 echo $OUTPUT->header();
-echo $OUTPUT->heading($title);
+echo $output->heading($title, 1);
 echo $warning;
 $form->display();
 echo $OUTPUT->footer();

@@ -91,7 +91,7 @@ if ($check_anonymously) {
         $itemobj->print_analysed($item, $printnr, $mygroupid);
     }
 } else {
-    echo $OUTPUT->heading_with_help(get_string('insufficient_responses_for_this_group', 'feedback'),
+    echo $OUTPUT->heading(get_string('insufficient_responses_for_this_group', 'feedback'),
                                     'insufficient_responses',
                                     'feedback', '', '', 3);
 }

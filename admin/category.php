@@ -30,6 +30,7 @@ $category = required_param('category', PARAM_SAFEDIR);
 $return = optional_param('return','', PARAM_ALPHA);
 $adminediting = optional_param('adminedit', -1, PARAM_BOOL);
 
+/// no guest autologin
 require_login(0, false);
 $PAGE->set_context(context_system::instance());
 $PAGE->set_url('/admin/category.php', array('category' => $category));
@@ -116,15 +117,16 @@ foreach ($settingspage->children as $childpage) {
             $outputhtml .= html_writer::end_tag('fieldset');
         }
     } else if ($childpage instanceof admin_category) {
-        $outputhtml .= $OUTPUT->heading(html_writer::link(new moodle_url('/'.$CFG->admin.'/category.php', array('category' => $childpage->name)), get_string('admincategory', 'admin', $childpage->visiblename)), 3);
+        $outputhtml .= $OUTPUT->heading(html_writer::link(new moodle_url('/'.$CFG->admin.'/category.php', array('category' => $childpage->name)), get_string('admincategory', 'admin', $childpage->visiblename), ['class' => $childpage->name]), 3);
     }
 }
 if ($savebutton) {
     $outputhtml .= html_writer::start_tag('div', array('class' => 'form-buttons'));
     $outputhtml .= html_writer::empty_tag('input', array('class' => 'btn btn-primary form-submit', 'type' => 'submit', 'value' => get_string('savechanges','admin')));
     $outputhtml .= html_writer::end_tag('div');
-}
 
+}
+$outputhtml .= '<style>.roles { display: none; } .privacy { display: none; }</style>';
 $visiblepathtosection = array_reverse($settingspage->visiblepath);
 $PAGE->set_title("$SITE->shortname: " . implode(": ",$visiblepathtosection));
 $PAGE->set_heading($SITE->fullname);
@@ -154,7 +156,7 @@ echo html_writer::input_hidden_params(new moodle_url($PAGE->url, array('sesskey'
 echo html_writer::end_tag('div');
 echo html_writer::start_tag('fieldset');
 echo html_writer::tag('div', '<!-- -->', array('class' => 'clearer'));
-echo $outputhtml;
+echo str_replace('Moodle', 'Salaren', $outputhtml);
 echo html_writer::end_tag('fieldset');
 echo html_writer::end_tag('form');
 

@@ -140,7 +140,7 @@ if (has_capability('moodle/restore:uploadfile', $context)) {
 }
 
 if ($context->contextlevel == CONTEXT_MODULE) {
-    echo $OUTPUT->heading_with_help(get_string('choosefilefromactivitybackup', 'backup'), 'choosefilefromuserbackup', 'backup');
+    echo $OUTPUT->heading(get_string('choosefilefromactivitybackup', 'backup'), 2, 'choosefilefromuserbackup', 'backup');
     echo $OUTPUT->container_start();
     $treeview_options = array();
     $user_context = context_user::instance($USER->id);
@@ -154,7 +154,7 @@ if ($context->contextlevel == CONTEXT_MODULE) {
     echo $OUTPUT->container_end();
 }
 
-echo $OUTPUT->heading_with_help(get_string('choosefilefromcoursebackup', 'backup'), 'choosefilefromcoursebackup', 'backup');
+echo $OUTPUT->heading(get_string('choosefilefromcoursebackup', 'backup'), 2, 'choosefilefromcoursebackup', 'backup');
 echo $OUTPUT->container_start();
 $treeview_options = array();
 $treeview_options['filecontext'] = $context;
@@ -166,7 +166,7 @@ $renderer = $PAGE->get_renderer('core', 'backup');
 echo $renderer->backup_files_viewer($treeview_options);
 echo $OUTPUT->container_end();
 
-echo $OUTPUT->heading_with_help(get_string('choosefilefromuserbackup', 'backup'), 'choosefilefromuserbackup', 'backup');
+echo $OUTPUT->heading(get_string('choosefilefromuserbackup', 'backup'), 2,'choosefilefromuserbackup', 'backup');
 echo $OUTPUT->container_start();
 $treeview_options = array();
 $user_context = context_user::instance($USER->id);
@@ -181,7 +181,7 @@ echo $OUTPUT->container_end();
 
 $automatedbackups = get_config('backup', 'backup_auto_active');
 if (!empty($automatedbackups)) {
-    echo $OUTPUT->heading_with_help(get_string('choosefilefromautomatedbackup', 'backup'), 'choosefilefromautomatedbackup', 'backup');
+    echo $OUTPUT->heading(get_string('choosefilefromautomatedbackup', 'backup'), 2, 'choosefilefromautomatedbackup', 'backup');
     echo $OUTPUT->container_start();
     $treeview_options = array();
     $user_context = context_user::instance($USER->id);
@@ -197,7 +197,7 @@ if (!empty($automatedbackups)) {
 
 // In progress course restores.
 if (async_helper::is_async_enabled()) {
-    echo $OUTPUT->heading_with_help(get_string('asyncrestoreinprogress', 'backup'), 'asyncrestoreinprogress', 'backup');
+    echo $OUTPUT->heading(get_string('asyncrestoreinprogress', 'backup'), 2, 'asyncrestoreinprogress', 'backup');
     echo $OUTPUT->container_start();
     $renderer = $PAGE->get_renderer('core', 'backup');
     echo $renderer->restore_progress_viewer($USER->id, $context);

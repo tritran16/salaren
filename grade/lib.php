@@ -1055,7 +1055,7 @@ function print_grade_page_head($courseid, $active_type, $active_plugin=null,
         $output = '';
         // Add a help dialogue box if provided.
         if (isset($headerhelpidentifier)) {
-            $output = $OUTPUT->heading_with_help($heading, $headerhelpidentifier, $headerhelpcomponent);
+            $output = $OUTPUT->heading($heading, 1, $headerhelpidentifier, $headerhelpcomponent);
         } else {
             if (isset($user)) {
                 $output = $OUTPUT->context_header(
@@ -1067,7 +1067,7 @@ function print_grade_page_head($courseid, $active_type, $active_plugin=null,
                         ), 2
                     ) . $navselector;
             } else {
-                $output = $OUTPUT->heading($heading);
+                $output = $OUTPUT->heading($heading, 1);
             }
         }
 

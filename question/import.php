@@ -144,7 +144,7 @@ if ($form = $import_form->get_data()) {
     exit;
 }
 
-echo $OUTPUT->heading_with_help($txt->importquestions, 'importquestions', 'question');
+echo $OUTPUT->heading($txt->importquestions, 'importquestions', 'question');
 
 /// Print upload form
 $import_form->display();

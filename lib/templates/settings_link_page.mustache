@@ -36,19 +36,57 @@
         }
     }
 }}
+<style>
+    .modules {
+        display:none;
+    }
+    .users {
+        display: block;
+    }
+    .users h4 a {
+                display: none;
+            }
+    .accounts h4 a {
+                display: block;
+            }
+    .fitem {
+        display: none;
+    }
+    .roles {
+        display: none;
+    }
+    .privacy {
+        display: none;
+    }
+    .backups {
+        display: none;
+    }
+    .gradereports {
+        display: none;
+    }
+    .gradessettings {
+        display:none;
+    }
+    .gradecategorysettings {
+        display:none;
+    }
+    .gradeitemsettings {
+        display:none;
+    }
 
+</style>
 <ul class="nav nav-tabs" role="tablist">
 <!-- First the top most node and immediate children -->
-    <li class="nav-item">
+  <!--  <li class="nav-item">
         <a class="nav-link active" href="#link{{node.key}}" data-toggle="tab" role="tab">{{node.text}}</a>
-    </li>
+    </li> -->
 <!-- Now the first level children with sub nodes -->
 {{#node.children}}
     {{#children.count}}
         {{#display}}
             {{^is_short_branch}}
                 <li class="nav-item">
-                    <a class="nav-link" href="#link{{key}}" data-toggle="tab" role="tab">{{text}}</a>
+                    <a class="nav-link {{key}}" href="#link{{key}}" data-toggle="tab" role="tab">{{text}}</a>
                 </li>
             {{/is_short_branch}}
         {{/display}}
@@ -57,10 +95,10 @@
 </ul>
 
 <div class="tab-content mt-3">
-    <div class="tab-pane active" id="link{{node.key}}" role="tabpanel">
+    <!--<div class="tab-pane active" id="link{{node.key}}" role="tabpanel">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-3 {{key}}">
                 </div>
                 <div class="col">
                     <ul class="list-unstyled">
@@ -98,14 +136,14 @@
                 {{/display}}
             {{/node.children}}
         </div>
-    </div>
+    </div> -->
     {{#node.children}}
         {{#children.count}}
-            <div class="tab-pane" id="link{{key}}" role="tabpanel">
+            <div class="tab-pane {{key}}" id="link{{key}}" role="tabpanel">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-3">
-                            {{#action}}<h4><a href="{{action}}">{{text}}</a><h4>{{/action}}
+                        <div class="col-sm-3 {{key}}">
+                            {{#action}}<h4><a class="{{key}}" href="{{action}}">{{text}}</a><h4>{{/action}}
                             {{^action}}<h4>{{text}}<h4>{{/action}}
                         </div>
                         <div class="col-sm-9">
@@ -113,7 +151,7 @@
                                 {{#children}}
                                     {{#display}}
                                         {{^children.count}}
-                                            <li><a href="{{{action}}}">{{text}}</a></li>
+                                            <li class="{{key}}"><a href="{{{action}}}">{{text}}</a></li>
                                         {{/children.count}}
                                     {{/display}}
                                 {{/children}}
@@ -125,11 +163,11 @@
                             {{#children.count}}
                                 <hr>
                                 <div class="row">
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-3 {{key}}">
                                         {{#action}}<h4><a href="{{action}}">{{text}}</a><h4>{{/action}}
                                         {{^action}}<h4>{{text}}<h4>{{/action}}
                                     </div>
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-9 {{key}}">
                                         <ul class="list-unstyled">
                                             {{#children}}
                                                 {{> core/settings_link_page_single }}

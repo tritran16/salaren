@@ -175,7 +175,7 @@ $PAGE->navbar->add($streditingquestion);
 // for this question type.
 echo $OUTPUT->header();
 $heading = get_string('randomediting', 'mod_quiz');
-echo $OUTPUT->heading_with_help($heading, 'randomquestion', 'mod_quiz');
+echo $OUTPUT->heading($heading, 'randomquestion', 'mod_quiz');
 
 $mform->display();
 

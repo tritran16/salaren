@@ -96,7 +96,7 @@ class course_completion_form extends moodleform {
                 $criteria = new completion_criteria_activity(array_merge($params, $params_a));
                 $criteria->config_form_display($mform, $activity);
             }
-            $mform->addElement('static', 'criteria_role_note', '', get_string('activitiescompletednote', 'core_completion'));
+            $mform->addElement('static', 'criteria_role_note', '', str_replace("moodle", "salaren", get_string('activitiescompletednote', 'core_completion')));
 
             if (count($activities) > 1) {
                 // Map aggregation methods to context-sensitive human readable dropdown menu.
@@ -213,7 +213,7 @@ class course_completion_form extends moodleform {
         }
         $criteria = new completion_criteria_self($params);
         $criteria->config_form_display($mform);
-        $mform->addElement('static', 'criteria_self_note', '', get_string('manualselfcompletionnote', 'core_completion'));
+        $mform->addElement('static', 'criteria_self_note', '',str_replace("moodle","salaren", get_string('manualselfcompletionnote', 'core_completion')));
 
         // Role completion criteria
         $label = get_string('coursecompletioncondition', 'core_completion', get_string('manualcompletionby', 'core_completion'));
@@ -231,7 +231,7 @@ class course_completion_form extends moodleform {
                 $criteria = new completion_criteria_role(array_merge($params, $params_a));
                 $criteria->config_form_display($mform, $role);
             }
-            $mform->addElement('static', 'criteria_role_note', '', get_string('manualcompletionbynote', 'core_completion'));
+            $mform->addElement('static', 'criteria_role_note', '', str_replace("moodle", "salaren", get_string('manualcompletionbynote', 'core_completion')));
             // Map aggregation methods to context-sensitive human readable dropdown menu.
             $roleaggregationmenu = array();
             foreach ($aggregation_methods as $methodcode => $methodname) {
