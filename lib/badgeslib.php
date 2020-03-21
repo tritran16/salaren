@@ -233,13 +233,16 @@ function badges_calculate_message_schedule($schedule) {
 
     switch ($schedule) {
         case BADGE_MESSAGE_DAILY:
-            $nextcron = time() + 60 * 60 * 24;
+            $tomorrow = new DateTime("1 day", core_date::get_server_timezone_object());
+            $nextcron = $tomorrow->getTimestamp();
             break;
         case BADGE_MESSAGE_WEEKLY:
-            $nextcron = time() + 60 * 60 * 24 * 7;
+            $nextweek = new DateTime("1 week", core_date::get_server_timezone_object());
+            $nextcron = $nextweek->getTimestamp();
             break;
         case BADGE_MESSAGE_MONTHLY:
-            $nextcron = time() + 60 * 60 * 24 * 7 * 30;
+            $nextmonth = new DateTime("1 month", core_date::get_server_timezone_object());
+            $nextcron = $nextmonth->getTimestamp();
             break;
     }
 
@@ -500,10 +503,13 @@ function badges_bake($hash, $badgeid, $userid = 0, $pathhash = false) {
             $contents = $file->get_content();
 
             $filehandler = new PNG_MetaDataHandler($contents);
-            $assertion = new moodle_url('/badges/assertion.php', array('b' => $hash));
-            if ($filehandler->check_chunks("tEXt", "openbadges")) {
-                // Add assertion URL tExt chunk.
-                $newcontents = $filehandler->add_chunks("tEXt", "openbadges", $assertion->out(false));
+            // For now, the site backpack OB version will be used as default.
+            $obversion = badges_open_badges_backpack_api();
+            $assertion = new core_badges_assertion($hash, $obversion);
+            $assertionjson = json_encode($assertion->get_badge_assertion());
+            if ($filehandler->check_chunks("iTXt", "openbadges")) {
+                // Add assertion URL iTXt chunk.
+                $newcontents = $filehandler->add_chunks("iTXt", "openbadges", $assertionjson);
                 $fileinfo = array(
                         'contextid' => $user_context->id,
                         'component' => 'badges',
@@ -857,45 +863,6 @@ function badges_get_badge_api_versions() {
 }
 
 /**
- * Called on install or upgrade to create default list of backpacks a user can connect to.
- *
- * @return void
- */
-function badges_install_default_backpacks() {
-    global $DB;
-
-    $record = new stdClass();
-    $record->backpackweburl = BADGE_BACKPACKWEBURL;
-    $record->backpackapiurl = BADGE_BACKPACKAPIURL;
-    $record->apiversion = OPEN_BADGES_V1;
-    $record->sortorder = 0;
-    $record->password = '';
-
-    $bpid = 0;
-    if (!($bp = $DB->get_record('badge_external_backpack', array('backpackapiurl' => $record->backpackapiurl)))) {
-        $bpid = $DB->insert_record('badge_external_backpack', $record);
-    } else {
-        $bpid = $bp->id;
-    }
-    set_config('badges_site_backpack', $bpid);
-
-    // All existing backpacks default to V1.
-    $DB->set_field('badge_backpack', 'externalbackpackid', $bpid);
-
-    $record = new stdClass();
-    $record->backpackapiurl = BADGRIO_BACKPACKAPIURL;
-    $record->backpackweburl = BADGRIO_BACKPACKWEBURL;
-    $record->apiversion = OPEN_BADGES_V2;
-    $record->sortorder = 1;
-    $record->password = '';
-
-    if (!$DB->record_exists('badge_external_backpack', array('backpackapiurl' => $record->backpackapiurl))) {
-        $DB->insert_record('badge_external_backpack', $record);
-    }
-
-}
-
-/**
  * Get the default issuer for a badge from this site.
  *
  * @return array
@@ -904,7 +871,7 @@ function badges_get_default_issuer() {
     global $CFG, $SITE;
 
     $issuer = array();
-    $issuerurl = new moodle_url('/badges/issuer.php');
+    $issuerurl = new moodle_url('/');
     $issuer['name'] = $CFG->badges_defaultissuername;
     if (empty($issuer['name'])) {
         $issuer['name'] = $SITE->fullname ? $SITE->fullname : $SITE->shortname;
@@ -912,7 +879,8 @@ function badges_get_default_issuer() {
     $issuer['url'] = $issuerurl->out(false);
     $issuer['email'] = $CFG->badges_defaultissuercontact;
     $issuer['@context'] = OPEN_BADGES_V2_CONTEXT;
-    $issuer['id'] = $issuerurl->out(false);
+    $issuerid = new moodle_url('/badges/issuer_json.php');
+    $issuer['id'] = $issuerid->out(false);
     $issuer['type'] = OPEN_BADGES_V2_TYPE_ISSUER;
     return $issuer;
 }

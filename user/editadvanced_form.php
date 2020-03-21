@@ -99,7 +99,7 @@ class user_editadvanced_form extends moodleform {
 
         $purpose = user_edit_map_field_purpose($userid, 'username');
         $mform->addElement('text', 'username', get_string('username'), 'size="20"' . $purpose);
-        // $mform->addHelpButton('username', 'username', 'auth');
+        $mform->addHelpButton('username', 'username', 'auth');
         $mform->setType('username', PARAM_RAW);
 
         if ($userid !== -1) {
@@ -107,10 +107,10 @@ class user_editadvanced_form extends moodleform {
         }
 
         $mform->addElement('selectgroups', 'auth', get_string('chooseauthmethod', 'auth'), $authoptions);
-        // $mform->addHelpButton('auth', 'chooseauthmethod', 'auth');
+        $mform->addHelpButton('auth', 'chooseauthmethod', 'auth');
 
         $mform->addElement('advcheckbox', 'suspended', get_string('suspended', 'auth'));
-        // $mform->addHelpButton('suspended', 'suspended', 'auth');
+        $mform->addHelpButton('suspended', 'suspended', 'auth');
 
         $mform->addElement('checkbox', 'createpassword', get_string('createpassword', 'auth'));
         $mform->disabledIf('createpassword', 'auth', 'in', $cannotchangepass);
@@ -121,7 +121,7 @@ class user_editadvanced_form extends moodleform {
 
         $purpose = user_edit_map_field_purpose($userid, 'password');
         $mform->addElement('passwordunmask', 'newpassword', get_string('newpassword'), 'size="20"' . $purpose);
-        // $mform->addHelpButton('newpassword', 'newpassword');
+        $mform->addHelpButton('newpassword', 'newpassword');
         $mform->setType('newpassword', core_user::get_property_type('password'));
         $mform->disabledIf('newpassword', 'createpassword', 'checked');
 
@@ -136,14 +136,14 @@ class user_editadvanced_form extends moodleform {
                 }
                 $services = get_string('userservices', 'webservice', rtrim($services, ','));
                 $mform->addElement('advcheckbox', 'signoutofotherservices', get_string('signoutofotherservices'), $services);
-                // $mform->addHelpButton('signoutofotherservices', 'signoutofotherservices');
+                $mform->addHelpButton('signoutofotherservices', 'signoutofotherservices');
                 $mform->disabledIf('signoutofotherservices', 'newpassword', 'eq', '');
                 $mform->setDefault('signoutofotherservices', 1);
             }
         }
 
         $mform->addElement('advcheckbox', 'preference_auth_forcepasswordchange', get_string('forcepasswordchange'));
-        // $mform->addHelpButton('preference_auth_forcepasswordchange', 'forcepasswordchange');
+        $mform->addHelpButton('preference_auth_forcepasswordchange', 'forcepasswordchange');
         $mform->disabledIf('preference_auth_forcepasswordchange', 'createpassword', 'checked');
 
         // Shared fields.
@@ -265,7 +265,7 @@ class user_editadvanced_form extends moodleform {
         } else {
             if (!empty($usernew->newpassword)) {
                 $errmsg = ''; // Prevent eclipse warning.
-                if (!check_password_policy($usernew->newpassword, $errmsg)) {
+                if (!check_password_policy($usernew->newpassword, $errmsg, $usernew)) {
                     $err['newpassword'] = $errmsg;
                 }
             } else if (!$user) {

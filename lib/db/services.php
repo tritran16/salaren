@@ -106,7 +106,7 @@ $functions = array(
         'methodname'    => 'get_user_badges',
         'description'   => 'Returns the list of badges awarded to a user.',
         'type'          => 'read',
-        'capabilities'  => 'salaren/badges:viewotherbadges',
+        'capabilities'  => 'moodle/badges:viewotherbadges',
         'services'      => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_blog_get_entries' => array(
@@ -163,7 +163,7 @@ $functions = array(
         'description' => 'Update the start day (but not time) for an event.',
         'classpath' => 'calendar/externallib.php',
         'type' => 'write',
-        'capabilities' => 'salaren/calendar:manageentries, salaren/calendar:manageownentries, salaren/calendar:managegroupentries',
+        'capabilities' => 'moodle/calendar:manageentries, moodle/calendar:manageownentries, moodle/calendar:managegroupentries',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -173,7 +173,7 @@ $functions = array(
         'description' => 'Create calendar events',
         'classpath' => 'calendar/externallib.php',
         'type' => 'write',
-        'capabilities' => 'salaren/calendar:manageentries, salaren/calendar:manageownentries, salaren/calendar:managegroupentries',
+        'capabilities' => 'moodle/calendar:manageentries, moodle/calendar:manageownentries, moodle/calendar:managegroupentries',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_calendar_delete_calendar_events' => array(
@@ -182,7 +182,7 @@ $functions = array(
         'description' => 'Delete calendar events',
         'classpath' => 'calendar/externallib.php',
         'type' => 'write',
-        'capabilities' => 'salaren/calendar:manageentries, salaren/calendar:manageownentries, salaren/calendar:managegroupentries',
+        'capabilities' => 'moodle/calendar:manageentries, moodle/calendar:manageownentries, moodle/calendar:managegroupentries',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -192,7 +192,7 @@ $functions = array(
         'description' => 'Get calendar events',
         'classpath' => 'calendar/externallib.php',
         'type' => 'read',
-        'capabilities' => 'salaren/calendar:manageentries, salaren/calendar:manageownentries, salaren/calendar:managegroupentries',
+        'capabilities' => 'moodle/calendar:manageentries, moodle/calendar:manageownentries, moodle/calendar:managegroupentries',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_calendar_get_action_events_by_timesort' => array(
@@ -201,7 +201,7 @@ $functions = array(
         'description' => 'Get calendar action events by tiemsort',
         'classpath' => 'calendar/externallib.php',
         'type' => 'read',
-        'capabilities' => 'salaren/calendar:manageentries, salaren/calendar:manageownentries, salaren/calendar:managegroupentries',
+        'capabilities' => 'moodle/calendar:manageentries, moodle/calendar:manageownentries, moodle/calendar:managegroupentries',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -211,7 +211,7 @@ $functions = array(
         'description' => 'Get calendar action events by course',
         'classpath' => 'calendar/externallib.php',
         'type' => 'read',
-        'capabilities' => 'salaren/calendar:manageentries, salaren/calendar:manageownentries, salaren/calendar:managegroupentries',
+        'capabilities' => 'moodle/calendar:manageentries, moodle/calendar:manageownentries, moodle/calendar:managegroupentries',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -221,7 +221,7 @@ $functions = array(
         'description' => 'Get calendar action events by courses',
         'classpath' => 'calendar/externallib.php',
         'type' => 'read',
-        'capabilities' => 'salaren/calendar:manageentries, salaren/calendar:manageownentries, salaren/calendar:managegroupentries',
+        'capabilities' => 'moodle/calendar:manageentries, moodle/calendar:manageownentries, moodle/calendar:managegroupentries',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -231,7 +231,7 @@ $functions = array(
         'description' => 'Get calendar event by id',
         'classpath' => 'calendar/externallib.php',
         'type' => 'read',
-        'capabilities' => 'salaren/calendar:manageentries, salaren/calendar:manageownentries, salaren/calendar:managegroupentries',
+        'capabilities' => 'moodle/calendar:manageentries, moodle/calendar:manageownentries, moodle/calendar:managegroupentries',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -241,7 +241,7 @@ $functions = array(
         'description' => 'Submit form data for event form',
         'classpath' => 'calendar/externallib.php',
         'type' => 'write',
-        'capabilities' => 'salaren/calendar:manageentries, salaren/calendar:manageownentries, salaren/calendar:managegroupentries',
+        'capabilities' => 'moodle/calendar:manageentries, moodle/calendar:manageownentries, moodle/calendar:managegroupentries',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -261,13 +261,21 @@ $functions = array(
         'type' => 'read',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
+    'core_calendar_get_timestamps' => [
+        'classname'     => 'core_calendar_external',
+        'methodname'    => 'get_timestamps',
+        'description'   => 'Fetch unix timestamps for given date times.',
+        'classpath' => 'calendar/externallib.php',
+        'type'          => 'read',
+        'ajax'          => true,
+    ],
     'core_cohort_add_cohort_members' => array(
         'classname' => 'core_cohort_external',
         'methodname' => 'add_cohort_members',
         'classpath' => 'cohort/externallib.php',
         'description' => 'Adds cohort members.',
         'type' => 'write',
-        'capabilities' => 'salaren/cohort:assign'
+        'capabilities' => 'moodle/cohort:assign'
     ),
     'core_cohort_create_cohorts' => array(
         'classname' => 'core_cohort_external',
@@ -275,7 +283,7 @@ $functions = array(
         'classpath' => 'cohort/externallib.php',
         'description' => 'Creates new cohorts.',
         'type' => 'write',
-        'capabilities' => 'salaren/cohort:manage'
+        'capabilities' => 'moodle/cohort:manage'
     ),
     'core_cohort_delete_cohort_members' => array(
         'classname' => 'core_cohort_external',
@@ -283,7 +291,7 @@ $functions = array(
         'classpath' => 'cohort/externallib.php',
         'description' => 'Deletes cohort members.',
         'type' => 'write',
-        'capabilities' => 'salaren/cohort:assign'
+        'capabilities' => 'moodle/cohort:assign'
     ),
     'core_cohort_delete_cohorts' => array(
         'classname' => 'core_cohort_external',
@@ -291,7 +299,7 @@ $functions = array(
         'classpath' => 'cohort/externallib.php',
         'description' => 'Deletes all specified cohorts.',
         'type' => 'write',
-        'capabilities' => 'salaren/cohort:manage'
+        'capabilities' => 'moodle/cohort:manage'
     ),
     'core_cohort_get_cohort_members' => array(
         'classname' => 'core_cohort_external',
@@ -299,7 +307,7 @@ $functions = array(
         'classpath' => 'cohort/externallib.php',
         'description' => 'Returns cohort members.',
         'type' => 'read',
-        'capabilities' => 'salaren/cohort:view'
+        'capabilities' => 'moodle/cohort:view'
     ),
     'core_cohort_search_cohorts' => array(
         'classname' => 'core_cohort_external',
@@ -308,7 +316,7 @@ $functions = array(
         'description' => 'Search for cohorts.',
         'type' => 'read',
         'ajax' => true,
-        'capabilities' => 'salaren/cohort:view'
+        'capabilities' => 'moodle/cohort:view'
     ),
     'core_cohort_get_cohorts' => array(
         'classname' => 'core_cohort_external',
@@ -316,7 +324,7 @@ $functions = array(
         'classpath' => 'cohort/externallib.php',
         'description' => 'Returns cohort details.',
         'type' => 'read',
-        'capabilities' => 'salaren/cohort:view'
+        'capabilities' => 'moodle/cohort:view'
     ),
     'core_cohort_update_cohorts' => array(
         'classname' => 'core_cohort_external',
@@ -324,14 +332,28 @@ $functions = array(
         'classpath' => 'cohort/externallib.php',
         'description' => 'Updates existing cohorts.',
         'type' => 'write',
-        'capabilities' => 'salaren/cohort:manage'
+        'capabilities' => 'moodle/cohort:manage'
     ),
     'core_comment_get_comments' => array(
         'classname' => 'core_comment_external',
         'methodname' => 'get_comments',
         'description' => 'Returns comments.',
         'type' => 'read',
-        'capabilities' => 'salaren/comment:view',
+        'capabilities' => 'moodle/comment:view',
+        'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
+    ),
+    'core_comment_add_comments' => array(
+        'classname' => 'core_comment_external',
+        'methodname' => 'add_comments',
+        'description' => 'Adds a comment or comments.',
+        'type' => 'write',
+        'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
+    ),
+    'core_comment_delete_comments' => array(
+        'classname' => 'core_comment_external',
+        'methodname' => 'delete_comments',
+        'description' => 'Deletes a comment or comments.',
+        'type' => 'write',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_completion_get_activities_completion_status' => array(
@@ -368,7 +390,7 @@ $functions = array(
         'methodname'    => 'override_activity_completion_status',
         'description'   => 'Update completion status for a user in an activity by overriding it.',
         'type'          => 'write',
-        'capabilities'  => 'salaren/course:overridecompletion',
+        'capabilities'  => 'moodle/course:overridecompletion',
         'ajax'          => true,
     ),
     'core_course_create_categories' => array(
@@ -377,7 +399,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Create course categories',
         'type' => 'write',
-        'capabilities' => 'salaren/category:manage'
+        'capabilities' => 'moodle/category:manage'
     ),
     'core_course_create_courses' => array(
         'classname' => 'core_course_external',
@@ -385,7 +407,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Create new courses',
         'type' => 'write',
-        'capabilities' => 'salaren/course:create, salaren/course:visibility'
+        'capabilities' => 'moodle/course:create, moodle/course:visibility'
     ),
     'core_course_delete_categories' => array(
         'classname' => 'core_course_external',
@@ -393,7 +415,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Delete course categories',
         'type' => 'write',
-        'capabilities' => 'salaren/category:manage'
+        'capabilities' => 'moodle/category:manage'
     ),
     'core_course_delete_courses' => array(
         'classname' => 'core_course_external',
@@ -401,7 +423,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Deletes all specified courses',
         'type' => 'write',
-        'capabilities' => 'salaren/course:delete'
+        'capabilities' => 'moodle/course:delete'
     ),
     'core_course_delete_modules' => array(
         'classname' => 'core_course_external',
@@ -409,7 +431,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Deletes all specified module instances',
         'type' => 'write',
-        'capabilities' => 'salaren/course:manageactivities'
+        'capabilities' => 'moodle/course:manageactivities'
     ),
     'core_course_duplicate_course' => array(
         'classname' => 'core_course_external',
@@ -417,7 +439,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Duplicate an existing course (creating a new one).',
         'type' => 'write',
-        'capabilities' => 'salaren/backup:backupcourse, salaren/restore:restorecourse, salaren/course:create'
+        'capabilities' => 'moodle/backup:backupcourse, moodle/restore:restorecourse, moodle/course:create'
     ),
     'core_course_get_categories' => array(
         'classname' => 'core_course_external',
@@ -425,7 +447,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Return category details',
         'type' => 'read',
-        'capabilities' => 'salaren/category:viewhiddencategories',
+        'capabilities' => 'moodle/category:viewhiddencategories',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_course_get_contents' => array(
@@ -434,7 +456,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Get course contents',
         'type' => 'read',
-        'capabilities' => 'salaren/course:update, salaren/course:viewhiddencourses',
+        'capabilities' => 'moodle/course:update, moodle/course:viewhiddencourses',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_course_get_course_module' => array(
@@ -483,7 +505,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Return course details',
         'type' => 'read',
-        'capabilities' => 'salaren/course:view, salaren/course:update, salaren/course:viewhiddencourses',
+        'capabilities' => 'moodle/course:view, moodle/course:update, moodle/course:viewhiddencourses',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -493,7 +515,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Import course data from a course into another course. Does not include any user data.',
         'type' => 'write',
-        'capabilities' => 'salaren/backup:backuptargetimport, salaren/restore:restoretargetimport'
+        'capabilities' => 'moodle/backup:backuptargetimport, moodle/restore:restoretargetimport'
     ),
     'core_course_search_courses' => array(
         'classname' => 'core_course_external',
@@ -510,7 +532,7 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Update categories',
         'type' => 'write',
-        'capabilities' => 'salaren/category:manage',
+        'capabilities' => 'moodle/category:manage',
     ),
     'core_course_update_courses' => array(
         'classname' => 'core_course_external',
@@ -518,8 +540,8 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Update courses',
         'type' => 'write',
-        'capabilities' => 'salaren/course:update, salaren/course:changecategory, salaren/course:changefullname, '
-            . 'salaren/course:changeshortname, salaren/course:changeidnumber, salaren/course:changesummary, salaren/course:visibility'
+        'capabilities' => 'moodle/course:update, moodle/course:changecategory, moodle/course:changefullname, '
+            . 'moodle/course:changeshortname, moodle/course:changeidnumber, moodle/course:changesummary, moodle/course:visibility'
     ),
     'core_course_view_course' => array(
         'classname' => 'core_course_external',
@@ -527,15 +549,6 @@ $functions = array(
         'classpath' => 'course/externallib.php',
         'description' => 'Log that the course was viewed',
         'type' => 'write',
-        'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
-    ),
-    'core_course_get_activities_overview' => array(
-        'classname' => 'core_course_external',
-        'methodname' => 'get_activities_overview',
-        'classpath' => 'course/externallib.php',
-        'description' => '** DEPRECATED ** Please do not call this function any more.
-                          Return activities overview for the given courses.',
-        'type' => 'read',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_course_get_user_navigation_options' => array(
@@ -608,6 +621,14 @@ $functions = array(
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
+    'core_course_get_enrolled_users_by_cmid' => array(
+        'classname' => 'core_course_external',
+        'methodname' => 'get_enrolled_users_by_cmid',
+        'classpath' => 'course/externallib.php',
+        'description' => 'List users by course module id & filter by group id.',
+        'type' => 'read',
+        'ajax' => true,
+    ),
     'core_enrol_get_course_enrolment_methods' => array(
         'classname' => 'core_enrol_external',
         'methodname' => 'get_course_enrolment_methods',
@@ -622,8 +643,8 @@ $functions = array(
         'classpath' => 'enrol/externallib.php',
         'description' => 'Get enrolled users by course id.',
         'type' => 'read',
-        'capabilities' => 'salaren/user:viewdetails, salaren/user:viewhiddendetails, salaren/course:useremail, salaren/user:update, '
-            . 'salaren/site:accessallgroups',
+        'capabilities' => 'moodle/user:viewdetails, moodle/user:viewhiddendetails, moodle/course:useremail, moodle/user:update, '
+            . 'moodle/site:accessallgroups',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_enrol_get_enrolled_users_with_capability' => array(
@@ -641,22 +662,41 @@ $functions = array(
         'description' => 'Get the list of potential users to enrol',
         'ajax' => true,
         'type' => 'read',
-        'capabilities' => 'salaren/course:enrolreview'
+        'capabilities' => 'moodle/course:enrolreview'
     ),
+    'core_enrol_search_users' => [
+        'classname' => 'core_enrol_external',
+        'methodname' => 'search_users',
+        'classpath' => 'enrol/externallib.php',
+        'description' => 'Search within the list of course participants',
+        'ajax' => true,
+        'type' => 'read',
+        'capabilities' => 'moodle/course:viewparticipants',
+        'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
+    ],
     'core_enrol_get_users_courses' => array(
         'classname' => 'core_enrol_external',
         'methodname' => 'get_users_courses',
         'classpath' => 'enrol/externallib.php',
         'description' => 'Get the list of courses where a user is enrolled in',
         'type' => 'read',
-        'capabilities' => 'salaren/course:viewparticipants',
+        'capabilities' => 'moodle/course:viewparticipants',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_enrol_edit_user_enrolment' => array(
         'classname' => 'core_enrol_external',
         'methodname' => 'edit_user_enrolment',
         'classpath' => 'enrol/externallib.php',
-        'description' => 'External function that updates a given user enrolment',
+        'description' => '** DEPRECATED ** Please do not call this function any more.
+                          External function that updates a given user enrolment',
+        'type' => 'write',
+        'ajax' => true,
+    ),
+    'core_enrol_submit_user_enrolment_form' => array(
+        'classname' => 'core_enrol_external',
+        'methodname' => 'submit_user_enrolment_form',
+        'classpath' => 'enrol/externallib.php',
+        'description' => 'Submit form data for enrolment form',
         'type' => 'write',
         'ajax' => true,
     ),
@@ -675,6 +715,22 @@ $functions = array(
         'description' => 'Return a list of notifications for the current session',
         'type' => 'read',
         'loginrequired' => false,
+        'ajax' => true,
+    ),
+    'core_session_touch' => array(
+        'classname' => 'core\session\external',
+        'methodname' => 'touch_session',
+        'description' => 'Keep the users session alive',
+        'type' => 'read',
+        'loginrequired' => true,
+        'ajax' => true,
+    ),
+    'core_session_time_remaining' => array(
+        'classname' => 'core\session\external',
+        'methodname' => 'time_remaining',
+        'description' => 'Count the seconds remaining in this session',
+        'type' => 'read',
+        'loginrequired' => true,
         'ajax' => true,
     ),
     'core_files_get_files' => array(
@@ -754,7 +810,7 @@ $functions = array(
                                      This function does not return category or manual items.
                                      This function is suitable for managers or teachers not students.',
         'type' => 'read',
-        'capabilities' => 'salaren/grade:view, salaren/grade:viewall, salaren/grade:viewhidden'
+        'capabilities' => 'moodle/grade:view, moodle/grade:viewall, moodle/grade:viewhidden'
     ),
     'core_grades_update_grades' => array(
         'classname' => 'core_grades_external',
@@ -762,6 +818,40 @@ $functions = array(
         'description' => 'Update a grade item and associated student grades.',
         'type' => 'write',
     ),
+    'core_grades_grader_gradingpanel_point_fetch' => [
+        'classname' => 'core_grades\\grades\\grader\\gradingpanel\\point\\external\\fetch',
+        'methodname' => 'execute',
+        'description' => 'Fetch the data required to display the grader grading panel for simple grading, ' .
+            'creating the grade item if required',
+        'type' => 'write',
+        'ajax' => true,
+        'services' => [MOODLE_OFFICIAL_MOBILE_SERVICE],
+    ],
+    'core_grades_grader_gradingpanel_point_store' => [
+        'classname' => 'core_grades\\grades\\grader\\gradingpanel\\point\\external\\store',
+        'methodname' => 'execute',
+        'description' => 'Store the data required to display the grader grading panel for simple grading',
+        'type' => 'write',
+        'ajax' => true,
+        'services' => [MOODLE_OFFICIAL_MOBILE_SERVICE],
+    ],
+    'core_grades_grader_gradingpanel_scale_fetch' => [
+        'classname' => 'core_grades\\grades\\grader\\gradingpanel\\scale\\external\\fetch',
+        'methodname' => 'execute',
+        'description' => 'Fetch the data required to display the grader grading panel for scale-based grading, ' .
+            'creating the grade item if required',
+        'type' => 'write',
+        'ajax' => true,
+        'services' => [MOODLE_OFFICIAL_MOBILE_SERVICE],
+    ],
+    'core_grades_grader_gradingpanel_scale_store' => [
+        'classname' => 'core_grades\\grades\\grader\\gradingpanel\\scale\\external\\store',
+        'methodname' => 'execute',
+        'description' => 'Store the data required to display the grader grading panel for scale-based grading',
+        'type' => 'write',
+        'ajax' => true,
+        'services' => [MOODLE_OFFICIAL_MOBILE_SERVICE],
+    ],
     'core_grading_get_definitions' => array(
         'classname' => 'core_grading_external',
         'methodname' => 'get_definitions',
@@ -786,7 +876,7 @@ $functions = array(
         'classpath' => 'group/externallib.php',
         'description' => 'Adds group members.',
         'type' => 'write',
-        'capabilities' => 'salaren/course:managegroups',
+        'capabilities' => 'moodle/course:managegroups',
     ),
     'core_group_assign_grouping' => array(
         'classname' => 'core_group_external',
@@ -808,7 +898,7 @@ $functions = array(
         'classpath' => 'group/externallib.php',
         'description' => 'Creates new groups.',
         'type' => 'write',
-        'capabilities' => 'salaren/course:managegroups'
+        'capabilities' => 'moodle/course:managegroups'
     ),
     'core_group_delete_group_members' => array(
         'classname' => 'core_group_external',
@@ -816,7 +906,7 @@ $functions = array(
         'classpath' => 'group/externallib.php',
         'description' => 'Deletes group members.',
         'type' => 'write',
-        'capabilities' => 'salaren/course:managegroups'
+        'capabilities' => 'moodle/course:managegroups'
     ),
     'core_group_delete_groupings' => array(
         'classname' => 'core_group_external',
@@ -831,7 +921,7 @@ $functions = array(
         'classpath' => 'group/externallib.php',
         'description' => 'Deletes all specified groups.',
         'type' => 'write',
-        'capabilities' => 'salaren/course:managegroups'
+        'capabilities' => 'moodle/course:managegroups'
     ),
     'core_group_get_activity_allowed_groups' => array(
         'classname' => 'core_group_external',
@@ -855,6 +945,7 @@ $functions = array(
         'classpath' => 'group/externallib.php',
         'description' => 'Returns all groupings in specified course.',
         'type' => 'read',
+        'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_group_get_course_groups' => array(
         'classname' => 'core_group_external',
@@ -863,7 +954,8 @@ $functions = array(
         'description' => 'Returns all groups in specified course.',
         'type' => 'read',
         'ajax' => true,
-        'capabilities' => 'salaren/course:managegroups'
+        'capabilities' => 'moodle/course:managegroups',
+        'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_group_get_course_user_groups' => array(
         'classname' => 'core_group_external',
@@ -871,7 +963,7 @@ $functions = array(
         'classpath' => 'group/externallib.php',
         'description' => 'Returns all groups in specified course for the specified user.',
         'type' => 'read',
-        'capabilities' => 'salaren/course:managegroups',
+        'capabilities' => 'moodle/course:managegroups',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_group_get_group_members' => array(
@@ -880,7 +972,7 @@ $functions = array(
         'classpath' => 'group/externallib.php',
         'description' => 'Returns group members.',
         'type' => 'read',
-        'capabilities' => 'salaren/course:managegroups'
+        'capabilities' => 'moodle/course:managegroups'
     ),
     'core_group_get_groupings' => array(
         'classname' => 'core_group_external',
@@ -895,7 +987,7 @@ $functions = array(
         'classpath' => 'group/externallib.php',
         'description' => 'Returns group details.',
         'type' => 'read',
-        'capabilities' => 'salaren/course:managegroups'
+        'capabilities' => 'moodle/course:managegroups'
     ),
     'core_group_unassign_grouping' => array(
         'classname' => 'core_group_external',
@@ -917,7 +1009,7 @@ $functions = array(
         'classpath' => 'group/externallib.php',
         'description' => 'Updates existing groups.',
         'type' => 'write',
-        'capabilities' => 'salaren/course:managegroups'
+        'capabilities' => 'moodle/course:managegroups'
     ),
     'core_message_mute_conversations' => array(
         'classname' => 'core_message_external',
@@ -1027,7 +1119,7 @@ $functions = array(
         'description' => '** DEPRECATED ** Please do not call this function any more.
                           Deletes a conversation.',
         'type' => 'write',
-        'capabilities' => 'salaren/site:deleteownmessage',
+        'capabilities' => 'moodle/site:deleteownmessage',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1037,7 +1129,7 @@ $functions = array(
         'classpath' => 'message/externallib.php',
         'description' => 'Deletes a list of conversations.',
         'type' => 'write',
-        'capabilities' => 'salaren/site:deleteownmessage',
+        'capabilities' => 'moodle/site:deleteownmessage',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1047,7 +1139,7 @@ $functions = array(
         'classpath' => 'message/externallib.php',
         'description' => 'Deletes a message.',
         'type' => 'write',
-        'capabilities' => 'salaren/site:deleteownmessage',
+        'capabilities' => 'moodle/site:deleteownmessage',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1328,7 +1420,7 @@ $functions = array(
         'classpath' => 'message/externallib.php',
         'description' => 'Send instant messages',
         'type' => 'write',
-        'capabilities' => 'salaren/site:sendmessage',
+        'capabilities' => 'moodle/site:sendmessage',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1338,7 +1430,7 @@ $functions = array(
         'classpath' => 'message/externallib.php',
         'description' => 'Send messages to an existing conversation between users',
         'type' => 'write',
-        'capabilities' => 'salaren/site:sendmessage',
+        'capabilities' => 'moodle/site:sendmessage',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1376,7 +1468,7 @@ $functions = array(
         'classpath' => 'message/externallib.php',
         'description' => 'Get the notification preferences for a given user.',
         'type' => 'read',
-        'capabilities' => 'salaren/user:editownmessageprofile',
+        'capabilities' => 'moodle/user:editownmessageprofile',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_message_get_user_message_preferences' => array(
@@ -1385,7 +1477,7 @@ $functions = array(
         'classpath' => 'message/externallib.php',
         'description' => 'Get the message preferences for a given user.',
         'type' => 'read',
-        'capabilities' => 'salaren/user:editownmessageprofile',
+        'capabilities' => 'moodle/user:editownmessageprofile',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
         'ajax' => true
     ),
@@ -1413,7 +1505,7 @@ $functions = array(
         'classpath' => 'message/externallib.php',
         'description' => 'Deletes a message for all users.',
         'type' => 'write',
-        'capabilities' => 'salaren/site:deleteanymessage',
+        'capabilities' => 'moodle/site:deleteanymessage',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1424,7 +1516,7 @@ $functions = array(
         'description' => 'Create notes',
         'type' => 'write',
         'ajax' => true,
-        'capabilities' => 'salaren/notes:manage',
+        'capabilities' => 'moodle/notes:manage',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_notes_delete_notes' => array(
@@ -1433,7 +1525,7 @@ $functions = array(
         'classpath' => 'notes/externallib.php',
         'description' => 'Delete notes',
         'type' => 'write',
-        'capabilities' => 'salaren/notes:manage',
+        'capabilities' => 'moodle/notes:manage',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_notes_get_course_notes' => array(
@@ -1442,7 +1534,7 @@ $functions = array(
         'classpath' => 'notes/externallib.php',
         'description' => 'Returns all notes in specified course (or site), for the specified user.',
         'type' => 'read',
-        'capabilities' => 'salaren/notes:view',
+        'capabilities' => 'moodle/notes:view',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_notes_get_notes' => array(
@@ -1451,7 +1543,7 @@ $functions = array(
         'classpath' => 'notes/externallib.php',
         'description' => 'Get notes',
         'type' => 'read',
-        'capabilities' => 'salaren/notes:view'
+        'capabilities' => 'moodle/notes:view'
     ),
     'core_notes_update_notes' => array(
         'classname' => 'core_notes_external',
@@ -1459,7 +1551,7 @@ $functions = array(
         'classpath' => 'notes/externallib.php',
         'description' => 'Update notes',
         'type' => 'write',
-        'capabilities' => 'salaren/notes:manage'
+        'capabilities' => 'moodle/notes:manage'
     ),
     'core_notes_view_notes' => array(
         'classname' => 'core_notes_external',
@@ -1467,7 +1559,7 @@ $functions = array(
         'classpath' => 'notes/externallib.php',
         'description' => 'Simulates the web interface view of notes/index.php: trigger events.',
         'type' => 'write',
-        'capabilities' => 'salaren/notes:view',
+        'capabilities' => 'moodle/notes:view',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_output_load_template' => array(
@@ -1500,7 +1592,7 @@ $functions = array(
         'methodname'    => 'update_flag',
         'description'   => 'Update the flag state of a question attempt.',
         'type'          => 'write',
-        'capabilities'  => 'salaren/question:flag',
+        'capabilities'  => 'moodle/question:flag',
         'services'      => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_question_submit_tags_form' => array(
@@ -1522,7 +1614,7 @@ $functions = array(
         'methodname' => 'get_item_ratings',
         'description' => 'Retrieve all the ratings for an item.',
         'type' => 'read',
-        'capabilities' => 'salaren/rating:view',
+        'capabilities' => 'moodle/rating:view',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_rating_add_rating' => array(
@@ -1530,7 +1622,7 @@ $functions = array(
         'methodname' => 'add_rating',
         'description' => 'Rates an item.',
         'type' => 'write',
-        'capabilities' => 'salaren/rating:rate',
+        'capabilities' => 'moodle/rating:rate',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_role_assign_roles' => array(
@@ -1539,7 +1631,7 @@ $functions = array(
         'classpath' => 'enrol/externallib.php',
         'description' => 'Manual role assignments.',
         'type' => 'write',
-        'capabilities' => 'salaren/role:assign'
+        'capabilities' => 'moodle/role:assign'
     ),
     'core_role_unassign_roles' => array(
         'classname' => 'core_role_external',
@@ -1547,7 +1639,7 @@ $functions = array(
         'classpath' => 'enrol/externallib.php',
         'description' => 'Manual role unassignments.',
         'type' => 'write',
-        'capabilities' => 'salaren/role:assign'
+        'capabilities' => 'moodle/role:assign'
     ),
     'core_search_get_relevant_users' => array(
         'classname' => '\core_search\external',
@@ -1629,7 +1721,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Copy files from a draft area to users private files area.',
         'type' => 'write',
-        'capabilities' => 'salaren/user:manageownfiles',
+        'capabilities' => 'moodle/user:manageownfiles',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_user_create_users' => array(
@@ -1638,7 +1730,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Create users.',
         'type' => 'write',
-        'capabilities' => 'salaren/user:create'
+        'capabilities' => 'moodle/user:create'
     ),
     'core_user_delete_users' => array(
         'classname' => 'core_user_external',
@@ -1646,7 +1738,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Delete users.',
         'type' => 'write',
-        'capabilities' => 'salaren/user:delete'
+        'capabilities' => 'moodle/user:delete'
     ),
     'core_user_get_course_user_profiles' => array(
         'classname' => 'core_user_external',
@@ -1654,8 +1746,8 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Get course user profiles (each of the profils matching a course id and a user id),.',
         'type' => 'read',
-        'capabilities' => 'salaren/user:viewdetails, salaren/user:viewhiddendetails, salaren/course:useremail, salaren/user:update, '
-            . 'salaren/site:accessallgroups',
+        'capabilities' => 'moodle/user:viewdetails, moodle/user:viewhiddendetails, moodle/course:useremail, moodle/user:update, '
+            . 'moodle/site:accessallgroups',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_user_get_users' => array(
@@ -1664,7 +1756,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'search for users matching the parameters',
         'type' => 'read',
-        'capabilities' => 'salaren/user:viewdetails, salaren/user:viewhiddendetails, salaren/course:useremail, salaren/user:update'
+        'capabilities' => 'moodle/user:viewdetails, moodle/user:viewhiddendetails, moodle/course:useremail, moodle/user:update'
     ),
     'core_user_get_users_by_field' => array(
         'classname' => 'core_user_external',
@@ -1673,7 +1765,7 @@ $functions = array(
         'description' => 'Retrieve users\' information for a specified unique field - If you want to do a user search, use '
             . 'core_user_get_users()',
         'type' => 'read',
-        'capabilities' => 'salaren/user:viewdetails, salaren/user:viewhiddendetails, salaren/course:useremail, salaren/user:update',
+        'capabilities' => 'moodle/user:viewdetails, moodle/user:viewhiddendetails, moodle/course:useremail, moodle/user:update',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1691,7 +1783,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Update users.',
         'type' => 'write',
-        'capabilities' => 'salaren/user:update',
+        'capabilities' => 'moodle/user:update',
         'ajax' => true,
     ),
     'core_user_update_user_preferences' => array(
@@ -1700,7 +1792,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Update a user\'s preferences',
         'type' => 'write',
-        'capabilities' => 'salaren/user:editownmessageprofile, salaren/user:editmessageprofile',
+        'capabilities' => 'moodle/user:editownmessageprofile, moodle/user:editmessageprofile',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1710,7 +1802,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Simulates the web-interface view of user/index.php (triggering events),.',
         'type' => 'write',
-        'capabilities' => 'salaren/course:viewparticipants',
+        'capabilities' => 'moodle/course:viewparticipants',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_user_view_user_profile' => array(
@@ -1719,7 +1811,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Simulates the web-interface view of user/view.php and user/profile.php (triggering events),.',
         'type' => 'write',
-        'capabilities' => 'salaren/user:viewdetails',
+        'capabilities' => 'moodle/user:viewdetails',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_user_get_user_preferences' => array(
@@ -1737,7 +1829,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Update or delete the user picture in the site',
         'type' => 'write',
-        'capabilities' => 'salaren/user:editownprofile, salaren/user:editprofile',
+        'capabilities' => 'moodle/user:editownprofile, moodle/user:editprofile',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
     'core_user_set_user_preferences' => array(
@@ -1746,7 +1838,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Set user preferences.',
         'type' => 'write',
-        'capabilities' => 'salaren/site:config',
+        'capabilities' => 'moodle/site:config',
         'ajax' => true,
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1764,7 +1856,7 @@ $functions = array(
         'classpath' => 'user/externallib.php',
         'description' => 'Returns general information about files in the user private files area.',
         'type' => 'read',
-        'capabilities' => 'salaren/user:manageownfiles',
+        'capabilities' => 'moodle/user:manageownfiles',
         'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
 
@@ -1775,7 +1867,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Creates new competency frameworks.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_read_competency_framework' => array(
@@ -1784,7 +1876,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Load a summary of a competency framework.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_duplicate_competency_framework' => array(
@@ -1793,7 +1885,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Duplicate a competency framework.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_delete_competency_framework' => array(
@@ -1802,7 +1894,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Delete a competency framework.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_update_competency_framework' => array(
@@ -1811,7 +1903,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Update a competency framework.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_list_competency_frameworks' => array(
@@ -1820,7 +1912,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Load a list of a competency frameworks.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_count_competency_frameworks' => array(
@@ -1829,7 +1921,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Count a list of a competency frameworks.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_competency_framework_viewed' => array(
@@ -1838,7 +1930,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Log event competency framework viewed',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_create_competency' => array(
@@ -1847,7 +1939,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Creates new competencies.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_read_competency' => array(
@@ -1856,7 +1948,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Load a summary of a competency.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_competency_viewed' => array(
@@ -1865,7 +1957,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Log event competency viewed',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
         'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1875,7 +1967,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Delete a competency.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_update_competency' => array(
@@ -1884,7 +1976,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Update a competency.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_list_competencies' => array(
@@ -1893,7 +1985,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Load a list of a competencies.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_list_competencies_in_template' => array(
@@ -1902,7 +1994,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Load a list of a competencies for a given template.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_count_competencies' => array(
@@ -1911,7 +2003,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Count a list of a competencies.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_count_competencies_in_template' => array(
@@ -1920,7 +2012,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Count a list of a competencies for a given template.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_search_competencies' => array(
@@ -1929,7 +2021,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Search a list of a competencies.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_set_parent_competency' => array(
@@ -1938,7 +2030,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Set a new parent for a competency.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_move_up_competency' => array(
@@ -1947,7 +2039,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Re-order a competency.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_move_down_competency' => array(
@@ -1956,7 +2048,25 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Re-order a competency.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
+        'ajax'         => true,
+    ),
+    'core_competency_list_course_module_competencies' => array(
+        'classname'    => 'core_competency\external',
+        'methodname'   => 'list_course_module_competencies',
+        'classpath'    => '',
+        'description'  => 'List the competencies in a course module',
+        'type'         => 'read',
+        'capabilities' => 'moodle/competency:coursecompetencyview',
+        'ajax'         => true,
+    ),
+    'core_competency_count_course_module_competencies' => array(
+        'classname'    => 'core_competency\external',
+        'methodname'   => 'count_course_module_competencies',
+        'classpath'    => '',
+        'description'  => 'Count the competencies in a course module',
+        'type'         => 'read',
+        'capabilities' => 'moodle/competency:coursecompetencyview',
         'ajax'         => true,
     ),
     'core_competency_list_course_competencies' => array(
@@ -1965,7 +2075,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'List the competencies in a course',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:coursecompetencyview',
+        'capabilities' => 'moodle/competency:coursecompetencyview',
         'ajax'         => true,
         'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -1975,7 +2085,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'List the competencies in a course',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:coursecompetencyview',
+        'capabilities' => 'moodle/competency:coursecompetencyview',
         'ajax'         => true,
     ),
     'core_competency_count_courses_using_competency' => array(
@@ -1984,7 +2094,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'List the courses using a competency',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:coursecompetencyview',
+        'capabilities' => 'moodle/competency:coursecompetencyview',
         'ajax'         => true,
     ),
     'core_competency_add_competency_to_course' => array(
@@ -1993,7 +2103,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Add the competency to a course',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:coursecompetencymanage',
+        'capabilities' => 'moodle/competency:coursecompetencymanage',
         'ajax'         => true,
     ),
     'core_competency_add_competency_to_template' => array(
@@ -2002,7 +2112,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Add the competency to a template',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:templatemanage',
+        'capabilities' => 'moodle/competency:templatemanage',
         'ajax'         => true,
     ),
     'core_competency_remove_competency_from_course' => array(
@@ -2011,7 +2121,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Remove a competency from a course',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:coursecompetencymanage',
+        'capabilities' => 'moodle/competency:coursecompetencymanage',
         'ajax'         => true,
     ),
     'core_competency_set_course_competency_ruleoutcome' => array(
@@ -2020,7 +2130,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Modify the ruleoutcome value for course competency',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:coursecompetencymanage',
+        'capabilities' => 'moodle/competency:coursecompetencymanage',
         'ajax'         => true,
     ),
     'core_competency_remove_competency_from_template' => array(
@@ -2029,7 +2139,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Remove a competency from a template',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:templatemanage',
+        'capabilities' => 'moodle/competency:templatemanage',
         'ajax'         => true,
     ),
     'core_competency_reorder_course_competency' => array(
@@ -2038,7 +2148,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Move a course competency to a new relative sort order.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:coursecompetencymanage',
+        'capabilities' => 'moodle/competency:coursecompetencymanage',
         'ajax'         => true,
     ),
     'core_competency_reorder_template_competency' => array(
@@ -2047,7 +2157,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Move a template competency to a new relative sort order.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:templatemanage',
+        'capabilities' => 'moodle/competency:templatemanage',
         'ajax'         => true,
     ),
     'core_competency_create_template' => array(
@@ -2056,7 +2166,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Creates new learning plan templates.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:templatemanage',
+        'capabilities' => 'moodle/competency:templatemanage',
         'ajax'         => true,
     ),
     'core_competency_duplicate_template' => array(
@@ -2065,7 +2175,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Duplicate learning plan template.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:templatemanage',
+        'capabilities' => 'moodle/competency:templatemanage',
         'ajax'         => true,
     ),
     'core_competency_read_template' => array(
@@ -2074,7 +2184,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Load a summary of a learning plan template.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:templateview',
+        'capabilities' => 'moodle/competency:templateview',
         'ajax'         => true,
     ),
     'core_competency_delete_template' => array(
@@ -2083,7 +2193,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Delete a learning plan template.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:templatemanage',
+        'capabilities' => 'moodle/competency:templatemanage',
         'ajax'         => true,
     ),
     'core_competency_update_template' => array(
@@ -2092,7 +2202,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Update a learning plan template.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:templatemanage',
+        'capabilities' => 'moodle/competency:templatemanage',
         'ajax'         => true,
     ),
     'core_competency_list_templates' => array(
@@ -2101,7 +2211,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Load a list of a learning plan templates.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:templateview',
+        'capabilities' => 'moodle/competency:templateview',
         'ajax'         => true,
     ),
     'core_competency_list_templates_using_competency' => array(
@@ -2110,7 +2220,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Load a list of a learning plan templates for a given competency.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:templateview',
+        'capabilities' => 'moodle/competency:templateview',
         'ajax'         => true,
     ),
     'core_competency_count_templates' => array(
@@ -2119,7 +2229,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Count a list of a learning plan templates.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:templateview',
+        'capabilities' => 'moodle/competency:templateview',
         'ajax'         => true,
     ),
     'core_competency_count_templates_using_competency' => array(
@@ -2128,7 +2238,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Count a list of a learning plan templates for a given competency.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:templateview',
+        'capabilities' => 'moodle/competency:templateview',
         'ajax'         => true,
     ),
     'core_competency_create_plan' => array(
@@ -2137,7 +2247,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Creates a learning plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_update_plan' => array(
@@ -2146,7 +2256,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Updates a learning plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_complete_plan' => array(
@@ -2155,7 +2265,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Complete learning plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_reopen_plan' => array(
@@ -2164,7 +2274,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Reopen learning plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_read_plan' => array(
@@ -2173,7 +2283,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Load a learning plan.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:planviewown',
+        'capabilities' => 'moodle/competency:planviewown',
         'ajax'         => true,
     ),
     'core_competency_delete_plan' => array(
@@ -2182,7 +2292,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Delete a learning plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_list_user_plans' => array(
@@ -2191,7 +2301,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'List a user\'s learning plans.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:planviewown',
+        'capabilities' => 'moodle/competency:planviewown',
         'ajax'         => true,
     ),
     'core_competency_list_plan_competencies' => array(
@@ -2200,7 +2310,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'List the competencies in a plan',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:planviewown',
+        'capabilities' => 'moodle/competency:planviewown',
         'ajax'         => true,
     ),
     'core_competency_add_competency_to_plan' => array(
@@ -2209,7 +2319,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Add the competency to a learning plan',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_remove_competency_from_plan' => array(
@@ -2218,7 +2328,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Remove the competency from a learning plan',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_reorder_plan_competency' => array(
@@ -2227,7 +2337,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Move a plan competency to a new relative sort order.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_plan_request_review' => array(
@@ -2236,7 +2346,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Request for a plan to be reviewed.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanagedraft',
+        'capabilities' => 'moodle/competency:planmanagedraft',
         'ajax'         => true,
     ),
     'core_competency_plan_start_review' => array(
@@ -2245,7 +2355,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Start the review of a plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_plan_stop_review' => array(
@@ -2254,7 +2364,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Stop the review of a plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_plan_cancel_review_request' => array(
@@ -2263,7 +2373,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Cancel the review of a plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanagedraft',
+        'capabilities' => 'moodle/competency:planmanagedraft',
         'ajax'         => true,
     ),
     'core_competency_approve_plan' => array(
@@ -2272,7 +2382,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Approve a plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_unapprove_plan' => array(
@@ -2281,7 +2391,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Unapprove a plan.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
      'core_competency_template_has_related_data' => array(
@@ -2290,7 +2400,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Check if a template has related data',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:templateview',
+        'capabilities' => 'moodle/competency:templateview',
         'ajax'         => true,
     ),
     'core_competency_get_scale_values' => array(
@@ -2299,7 +2409,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Fetch the values for a specific scale',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
         'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -2309,7 +2419,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Adds a related competency',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_remove_related_competency' => array(
@@ -2318,7 +2428,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Remove a related competency',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencymanage',
+        'capabilities' => 'moodle/competency:competencymanage',
         'ajax'         => true,
     ),
     'core_competency_read_user_evidence' => array(
@@ -2327,7 +2437,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Read an evidence of prior learning.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:userevidenceview',
+        'capabilities' => 'moodle/competency:userevidenceview',
         'ajax'         => true,
     ),
     'core_competency_delete_user_evidence' => array(
@@ -2336,7 +2446,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Delete an evidence of prior learning.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:userevidencemanageown',
+        'capabilities' => 'moodle/competency:userevidencemanageown',
         'ajax'         => true,
     ),
     'core_competency_create_user_evidence_competency' => array(
@@ -2345,7 +2455,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Create an evidence of prior learning relationship with a competency.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:userevidencemanageown, salaren/competency:competencyview',
+        'capabilities' => 'moodle/competency:userevidencemanageown, moodle/competency:competencyview',
         'ajax'         => true,
     ),
     'core_competency_delete_user_evidence_competency' => array(
@@ -2354,7 +2464,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Delete an evidence of prior learning relationship with a competency.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:userevidencemanageown',
+        'capabilities' => 'moodle/competency:userevidencemanageown',
         'ajax'         => true,
     ),
     'core_competency_user_competency_cancel_review_request' => array(
@@ -2363,7 +2473,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Cancel a review request.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:userevidencemanageown',
+        'capabilities' => 'moodle/competency:userevidencemanageown',
         'ajax'         => true,
     ),
     'core_competency_user_competency_request_review' => array(
@@ -2372,7 +2482,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Request a review.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:userevidencemanageown',
+        'capabilities' => 'moodle/competency:userevidencemanageown',
         'ajax'         => true,
     ),
     'core_competency_user_competency_start_review' => array(
@@ -2381,7 +2491,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Start a review.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencygrade',
+        'capabilities' => 'moodle/competency:competencygrade',
         'ajax'         => true,
     ),
     'core_competency_user_competency_stop_review' => array(
@@ -2390,7 +2500,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Stop a review.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencygrade',
+        'capabilities' => 'moodle/competency:competencygrade',
         'ajax'         => true,
     ),
     'core_competency_user_competency_viewed' => array(
@@ -2399,7 +2509,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Log the user competency viewed event.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:usercompetencyview',
+        'capabilities' => 'moodle/competency:usercompetencyview',
         'ajax'         => true,
         'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -2409,7 +2519,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Log the user competency viewed in plan event.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:usercompetencyview',
+        'capabilities' => 'moodle/competency:usercompetencyview',
         'ajax'         => true,
         'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -2419,7 +2529,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Log the user competency viewed in course event',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:usercompetencyview',
+        'capabilities' => 'moodle/competency:usercompetencyview',
         'ajax'         => true,
         'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -2429,7 +2539,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Log the user competency plan viewed event.',
         'type'         => 'read',
-        'capabilities' => 'salaren/competency:usercompetencyview',
+        'capabilities' => 'moodle/competency:usercompetencyview',
         'ajax'         => true,
         'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -2439,7 +2549,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Grade a competency.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencygrade',
+        'capabilities' => 'moodle/competency:competencygrade',
         'ajax'         => true,
     ),
     'core_competency_grade_competency_in_plan' => array(
@@ -2448,7 +2558,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Grade a competency from the user plan page.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencygrade',
+        'capabilities' => 'moodle/competency:competencygrade',
         'ajax'         => true,
     ),
     'core_competency_grade_competency_in_course' => array(
@@ -2457,7 +2567,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Grade a competency from the course page.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:competencygrade',
+        'capabilities' => 'moodle/competency:competencygrade',
         'ajax'         => true,
         'services'     => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -2467,7 +2577,7 @@ $functions = array(
         'classpath'    => '',
         'description'  => 'Unlink a plan form it template.',
         'type'         => 'write',
-        'capabilities' => 'salaren/competency:planmanage',
+        'capabilities' => 'moodle/competency:planmanage',
         'ajax'         => true,
     ),
     'core_competency_template_viewed' => array(
@@ -2476,7 +2586,7 @@ $functions = array(
         'classpath'     => '',
         'description'   => 'Log event template viewed',
         'type'          => 'read',
-        'capabilities'  => 'salaren/competency:templateview',
+        'capabilities'  => 'moodle/competency:templateview',
         'ajax'          => true,
     ),
     'core_competency_request_review_of_user_evidence_linked_competencies' => array(
@@ -2485,7 +2595,7 @@ $functions = array(
         'classpath'     => '',
         'description'   => 'Send user evidence competencies in review',
         'type'          => 'write',
-        'capabilities'  => 'salaren/competency:userevidencemanageown',
+        'capabilities'  => 'moodle/competency:userevidencemanageown',
         'ajax'          => true,
     ),
     'core_competency_update_course_competency_settings' => array(
@@ -2494,7 +2604,7 @@ $functions = array(
         'classpath'     => '',
         'description'   => 'Update the course competency settings',
         'type'          => 'write',
-        'capabilities'  => 'salaren/competency:coursecompetencyconfigure',
+        'capabilities'  => 'moodle/competency:coursecompetencyconfigure',
         'ajax'          => true,
     ),
     'core_competency_delete_evidence' => array(
@@ -2503,7 +2613,7 @@ $functions = array(
         'classpath'     => '',
         'description'   => 'Delete an evidence',
         'type'          => 'write',
-        'capabilities'  => 'salaren/competency:evidencedelete',
+        'capabilities'  => 'moodle/competency:evidencedelete',
         'ajax'          => true,
         'services'      => array(MOODLE_OFFICIAL_MOBILE_SERVICE),
     ),
@@ -2591,7 +2701,17 @@ $functions = array(
         'description' => 'Drag and drop categories',
         'type'        => 'write',
         'ajax'        => 'true'
-    )
+    ),
+    'core_h5p_get_trusted_h5p_file' => [
+        'classname'     => 'core_h5p\external',
+        'methodname'    => 'get_trusted_h5p_file',
+        'classpath'     => '',
+        'description'   => 'Get the H5P file cleaned for Mobile App.',
+        'type'          => 'read',
+        'ajax'          => 'true',
+        'capabilities'  => '',
+        'services'      => [MOODLE_OFFICIAL_MOBILE_SERVICE],
+    ],
 );
 
 $services = array(

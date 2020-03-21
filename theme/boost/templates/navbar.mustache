@@ -33,9 +33,6 @@
                     <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}">
                 </span>
             {{/ output.should_display_navbar_logo }}
-            <span class="logo d-none d-sm-inline">
-                <img src="/salaren.png" alt="{{sitename}}">
-            </span>
             <span class="site-name d-none d-md-inline">{{{ sitename }}}</span>
         </a>
 
@@ -46,12 +43,12 @@
             {{{ output.page_heading_menu }}}
         </ul>
         <ul class="nav navbar-nav ml-auto">
-            <div class="d-none d-lg-block">
-            {{{ output.search_box }}}
-        </div>
+            <li class="d-none d-lg-block">
+                {{{ output.search_box }}}
+            </li>
             <!-- navbar_plugin_output -->
             <li class="nav-item">
-            {{{ output.navbar_plugin_output }}}
+                {{{ output.navbar_plugin_output }}}
             </li>
             <!-- user_menu -->
             <li class="nav-item d-flex align-items-center">

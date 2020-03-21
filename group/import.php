@@ -239,6 +239,6 @@ if ($mform_post->is_cancelled()) {
 
 /// Print the form
 echo $OUTPUT->header();
-echo $OUTPUT->heading($strimportgroups, 'importgroups', 'core_group');
+echo $OUTPUT->heading_with_help($strimportgroups, 'importgroups', 'core_group');
 $mform_post ->display();
 echo $OUTPUT->footer();

@@ -245,7 +245,7 @@ if ($userform->is_cancelled()) {
     $usercontext = context_user::instance($usernew->id);
 
     // Update preferences.
-    // useredit_update_user_preference($usernew);
+    useredit_update_user_preference($usernew);
 
     // Update tags.
     if (empty($USER->newadminuser) && isset($usernew->interests)) {

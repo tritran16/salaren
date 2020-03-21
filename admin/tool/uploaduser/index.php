@@ -86,7 +86,7 @@ $today = time();
 $today = make_timestamp(date('Y', $today), date('m', $today), date('d', $today), 0, 0, 0);
 
 // array of all valid fields for validation
-$STD_FIELDS = array('id', 'username', 'email',
+$STD_FIELDS = array('id', 'username', 'email', 'emailstop',
         'city', 'country', 'lang', 'timezone', 'mailformat',
         'maildisplay', 'maildigest', 'htmleditor', 'autosubscribe',
         'institution', 'department', 'idnumber', 'skype',
@@ -138,7 +138,7 @@ if (empty($iid)) {
     } else {
         echo $OUTPUT->header();
 
-        echo $OUTPUT->heading(get_string('uploadusers', 'tool_uploaduser'), 1, 'uploadusers', 'tool_uploaduser');
+        echo $OUTPUT->heading_with_help(get_string('uploadusers', 'tool_uploaduser'), 'uploadusers', 'tool_uploaduser');
 
         $mform1->display();
         echo $OUTPUT->footer();
@@ -668,7 +668,7 @@ if ($formdata = $mform2->is_cancelled()) {
                     // Check for passwords that we want to force users to reset next
                     // time they log in.
                     $errmsg = null;
-                    $weak = !check_password_policy($user->password, $errmsg);
+                    $weak = !check_password_policy($user->password, $errmsg, $user);
                     if ($resetpasswords == UU_PWRESET_ALL or ($resetpasswords == UU_PWRESET_WEAK and $weak)) {
                         if ($weak) {
                             $weakpasswords++;
@@ -809,7 +809,7 @@ if ($formdata = $mform2->is_cancelled()) {
                     }
                 } else {
                     $errmsg = null;
-                    $weak = !check_password_policy($user->password, $errmsg);
+                    $weak = !check_password_policy($user->password, $errmsg, $user);
                     if ($resetpasswords == UU_PWRESET_ALL or ($resetpasswords == UU_PWRESET_WEAK and $weak)) {
                         if ($weak) {
                             $weakpasswords++;
@@ -1039,6 +1039,7 @@ if ($formdata = $mform2->is_cancelled()) {
                 if ($roleid) {
                     // Find duration and/or enrol status.
                     $timeend = 0;
+                    $timestart = $today;
                     $status = null;
 
                     if (isset($user->{'enrolstatus'.$i})) {
@@ -1054,16 +1055,23 @@ if ($formdata = $mform2->is_cancelled()) {
                         }
                     }
 
+                    if (!empty($user->{'enroltimestart'.$i})) {
+                        $parsedtimestart = strtotime($user->{'enroltimestart'.$i});
+                        if ($parsedtimestart !== false) {
+                            $timestart = $parsedtimestart;
+                        }
+                    }
+
                     if (!empty($user->{'enrolperiod'.$i})) {
                         $duration = (int)$user->{'enrolperiod'.$i} * 60*60*24; // convert days to seconds
                         if ($duration > 0) { // sanity check
-                            $timeend = $today + $duration;
+                            $timeend = $timestart + $duration;
                         }
                     } else if ($manualcache[$courseid]->enrolperiod > 0) {
-                        $timeend = $today + $manualcache[$courseid]->enrolperiod;
+                        $timeend = $timestart + $manualcache[$courseid]->enrolperiod;
                     }
 
-                    $manual->enrol_user($manualcache[$courseid], $user->id, $roleid, $today, $timeend, $status);
+                    $manual->enrol_user($manualcache[$courseid], $user->id, $roleid, $timestart, $timeend, $status);
 
                     $a = new stdClass();
                     $a->course = $shortname;
@@ -1176,7 +1184,7 @@ if ($formdata = $mform2->is_cancelled()) {
 // Print the header
 echo $OUTPUT->header();
 
-echo $OUTPUT->heading(get_string('uploaduserspreview', 'tool_uploaduser'), 1);
+echo $OUTPUT->heading(get_string('uploaduserspreview', 'tool_uploaduser'));
 
 // NOTE: this is JUST csv processing preview, we must not prevent import from here if there is something in the file!!
 //       this was intended for validation of csv formatting and encoding, not filtering the data!!!!

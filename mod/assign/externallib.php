@@ -432,7 +432,7 @@ class mod_assign_external extends external_api {
                         'id' => $module->assignmentid,
                         'cmid' => $module->id,
                         'course' => $module->course,
-                        'name' => $module->name,
+                        'name' => external_format_string($module->name, $context),
                         'nosubmissions' => $module->nosubmissions,
                         'submissiondrafts' => $module->submissiondrafts,
                         'sendnotifications' => $module->sendnotifications,
@@ -462,9 +462,10 @@ class mod_assign_external extends external_api {
 
                     // Return or not intro and file attachments depending on the plugin settings.
                     if ($assign->show_intro()) {
-
-                        list($assignment['intro'], $assignment['introformat']) = external_format_text($module->intro,
-                            $module->introformat, $context->id, 'mod_assign', 'intro', null);
+                        $options = array('noclean' => true);
+                        list($assignment['intro'], $assignment['introformat']) =
+                            external_format_text($module->intro, $module->introformat, $context->id, 'mod_assign', 'intro', null,
+                                $options);
                         $assignment['introfiles'] = external_util::get_area_files($context->id, 'mod_assign', 'intro', false,
                                                                                     false);
 
@@ -527,7 +528,7 @@ class mod_assign_external extends external_api {
                 'id' => new external_value(PARAM_INT, 'assignment id'),
                 'cmid' => new external_value(PARAM_INT, 'course module id'),
                 'course' => new external_value(PARAM_INT, 'course id'),
-                'name' => new external_value(PARAM_TEXT, 'assignment name'),
+                'name' => new external_value(PARAM_RAW, 'assignment name'),
                 'nosubmissions' => new external_value(PARAM_INT, 'no submissions'),
                 'submissiondrafts' => new external_value(PARAM_INT, 'submissions drafts'),
                 'sendnotifications' => new external_value(PARAM_INT, 'send notifications'),
@@ -2350,6 +2351,8 @@ class mod_assign_external extends external_api {
             throw new required_capability_exception($context, 'mod/assign:viewgrades', 'nopermission', '');
         }
 
+        $assign->update_effective_access($user->id);
+
         $gradingsummary = $lastattempt = $feedback = $previousattempts = null;
 
         // Get the renderable since it contais all the info we need.
@@ -2509,8 +2512,10 @@ class mod_assign_external extends external_api {
                         'submissionsenabled' => new external_value(PARAM_BOOL, 'Whether submissions are enabled or not.'),
                         'submissionssubmittedcount' => new external_value(PARAM_INT, 'Number of submissions in submitted status.'),
                         'submissionsneedgradingcount' => new external_value(PARAM_INT, 'Number of submissions that need grading.'),
-                        'warnofungroupedusers' => new external_value(PARAM_BOOL, 'Whether we need to warn people that there
-                                                                        are users without groups.'),
+                        'warnofungroupedusers' => new external_value(PARAM_ALPHA, 'Whether we need to warn people that there
+                                                                        are users without groups (\'warningrequired\'), warn
+                                                                        people there are users who will submit in the default
+                                                                        group (\'warningoptional\') or no warning (\'\').'),
                     ), 'Grading information.', VALUE_OPTIONAL
                 ),
                 'lastattempt' => new external_single_structure(
@@ -2819,10 +2824,10 @@ class mod_assign_external extends external_api {
             'requiregrading' => $participant->requiregrading,
             'grantedextension' => $participant->grantedextension,
             'blindmarking' => $assign->is_blind_marking(),
-            'allowsubmissionsfromdate' => $assign->get_instance()->allowsubmissionsfromdate,
-            'duedate' => $assign->get_instance()->duedate,
-            'cutoffdate' => $assign->get_instance()->cutoffdate,
-            'duedatestr' => userdate($assign->get_instance()->duedate, get_string('strftimedatetime', 'langconfig')),
+            'allowsubmissionsfromdate' => $assign->get_instance($userid)->allowsubmissionsfromdate,
+            'duedate' => $assign->get_instance($userid)->duedate,
+            'cutoffdate' => $assign->get_instance($userid)->cutoffdate,
+            'duedatestr' => userdate($assign->get_instance($userid)->duedate, get_string('strftimedatetime', 'langconfig')),
         );
 
         if (!empty($participant->groupid)) {

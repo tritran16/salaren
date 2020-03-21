@@ -263,7 +263,8 @@ class auth_plugin_shibboleth extends auth_plugin_base {
         global $OUTPUT;
 
         if (!isset($this->config->user_attribute) || empty($this->config->user_attribute)) {
-            echo $OUTPUT->notification(get_string("shib_not_set_up_error", "auth_shibboleth"), 'notifyproblem');
+            echo $OUTPUT->notification(get_string("shib_not_set_up_error", "auth_shibboleth",
+                (new moodle_url('/auth/shibboleth/README.txt'))->out()), 'notifyproblem');
             return;
         }
         if ($this->config->convert_data and $this->config->convert_data != '' and !is_readable($this->config->convert_data)) {
@@ -294,12 +295,19 @@ class auth_plugin_shibboleth extends auth_plugin_base {
         }
 
         $url = new moodle_url('/auth/shibboleth/index.php');
-        $iconurl = moodle_url::make_pluginfile_url(context_system::instance()->id,
-                                                   'auth_shibboleth',
-                                                   'logo',
-                                                   null,
-                                                   '/',
-                                                   $config->auth_logo);
+
+        if ($config->auth_logo) {
+            $iconurl = moodle_url::make_pluginfile_url(
+                context_system::instance()->id,
+                'auth_shibboleth',
+                'logo',
+                null,
+                null,
+                $config->auth_logo);
+        } else {
+            $iconurl = null;
+        }
+
         $result[] = ['url' => $url, 'iconurl' => $iconurl, 'name' => $config->login_name];
         return $result;
     }

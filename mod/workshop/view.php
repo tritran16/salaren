@@ -102,7 +102,7 @@ $output = $PAGE->get_renderer('mod_workshop');
 /// Output starts here
 
 echo $output->header();
-echo $OUTPUT->heading(format_string($workshop->name), 'userplan', 'workshop');
+echo $output->heading_with_help(format_string($workshop->name), 'userplan', 'workshop');
 echo $output->heading(format_string($currentphasetitle), 3, null, 'mod_workshop-userplanheading');
 echo $output->render($userplan);
 

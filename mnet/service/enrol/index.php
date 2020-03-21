@@ -32,7 +32,7 @@ admin_externalpage_setup('mnetenrol');
 $service = mnetservice_enrol::get_instance();
 
 echo $OUTPUT->header();
-echo $OUTPUT->heading(get_string('clientname', 'mnetservice_enrol'), 'clientname', 'mnetservice_enrol');
+echo $OUTPUT->heading_with_help(get_string('clientname', 'mnetservice_enrol'), 'clientname', 'mnetservice_enrol');
 
 if (!$service->is_available()) {
     echo $OUTPUT->box(get_string('mnetdisabled','mnet'), 'noticebox');

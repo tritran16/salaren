@@ -157,6 +157,8 @@ class enrol_self_plugin extends enrol_plugin {
 
         $this->enrol_user($instance, $USER->id, $instance->roleid, $timestart, $timeend);
 
+        \core\notification::success(get_string('youenrolledincourse', 'enrol'));
+
         if ($instance->password and $instance->customint1 and $data->enrolpassword !== $instance->password) {
             // It must be a group enrolment, let's assign group too.
             $groups = $DB->get_records('groups', array('courseid'=>$instance->courseid), 'id', 'id, enrolmentkey');
@@ -448,8 +450,9 @@ class enrol_self_plugin extends enrol_plugin {
             $userid = $instance->userid;
             unset($instance->userid);
             $this->unenrol_user($instance, $userid);
-            $days = $instance->customint2 / 60*60*24;
-            $trace->output("unenrolling user $userid from course $instance->courseid as they have did not log in for at least $days days", 1);
+            $days = $instance->customint2 / DAYSECS;
+            $trace->output("unenrolling user $userid from course $instance->courseid " .
+                "as they did not log in for at least $days days", 1);
         }
         $rs->close();
 
@@ -465,8 +468,9 @@ class enrol_self_plugin extends enrol_plugin {
             $userid = $instance->userid;
             unset($instance->userid);
             $this->unenrol_user($instance, $userid);
-                $days = $instance->customint2 / 60*60*24;
-            $trace->output("unenrolling user $userid from course $instance->courseid as they have did not access course for at least $days days", 1);
+            $days = $instance->customint2 / DAYSECS;
+            $trace->output("unenrolling user $userid from course $instance->courseid " .
+                "as they did not access the course for at least $days days", 1);
         }
         $rs->close();
 
@@ -712,7 +716,7 @@ class enrol_self_plugin extends enrol_plugin {
      * @return bool
      */
     public function edit_instance_form($instance, MoodleQuickForm $mform, $context) {
-        global $CFG;
+        global $CFG, $DB;
 
         // Merge these two settings to one value for the single selection element.
         if ($instance->notifyall and $instance->expirynotify) {

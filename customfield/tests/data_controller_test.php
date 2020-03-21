@@ -35,17 +35,11 @@ use core_customfield\data_controller;
 class core_customfield_data_controller_testcase extends advanced_testcase {
 
     /**
-     * Tests set up.
-     */
-    public function setUp() {
-        $this->resetAfterTest();
-    }
-
-    /**
-     * Get generator
+     * Get generator.
+     *
      * @return core_customfield_generator
      */
-    protected function get_generator() : core_customfield_generator {
+    protected function get_generator(): core_customfield_generator {
         return $this->getDataGenerator()->get_plugin_generator('core_customfield');
     }
 
@@ -54,6 +48,8 @@ class core_customfield_data_controller_testcase extends advanced_testcase {
      */
     public function test_constructor() {
         global $DB;
+        $this->resetAfterTest();
+
         // Create a course, fields category and fields.
         $course = $this->getDataGenerator()->create_course();
         $category0 = $this->get_generator()->create_category(['name' => 'aaaa']);
@@ -122,6 +118,8 @@ class core_customfield_data_controller_testcase extends advanced_testcase {
      */
     public function test_constructor_errors() {
         global $DB;
+        $this->resetAfterTest();
+
         // Create a category, field and data.
         $category = $this->get_generator()->create_category();
         $field = $this->get_generator()->create_field(['categoryid' => $category->get('id')]);
